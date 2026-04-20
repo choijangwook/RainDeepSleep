@@ -1,39 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-<title>최장욱.도시</title>
-	
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<link rel="icon" href="favicon.ico" />
-<style>
-*{ padding:0; margin: 0; -o-user-select:none; -ms-user-select:none; -khtml-user-select:none; -webkit-user-select:none; -moz-user-select: none;}
-html { width:100%; height:100%; }
-body { background:#8397ac; font:10px sans-serif; width:100%; height:100%; color:#FFFFFF; overflow: hidden; }
-#container{ min-width:465px; min-height:465px; width:100%; height:100%; overflow:hidden; text-align:center; }
-#container canvas{ position:absolute;top:0;left:0;width:100%;height:100% }
-#debug{ }
-#hub{ position:absolute; top:0; left:0; height:100%; width:100%; pointer-events:none; display:block; text-align:center;}
-
-a:link {text-decoration: none; color:#FFAA66;}
-a:visited {text-decoration: none; color:#FFAA66;}
-a:active {text-decoration: none; color:#FFAA66;}
-a:hover {text-decoration: underline; color: red;}
-</style>
+<meta charset="UTF-8">
+<title>Sleep & Rain Blog</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
-<script type="module">
-	
-	import { Main } from './build/MainGame.module.js';
+<body>
 
-	Main.init()
+<nav>
+<a href="/">홈</a>
+<a href="about.html">소개</a>
+<a href="contact.html">문의</a>
+<a href="privacy.html">개인정보</a>
+</nav>
 
-</script>
+<h1>🌧 Sleep & Rain Blog</h1>
+<p>수면, 힐링, ASMR 정보를 제공합니다.</p>
 
-<div id="container"></div>
-<div id="hub"></div>
-<object id="loader" type="image/svg+xml" data="assets/loader.svg"></object>
+<h2>📌 최신 글</h2>
 
+<ul>
+<li><a href="posts/post1.html">빗소리가 수면에 좋은 이유</a></li>
+<li><a href="posts/post2.html">ASMR이 뇌에 미치는 영향</a></li>
+</ul>
 
-
-</body></html>
+</body>
+</html>
