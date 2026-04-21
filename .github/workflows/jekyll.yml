@@ -1,1 +1,14 @@
+name: Deploy Jekyll site
 
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/jekyll-build-pages@v1
+      - uses: actions/deploy-pages@v1
