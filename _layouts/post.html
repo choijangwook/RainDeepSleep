@@ -1,79 +1,150 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
 
-<title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/RainDeepSleep/style.css">
 
-<link rel="stylesheet" href="/RainDeepSleep/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      background: #ffffff;
+      color: #222;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: sans-serif;
-  line-height: 1.7;
-}
+    nav {
+      padding: 14px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #eee;
+    }
 
-<nav style="padding:12px; background:#f5f5f5;">
-  <a href="/RainDeepSleep/" style="text-decoration:none; font-weight:bold;">
-    🏠 홈으로
-  </a>
-</nav>
-  
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      font-size: 16px;
+    }
 
-.container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 16px;
-  box-sizing: border-box;
-}
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+      box-sizing: border-box;
+    }
 
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-}
+    h1 {
+      font-size: 26px;
+      margin-top: 10px;
+    }
 
-.video-container iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-</style>
+    h2 {
+      margin-top: 28px;
+      font-size: 20px;
+    }
 
+    p {
+      font-size: 16px;
+    }
+
+    /* 🎥 유튜브 반응형 */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 16px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
+
+    /* 🔙 하단 버튼 */
+    .back-home {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .back-home a:hover {
+      background: #555;
+    }
+
+    /* 📌 관련 글 */
+    .related {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .related h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .related ul {
+      padding-left: 18px;
+    }
+
+    .related a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+
+    .related a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
 </head>
 
 <body>
 
-<nav>
-<a href="/RainDeepSleep/index.html">홈</a>
-</nav>
+  <!-- 🏠 상단 네비 -->
+  <nav>
+    <a href="/RainDeepSleep/">🏠 홈으로</a>
+  </nav>
 
-<div class="container">
+  <div class="container">
 
-<h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
 
-{{ content }}
+    {{ content }}
 
-</div>
+    <!-- 🔗 관련 글 -->
+    <div class="related">
+      <h3>📌 관련 글</h3>
+      <ul>
+        <li><a href="/RainDeepSleep/post1.html">빗소리가 수면에 좋은 이유</a></li>
+        <li><a href="/RainDeepSleep/post2.html">ASMR 효과</a></li>
+        <li><a href="/RainDeepSleep/post3.html">불면증 해결 방법</a></li>
+      </ul>
+    </div>
+
+    <!-- 🔙 하단 버튼 -->
+    <div class="back-home">
+      <a href="/RainDeepSleep/">← 홈으로 돌아가기</a>
+    </div>
+
+  </div>
 
 </body>
 </html>
-
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-.video-container iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 
 
