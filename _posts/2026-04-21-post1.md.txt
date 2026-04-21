@@ -1,8 +1,9 @@
----
-layout: post
-title: "빗소리가 수면에 좋은 이유"
-description: "빗소리가 수면에 미치는 효과와 이유"
----
+<!-- layouts/post.html 불러오기 -->
+{% include_relative ../layouts/post.html %}
+
+<!-- 콘텐츠 시작 -->
+
+# 빗소리가 수면에 좋은 이유
 
 빗소리는 백색소음으로 작용하여 주변 소음을 차단하고  
 뇌를 안정시키는 역할을 합니다.
