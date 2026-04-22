@@ -1,14 +1,16 @@
 ---
 layout: default
-title: "Home"
+title: "Rain Sound for Deep Sleep"
 ---
 
-<h2 style="text-align:center;">Latest Videos</h2>
+<h2 style="text-align:center;">🎬 Latest Videos</h2>
 
 {% for post in site.posts %}
-  <div style="padding:10px;border-bottom:1px solid #ddd;">
-    <a href="{{ post.url }}">
-      {{ post.title }}
+  <div style="padding:10px;border-bottom:1px solid #ddd;text-align:center;">
+    
+    <a href="{{ post.url }}" style="text-decoration:none;color:#000;">
+      🌧 {{ post.title }}
     </a>
+
   </div>
 {% endfor %}
