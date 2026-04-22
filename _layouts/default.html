@@ -94,28 +94,25 @@ h1{
   {{ content }}
 </div>
 
-<!-- 🔥 자동 이전 / 다음 (방향 수정 완료) -->
+<!-- 🔥 자동 이전 / 다음 (GitHub Pages 완벽 대응) -->
 <div class="pagination">
 
-  <!-- 이전 (←) : 더 오래된 글 -->
+  <!-- 이전 글 (←) : 더 오래된 글 -->
   {% if page.next %}
-    <a href="{{ site.baseurl }}{{ page.next.url }}">
-  
+    <a href="{{ site.baseurl }}{{ page.next.url }}">←</a>
   {% else %}
     <span style="opacity:0.3;">←</span>
   {% endif %}
 
   <span class="active">●</span>
 
-  <!-- 다음 (→) : 더 최신 글 -->
+  <!-- 다음 글 (→) : 더 최신 글 -->
   {% if page.previous %}
-    <a href="{{ page.previous.url }}">→</a>
+    <a href="{{ site.baseurl }}{{ page.previous.url }}">→</a>
   {% else %}
     <span style="opacity:0.3;">→</span>
   {% endif %}
 
-
-  
 </div>
 
 </body>
