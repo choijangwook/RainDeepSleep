@@ -14,71 +14,57 @@ padding:8px 12px;
 border-radius:8px;
 text-decoration:none;
 z-index:999;
-font-size:14px;
-">
+font-size:14px;">
 🏠
 </a>
 
-<!-- 🔥 TIMER (홈버튼 바로 아래) -->
-<div style="
-position:fixed;
-top:60px;
-left:15px;
-z-index:999;
-">
+<!-- 🔥 제목 (겹침 해결) -->
+<h2 id="mainTitle" style="
+text-align:center;
+font-size:15px;
+margin:15px 0 5px 60px;">
+🌧 Rain Sound for Deep Sleep
+</h2>
 
-<button onclick="setTimer(120)" style="display:block;margin-bottom:5px;">2h</button>
-<button onclick="setTimer(240)" style="display:block;margin-bottom:5px;">4h</button>
-<button onclick="setTimer(480)" style="display:block;">8h</button>
+<!-- 🔥 TIMER (겹침 제거 + 가로 정렬) -->
+<div style="
+display:flex;
+justify-content:center;
+gap:10px;
+margin:10px 0;">
+  
+<button onclick="setTimer(120)">2h</button>
+<button onclick="setTimer(240)">4h</button>
+<button onclick="setTimer(480)">8h</button>
 
 </div>
 
 <!-- 🔥 최신 영상 -->
 {% assign latest = site.posts.first %}
 
-{% if latest %}
-<div style="width:100%;">
-
-  <div style="position:relative;width:100%;padding-bottom:56.25%;">
-    <iframe 
-    id="mainVideo"
-    src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&autoplay=1&mute=1&rel=0"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    allowfullscreen>
-    </iframe>
-  </div>
-
-  <h2 id="mainTitle" style="text-align:center;font-size:16px;margin:10px;">
-    🌧 {{ latest.title }}
-  </h2>
-
+<div style="position:relative;width:100%;padding-bottom:56.25%;">
+<iframe 
+id="mainVideo"
+src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&autoplay=1&mute=1&rel=0"
+style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+allow="autoplay; encrypted-media; picture-in-picture"
+allowfullscreen>
+</iframe>
 </div>
-{% endif %}
 
 <!-- 🔥 화살표 -->
 {% if site.posts.size > 1 %}
-  {% assign second = site.posts[1] %}
+{% assign second = site.posts[1] %}
 
-  <div style="
-  position:fixed;bottom:20px;left:15px;
-  width:50px;height:50px;
-  background:#000;color:#fff;
-  border-radius:50%;
-  display:flex;justify-content:center;align-items:center;
-  opacity:0.3;">
-  ←
-  </div>
-
-  <a href="{{ site.baseurl }}{{ second.url }}" style="
-  position:fixed;bottom:20px;right:15px;
-  width:50px;height:50px;
-  background:#000;color:#fff;
-  border-radius:50%;
-  display:flex;justify-content:center;align-items:center;
-  text-decoration:none;">
-  →
-  </a>
+<a href="{{ site.baseurl }}{{ second.url }}" style="
+position:fixed;bottom:20px;right:15px;
+width:50px;height:50px;
+background:#000;color:#fff;
+border-radius:50%;
+display:flex;justify-content:center;align-items:center;
+text-decoration:none;">
+→
+</a>
 {% endif %}
 
 <!-- 🎬 Latest Videos -->
@@ -112,8 +98,18 @@ style="cursor:pointer;">
 </div>
 
 <script>
+let timerId = null;
+
 function setTimer(min){
-  alert("⏰ " + min + "분 타이머 설정됨");
+  if(timerId) clearTimeout(timerId);
+
+  timerId = setTimeout(()=>{
+    const player = document.getElementById("mainVideo");
+    player.src = ""; // 강제 정지
+    alert("⏰ 타이머 종료");
+  }, min * 60000);
+
+  alert("⏱ " + min + "분 타이머 설정됨");
 }
 
 function playVideo(id, title){
@@ -121,6 +117,7 @@ function playVideo(id, title){
   const titleBox = document.getElementById("mainTitle");
 
   player.src = "https://www.youtube.com/embed/" + id + "?playsinline=1&autoplay=1&mute=1&rel=0";
+
   titleBox.innerText = "🌧 " + title;
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
