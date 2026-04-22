@@ -6,10 +6,22 @@
 <title>{{ page.title }}</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
+  overflow-x:hidden; /* 🔥 밀림 방지 */
   font-family:sans-serif;
   background:#fafafa;
+}
+
+/* 컨테이너 */
+.container{
+  width:100%;
+  max-width:100%;
+  margin:0 auto;
 }
 
 /* 영상 */
@@ -17,41 +29,31 @@ body{
   position:relative;
   width:100%;
   padding-bottom:56.25%;
-  height:0;
 }
 .video iframe{
   position:absolute;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
+  top:0;
+  left:0;
   border:0;
 }
 
-/* 본문 */
-.content{
-  padding:10px;
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-}
-
 /* 홈 버튼 */
-.home-btn{
+.home{
   position:fixed;
-  top:15px;
-  left:15px;
+  top:10px;
+  left:10px;
   background:#000;
   color:#fff;
-  padding:8px 12px;
-  border-radius:8px;
+  padding:8px 10px;
+  border-radius:6px;
   text-decoration:none;
   z-index:999;
-  font-size:14px;
 }
 
-/* 하단 화살표 */
-.nav-btn{
+/* 화살표 */
+.nav{
   position:fixed;
   bottom:20px;
   width:50px;
@@ -62,51 +64,32 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:20px;
   text-decoration:none;
-  opacity:0.85;
 }
+.left{ left:15px; }
+.right{ right:15px; }
 
-.nav-left{ left:15px; }
-.nav-right{ right:15px; }
-
-.nav-btn:hover{
-  opacity:1;
-}
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 홈 버튼 (모바일 404 해결) -->
-<a href="{{ site.baseurl }}/" class="home-btn">🏠</a>
+<a href="{{ site.baseurl }}/" class="home">🏠</a>
 
-<!-- 제목 -->
-<h2 style="text-align:center;margin:10px 0;">
-  🌧 {{ page.title }}
-</h2>
-
-<!-- 본문 -->
-<div class="content">
-  {{ content }}
+<div class="container">
+{{ content }}
 </div>
 
-<!-- 🔥 글 페이지에서만 화살표 -->
 {% if page.url != "/" %}
-
   {% if page.next %}
-    <a class="nav-btn nav-left" href="{{ site.baseurl }}{{ page.next.url }}">←</a>
+    <a class="nav left" href="{{ site.baseurl }}{{ page.next.url }}">←</a>
   {% endif %}
-
   {% if page.previous %}
-    <a class="nav-btn nav-right" href="{{ site.baseurl }}{{ page.previous.url }}">→</a>
+    <a class="nav right" href="{{ site.baseurl }}{{ page.previous.url }}">→</a>
   {% endif %}
-
 {% endif %}
 
 </body>
 </html>
-
-
 
 
