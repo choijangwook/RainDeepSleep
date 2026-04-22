@@ -1,13 +1,52 @@
-<h2 style="font-size:16px;">🎧 Latest Sounds</h2>
+---
+layout: default
+title: "Rain Sound for Deep Sleep"
+---
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;">
+<!-- 🔥 배너 -->
+<div class="banner">
+  <img src="https://via.placeholder.com/1200x300?text=Rain+Deep+Sleep" alt="banner">
+</div>
+
+<h1>🌧 Rain Sound for Deep Sleep</h1>
+
+<!-- 🎧 최신 사운드 -->
+<h2 style="font-size:16px;margin-top:10px;">🎧 Latest Sounds</h2>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;max-width:900px;margin:auto;">
 
 {% for post in site.posts %}
   <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;font-size:13px;">
-    <div style="background:#eee;padding:10px;border-radius:10px;">
-      🌧 {{ post.title }}
+    
+    <div style="background:#eee;border-radius:10px;overflow:hidden;">
+      
+      <!-- 썸네일 (자동 유튜브 이미지) -->
+      {% if post.youtube %}
+        <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
+      {% endif %}
+      
+      <div style="padding:8px;">
+        🌧 {{ post.title }}
+      </div>
+
     </div>
+
   </a>
 {% endfor %}
 
 </div>
+
+<!-- ⏱ 공통 TIMER (홈에서도 사용 가능) -->
+<div style="text-align:center;margin:30px 0;">
+  <h3 style="font-size:16px;">⏱ Sleep Timer</h3>
+
+  <button onclick="setTimer(15)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">15 min</button>
+  <button onclick="setTimer(30)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">30 min</button>
+  <button onclick="setTimer(60)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">60 min</button>
+</div>
+
+<script>
+function setTimer(min){
+  alert("⏰ Timer set for " + min + " minutes");
+}
+</script>
