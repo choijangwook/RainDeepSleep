@@ -3,14 +3,62 @@ layout: default
 title: "Rain Sound for Deep Sleep"
 ---
 
-<h2 style="text-align:center;">🎬 Latest Videos</h2>
+<!-- 🔥 배너 -->
+<div style="width:100%;">
+  <img src="https://via.placeholder.com/1200x300?text=Rain+Deep+Sleep" style="width:100%;">
+</div>
+
+<!-- 🔥 자유 글 영역 -->
+<div style="text-align:center;padding:10px;font-size:14px;color:#444;">
+  ✨ 원하는 설명, 소개글을 여기에 작성하세요
+</div>
+
+<!-- 🎬 Latest Videos -->
+<h2 style="text-align:center;font-size:16px;">🎬 Latest Videos</h2>
+
+<div style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+padding:10px;
+max-width:900px;
+margin:auto;
+">
 
 {% for post in site.posts %}
-  <div style="padding:10px;border-bottom:1px solid #ddd;text-align:center;">
-    
-    <a href="{{ post.url }}" style="text-decoration:none;color:#000;">
-      🌧 {{ post.title }}
-    </a>
 
-  </div>
+  <a href="{{ post.url }}" style="text-decoration:none;color:#000;">
+
+    <div style="background:#eee;border-radius:10px;overflow:hidden;">
+
+      <!-- 썸네일 -->
+      {% if post.youtube %}
+      <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
+      {% endif %}
+
+      <div style="padding:8px;font-size:13px;">
+        🌧 {{ post.title }}
+      </div>
+
+    </div>
+
+  </a>
+
 {% endfor %}
+
+</div>
+
+<!-- ⏱ TIMER -->
+<div style="text-align:center;margin:30px 0;">
+  <h3 style="font-size:16px;">⏱ Sleep Timer</h3>
+
+  <button onclick="setTimer(120)" style="padding:10px;margin:5px;">2h</button>
+  <button onclick="setTimer(240)" style="padding:10px;margin:5px;">4h</button>
+  <button onclick="setTimer(480)" style="padding:10px;margin:5px;">8h</button>
+</div>
+
+<script>
+function setTimer(min){
+  alert("⏰ " + min + "분 타이머 설정됨");
+}
+</script>
