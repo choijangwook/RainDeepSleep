@@ -8,7 +8,7 @@ title: "Rain Sound for Deep Sleep"
   <img src="https://via.placeholder.com/1200x300?text=Rain+Deep+Sleep" alt="banner">
 </div>
 
-<!-- 🔥 홈 버튼 (항상 표시) -->
+<!-- 🔥 홈 버튼 -->
 <a href="{{ site.baseurl }}/" 
 style="position:fixed;top:15px;left:15px;
 background:#000;color:#fff;padding:8px 12px;
@@ -16,22 +16,18 @@ border-radius:8px;text-decoration:none;font-size:14px;z-index:999;">
 🏠 Home
 </a>
 
-<!-- 🔥 화살표 (첫 화면에서도 동작) -->
-{% assign sorted_posts = site.posts | sort: "order" %}
+<!-- 🔥 화살표 (최신/가장 오래된 기준) -->
+{% assign first = site.posts.first %}
+{% assign last = site.posts.last %}
 
-{% assign first = sorted_posts[0] %}
-{% assign last = sorted_posts | last %}
-
-<!-- 왼쪽 (첫 글) -->
-{% if first %}
-<a href="{{ site.baseurl }}{{ first.url }}" 
-class="nav-btn nav-left">←</a>
+<!-- ← 오래된 글 -->
+{% if last %}
+<a href="{{ site.baseurl }}{{ last.url }}" class="nav-btn nav-left">←</a>
 {% endif %}
 
-<!-- 오른쪽 (마지막 글) -->
-{% if last %}
-<a href="{{ site.baseurl }}{{ last.url }}" 
-class="nav-btn nav-right">→</a>
+<!-- → 최신 글 -->
+{% if first %}
+<a href="{{ site.baseurl }}{{ first.url }}" class="nav-btn nav-right">→</a>
 {% endif %}
 
 <!-- 🔥 자유 텍스트 -->
@@ -39,14 +35,14 @@ class="nav-btn nav-right">→</a>
   ✨ 여기에 원하는 문구를 자유롭게 작성하세요
 </div>
 
-<!-- 🎧 제목 변경 -->
+<!-- 🎬 Latest Videos -->
 <h2 style="font-size:16px;margin-top:10px;text-align:center;">
 🎬 Latest Videos
 </h2>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;max-width:900px;margin:auto;">
 
-{% for post in sorted_posts %}
+{% for post in site.posts %}
   <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;font-size:13px;">
     
     <div style="background:#eee;border-radius:10px;overflow:hidden;">
