@@ -3,112 +3,36 @@ layout: default
 title: "Rain Sound for Deep Sleep"
 ---
 
-<style>
-body{
-  margin:0;
-  overflow-x:hidden; /* 🔥 오른쪽 밀림 방지 */
-  font-family:sans-serif;
-}
-
-.container{
-  width:100%;
-  max-width:100%;
-  box-sizing:border-box;
-}
-
-/* 영상 */
-.video{
-  position:relative;
-  width:100%;
-  padding-bottom:56.25%;
-}
-.video iframe{
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  border:0;
-}
-
-/* 타이머 */
-.timer{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:10px 0;
-}
-
-.timer button{
-  padding:8px 12px;
-}
-
-/* 카드 */
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  padding:10px;
-}
-
-.card{
-  background:#eee;
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.card img{
-  width:100%;
-}
-
-</style>
-
-<div class="container">
-
-<!-- 홈 -->
-<a href="{{ site.baseurl }}/" style="
-position:fixed;
-top:10px;
-left:10px;
-background:#000;color:#fff;
-padding:8px 10px;
-border-radius:6px;
-z-index:999;
-text-decoration:none;">
-🏠
-</a>
-
 <h2 style="text-align:center;margin:15px 0 5px 60px;font-size:15px;">
 🌧 Rain Sound for Deep Sleep
 </h2>
 
-<!-- TIMER -->
-<div class="timer">
+<!-- 🔥 TIMER -->
+<div style="text-align:center;margin:10px 0;">
+<b>⏱ TIMER</b><br>
 <button onclick="setTimer(120)">2h</button>
 <button onclick="setTimer(240)">4h</button>
 <button onclick="setTimer(480)">8h</button>
 </div>
 
-<!-- 영상 -->
+<!-- 🔥 영상 -->
 {% assign latest = site.posts.first %}
-
 <div class="video">
 <iframe id="player"
-src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0&modestbranding=1&origin={{ site.url }}"
-allow="autoplay; encrypted-media; picture-in-picture"
+src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0"
 allowfullscreen>
 </iframe>
 </div>
 
-<!-- 목록 -->
+<!-- 🔥 목록 -->
 <h3 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h3>
 
-<div class="grid">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;">
 
 {% for post in site.posts %}
 <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;">
-  <div class="card">
-    <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg">
+  <div style="background:#eee;border-radius:10px;overflow:hidden;">
+    <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
     <div style="padding:6px;font-size:13px;">
       🌧 {{ post.title }}
     </div>
@@ -118,20 +42,18 @@ allowfullscreen>
 
 </div>
 
-</div>
-
 <script>
-let timerId;
+let timer;
 
 function setTimer(min){
-  if(timerId) clearTimeout(timerId);
+  if(timer) clearTimeout(timer);
 
-  timerId = setTimeout(()=>{
+  timer = setTimeout(()=>{
     const p = document.getElementById("player");
     if(p){
-      p.src = ""; // 🔥 완전 종료
+      p.src = ""; // 🔥 강제 종료
     }
-    alert("⏰ 종료");
+    alert("⏰ 타이머 종료");
   }, min * 60000);
 
   alert(min + "분 설정");
