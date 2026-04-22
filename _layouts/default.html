@@ -95,13 +95,13 @@ body{
 {% if page.url != "/" %}
 
   {% if page.next %}
-    <a class="nav-btn nav-left" href="{{ page.next.url }}">←</a>
+    <a class="nav-btn nav-left" href="{{ site.baseurl }}{{ page.next.url }}">←</a>
   {% endif %}
 
   {% if page.previous %}
-    <a class="nav-btn nav-right" href="{{ page.previous.url }}">→</a>
+    <a class="nav-btn nav-right" href="{{ site.baseurl }}{{ page.previous.url }}">→</a>
   {% endif %}
-
+  
 {% endif %}
 
 </body>
