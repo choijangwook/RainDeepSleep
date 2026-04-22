@@ -8,10 +8,13 @@ title: "Rain Sound for Deep Sleep"
   <img src="https://via.placeholder.com/1200x300?text=Rain+Deep+Sleep" alt="banner">
 </div>
 
-<h1>🌧 Rain Sound for Deep Sleep</h1>
+<!-- 🔥 자유 텍스트 영역 (여기에 마음대로 쓰면 됨) -->
+<div style="text-align:center;padding:10px;font-size:14px;color:#444;">
+  ✨ 여기에 원하는 문구, 소개글, 설명 등을 자유롭게 작성하세요
+</div>
 
 <!-- 🎧 최신 사운드 -->
-<h2 style="font-size:16px;margin-top:10px;">🎧 Latest Sounds</h2>
+<h2 style="font-size:16px;margin-top:10px;text-align:center;">🎧 Latest Sounds</h2>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;max-width:900px;margin:auto;">
 
@@ -20,7 +23,6 @@ title: "Rain Sound for Deep Sleep"
     
     <div style="background:#eee;border-radius:10px;overflow:hidden;">
       
-      <!-- 썸네일 (자동 유튜브 이미지) -->
       {% if post.youtube %}
         <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
       {% endif %}
@@ -36,13 +38,13 @@ title: "Rain Sound for Deep Sleep"
 
 </div>
 
-<!-- ⏱ 공통 TIMER (홈에서도 사용 가능) -->
+<!-- ⏱ TIMER (2h / 4h / 8h) -->
 <div style="text-align:center;margin:30px 0;">
   <h3 style="font-size:16px;">⏱ Sleep Timer</h3>
 
-  <button onclick="setTimer(15)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">15 min</button>
-  <button onclick="setTimer(30)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">30 min</button>
-  <button onclick="setTimer(60)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">60 min</button>
+  <button onclick="setTimer(120)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">2 hours</button>
+  <button onclick="setTimer(240)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">4 hours</button>
+  <button onclick="setTimer(480)" style="padding:10px 15px;margin:5px;border:none;border-radius:8px;background:#4a90e2;color:#fff;">8 hours</button>
 </div>
 
 <script>
