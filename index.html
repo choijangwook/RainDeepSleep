@@ -1,4 +1,184 @@
-<h2>📌 최신 글</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rain Sound for Deep Sleep</title>
 
-<ul>
-<li><a href="/RainDeepSleep/post1.html">빗소리가 수면에 좋은 이유</a>
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  background:#fafafa;
+  overflow-x:hidden;
+}
+
+/* 컨테이너 */
+.container{
+  width:100%;
+  padding:10px;
+  text-align:center;
+}
+
+/* 상단 메뉴 */
+.topnav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:10px 0 15px;
+}
+
+.topnav a{
+  padding:8px 10px;
+  background:#eee;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:13px;
+  color:#333;
+}
+
+/* 제목 */
+h1{
+  font-size:20px;
+  margin:10px 0;
+}
+
+/* 영상 풀폭 */
+.video{
+  position:relative;
+  width:100vw;
+  left:50%;
+  margin-left:-50vw;
+  padding-bottom:56.25%;
+  height:0;
+}
+
+.video iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+}
+
+/* 오디오 */
+audio{
+  width:100%;
+  margin-top:10px;
+}
+
+/* 카드 */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:15px;
+}
+
+@media(min-width:768px){
+  .card-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+.card{
+  background:#f0f0f0;
+  padding:14px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#000;
+  display:block;
+}
+
+/* 페이지 네비 */
+.pagination{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:35px;
+  margin-top:40px;
+  font-size:20px;
+}
+
+.pagination a{
+  text-decoration:none;
+  color:#333;
+}
+
+.pagination .active{
+  background:#4a90e2;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:50%;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- NAV -->
+<div class="topnav">
+  <a href="#video">Video</a>
+  <a href="#sounds">Sounds</a>
+  <a href="#keywords">Keywords</a>
+</div>
+
+<h1>🌧 Rain Sound for Deep Sleep</h1>
+
+<!-- VIDEO -->
+<div id="video" class="video">
+  <iframe src="https://www.youtube.com/embed/z9EeJnHKQ1M"
+  frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- SOUNDS -->
+<div id="sounds">
+  <h2>✨ Sounds</h2>
+  <audio controls>
+    <source src="https://www.soundjay.com/nature/rain-01.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- KEYWORDS -->
+<div id="keywords">
+  <h2>🔎 Keywords</h2>
+  <p>Rain · Sleep · ASMR · Relax · Meditation</p>
+</div>
+
+<!-- CARDS -->
+<h2>🎧 Recommended Videos</h2>
+
+<div class="card-grid">
+
+  <a class="card" href="#">🌧 Rain Window</a>
+  <a class="card" href="#">⛈ Thunder Rain</a>
+  <a class="card" href="#">🌊 Ocean Waves</a>
+  <a class="card" href="#">🌲 Forest Night</a>
+  <a class="card" href="#">🔥 Fireplace</a>
+  <a class="card" href="#">🌌 Night Sky</a>
+  <a class="card" href="#">🛏 Deep Sleep</a>
+  <a class="card" href="#">🌧 Soft Rain</a>
+
+</div>
+
+<!-- PAGINATION -->
+<div class="pagination">
+  <a href="#">←</a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">→</a>
+</div>
+
+</div>
+
+</body>
+</html>
