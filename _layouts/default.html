@@ -94,19 +94,21 @@ h1{
   {{ content }}
 </div>
 
-<!-- 🔥 자동 이전 / 다음 -->
+<!-- 🔥 자동 이전 / 다음 (방향 수정 완료) -->
 <div class="pagination">
 
-  {% if page.previous %}
-    <a href="{{ page.previous.url }}">←</a>
+  <!-- 이전 (←) : 더 오래된 글 -->
+  {% if page.next %}
+    <a href="{{ page.next.url }}">←</a>
   {% else %}
     <span style="opacity:0.3;">←</span>
   {% endif %}
 
   <span class="active">●</span>
 
-  {% if page.next %}
-    <a href="{{ page.next.url }}">→</a>
+  <!-- 다음 (→) : 더 최신 글 -->
+  {% if page.previous %}
+    <a href="{{ page.previous.url }}">→</a>
   {% else %}
     <span style="opacity:0.3;">→</span>
   {% endif %}
