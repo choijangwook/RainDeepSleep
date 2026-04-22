@@ -4,7 +4,7 @@ title: "Rain Sound for Deep Sleep"
 ---
 
 <!-- 🔥 홈 버튼 -->
-<a href="/" style="
+<a href="{{ site.baseurl }}/" style="
 position:fixed;
 top:15px;
 left:15px;
@@ -19,7 +19,7 @@ font-size:14px;
 🏠
 </a>
 
-<!-- 🔥 최신 영상 1개 메인에 표시 -->
+<!-- 🔥 최신 영상 -->
 {% assign latest = site.posts.first %}
 
 {% if latest %}
@@ -27,24 +27,25 @@ font-size:14px;
 
   <div style="position:relative;width:100%;padding-bottom:56.25%;">
     <iframe 
+    id="mainVideo"
     src="https://www.youtube.com/embed/{{ latest.youtube }}?rel=0&modestbranding=1&playsinline=1"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
     allowfullscreen>
     </iframe>
   </div>
 
-  <h2 style="text-align:center;font-size:16px;margin:10px;">
+  <h2 id="mainTitle" style="text-align:center;font-size:16px;margin:10px;">
     🌧 {{ latest.title }}
   </h2>
 
 </div>
 {% endif %}
 
-<!-- 🔥 화살표 (메인에서도 작동) -->
+<!-- 🔥 화살표 -->
 {% if site.posts.size > 1 %}
   {% assign second = site.posts[1] %}
 
-  <!-- 이전(없음 → 비활성 느낌) -->
+  <!-- 왼쪽 (비활성 느낌) -->
   <div style="
   position:fixed;bottom:20px;left:15px;
   width:50px;height:50px;
@@ -56,8 +57,8 @@ font-size:14px;
   ←
   </div>
 
-  <!-- 다음 -->
-  <a href="{{ second.url }}" style="
+  <!-- 오른쪽 -->
+  <a href="{{ site.baseurl }}{{ second.url }}" style="
   position:fixed;bottom:20px;right:15px;
   width:50px;height:50px;
   background:#000;color:#fff;
@@ -69,8 +70,13 @@ font-size:14px;
   </a>
 {% endif %}
 
-<!-- 🔥 Latest Videos -->
-<h2 style="text-align:center;font-size:16px;margin-top:20px;">
+<!-- 🔥 자유 영역 -->
+<div style="text-align:center;padding:10px;font-size:14px;color:#444;">
+  ✨ 원하는 문구를 자유롭게 작성하세요
+</div>
+
+<!-- 🎬 Latest Videos -->
+<h2 style="text-align:center;font-size:16px;margin-top:10px;">
 🎬 Latest Videos
 </h2>
 
@@ -79,31 +85,34 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
 padding:10px;
+max-width:900px;
+margin:auto;
 ">
 
 {% for post in site.posts %}
 
-  <a href="{{ post.url }}" style="text-decoration:none;color:#000;">
+<div onclick="playVideo('{{ post.youtube }}','{{ post.title }}')" 
+style="cursor:pointer;">
 
-    <div style="background:#eee;border-radius:10px;overflow:hidden;">
+  <div style="background:#eee;border-radius:10px;overflow:hidden;">
 
-      {% if post.youtube %}
-      <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
-      {% endif %}
+    {% if post.youtube %}
+    <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
+    {% endif %}
 
-      <div style="padding:8px;font-size:13px;">
-        🌧 {{ post.title }}
-      </div>
-
+    <div style="padding:8px;font-size:13px;">
+      🌧 {{ post.title }}
     </div>
 
-  </a>
+  </div>
+
+</div>
 
 {% endfor %}
 
 </div>
 
-<!-- 🔥 TIMER -->
+<!-- ⏱ TIMER -->
 <div style="text-align:center;margin:30px 0;">
   <h3>⏱ Sleep Timer</h3>
 
@@ -115,5 +124,20 @@ padding:10px;
 <script>
 function setTimer(min){
   alert("⏰ " + min + "분 타이머 설정됨");
+}
+
+function playVideo(id, title){
+  const player = document.getElementById("mainVideo");
+  const titleBox = document.getElementById("mainTitle");
+
+  if(player){
+    player.src = "https://www.youtube.com/embed/" + id + "?rel=0&modestbranding=1&playsinline=1";
+  }
+
+  if(titleBox){
+    titleBox.innerText = "🌧 " + title;
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
