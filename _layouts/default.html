@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
 
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#fafafa;
+  text-align:center;
+}
+
+/* 영상 */
+.video{
+  position:relative;
+  width:100vw;
+  left:50%;
+  margin-left:-50vw;
+  padding-bottom:56.25%;
+  height:0;
+}
+.video iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+/* 네비 */
+.pagination{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin:40px 0;
+  font-size:20px;
+}
+
+.pagination a{
+  text-decoration:none;
+  color:#333;
+}
+
+.active{
+  background:#4a90e2;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:50%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>{{ page.title }}</h1>
+
+{{ content }}
+
+<!-- 🔥 자동 이전/다음 -->
+<div class="pagination">
+
+  {% if page.previous %}
+    <a href="{{ page.previous.url }}">←</a>
+  {% else %}
+    <span style="opacity:0.3;">←</span>
+  {% endif %}
+
+  <span class="active">●</span>
+
+  {% if page.next %}
+    <a href="{{ page.next.url }}">→</a>
+  {% else %}
+    <span style="opacity:0.3;">→</span>
+  {% endif %}
+
+</div>
+
+</body>
+</html>
