@@ -61,25 +61,20 @@ h1{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:40px;
-  margin:50px 0;
-  font-size:22px;
+  gap:60px;
+  margin:60px 0;
+  font-size:28px;
 }
 
 .pagination a{
   text-decoration:none;
   color:#333;
-  padding:10px 14px;
+  padding:10px 16px;
 }
 
 .pagination span{
-  padding:10px 14px;
-}
-
-.active{
-  background:#4a90e2;
-  color:#fff;
-  border-radius:50%;
+  padding:10px 16px;
+  opacity:0.3;
 }
 </style>
 </head>
@@ -94,26 +89,36 @@ h1{
   {{ content }}
 </div>
 
-<!-- 🔥 자동 이전 / 다음 (GitHub Pages 완벽 대응) -->
-<div class="pagination">
+<!-- 🔥 순서 기반 네비게이션 (완전 안정) -->
+{% assign sorted_posts = site.posts | sort: "order" %}
 
-  <!-- 이전 글 (←) : 더 오래된 글 -->
-  {% if page.next %}
-    <a href="{{ site.baseurl }}{{ page.next.url }}">←</a>
-  {% else %}
-    <span style="opacity:0.3;">←</span>
+{% for post in sorted_posts %}
+  {% if post.url == page.url %}
+    
+    {% assign index = forloop.index0 %}
+    {% assign prev_index = index | minus: 1 %}
+    {% assign next_index = index | plus: 1 %}
+
+    <div class="pagination">
+
+      <!-- 이전 -->
+      {% if sorted_posts[prev_index] %}
+        <a href="{{ site.baseurl }}{{ sorted_posts[prev_index].url }}">←</a>
+      {% else %}
+        <span>←</span>
+      {% endif %}
+
+      <!-- 다음 -->
+      {% if sorted_posts[next_index] %}
+        <a href="{{ site.baseurl }}{{ sorted_posts[next_index].url }}">→</a>
+      {% else %}
+        <span>→</span>
+      {% endif %}
+
+    </div>
+
   {% endif %}
-
-  <span class="active">●</span>
-
-  <!-- 다음 글 (→) : 더 최신 글 -->
-  {% if page.previous %}
-    <a href="{{ site.baseurl }}{{ page.previous.url }}">→</a>
-  {% else %}
-    <span style="opacity:0.3;">→</span>
-  {% endif %}
-
-</div>
+{% endfor %}
 
 </body>
 </html>
