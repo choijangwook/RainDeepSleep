@@ -3,11 +3,11 @@ layout: default
 title: "Rain Sound for Deep Sleep"
 ---
 
-<h2 style="text-align:center;margin:15px 0 5px 60px;font-size:15px;">
+<h2 style="text-align:center;margin:15px 0;font-size:15px;">
 🌧 Rain Sound for Deep Sleep
 </h2>
 
-<!-- 🔥 TIMER -->
+<!-- TIMER -->
 <div style="text-align:center;margin:10px 0;">
 <b>⏱ TIMER</b><br>
 <button onclick="setTimer(120)">2h</button>
@@ -15,16 +15,18 @@ title: "Rain Sound for Deep Sleep"
 <button onclick="setTimer(480)">8h</button>
 </div>
 
-<!-- 🔥 영상 -->
+<!-- 영상 -->
 {% assign latest = site.posts.first %}
+
 <div class="video">
 <iframe id="player"
-src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0"
+src="https://www.youtube.com/embed/{{ latest.youtube }}?enablejsapi=1&playsinline=1"
+allow="encrypted-media"
 allowfullscreen>
 </iframe>
 </div>
 
-<!-- 🔥 목록 -->
+<!-- 목록 -->
 <h3 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h3>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;">
@@ -42,16 +44,23 @@ allowfullscreen>
 
 </div>
 
+<!-- 🔥 YouTube API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <script>
-let timer;
+let player;
+let timerId;
+
+function onYouTubeIframeAPIReady(){
+  player = new YT.Player('player');
+}
 
 function setTimer(min){
-  if(timer) clearTimeout(timer);
+  if(timerId) clearTimeout(timerId);
 
-  timer = setTimeout(()=>{
-    const p = document.getElementById("player");
-    if(p){
-      p.src = ""; // 🔥 강제 종료
+  timerId = setTimeout(()=>{
+    if(player){
+      player.stopVideo(); // 🔥 확실히 멈춤
     }
     alert("⏰ 타이머 종료");
   }, min * 60000);
