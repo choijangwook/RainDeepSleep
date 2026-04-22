@@ -1,19 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#fafafa;
+}
+
+.video{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+}
+.video iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border:0;
+}
+
+.nav-btn{
+  position:fixed;
+  bottom:20px;
+  width:50px;
+  height:50px;
+  background:#000;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:20px;
+  text-decoration:none;
+}
+
+.nav-left{ left:15px; }
+.nav-right{ right:15px; }
+</style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">{{ page.title }}</h2>
+
+<div style="padding:10px;">
+{{ content }}
+</div>
+
 {% if page.url != "/" %}
-
-<div class="nav-btn nav-left">
   {% if page.next %}
-    <a href="{{ site.baseurl }}{{ page.next.url }}">←</a>
-  {% else %}
-    ←
+    <a class="nav-btn nav-left" href="{{ page.next.url }}">←</a>
   {% endif %}
-</div>
 
-<div class="nav-btn nav-right">
   {% if page.previous %}
-    <a href="{{ site.baseurl }}{{ page.previous.url }}">→</a>
-  {% else %}
-    →
+    <a class="nav-btn nav-right" href="{{ page.previous.url }}">→</a>
   {% endif %}
-</div>
-
 {% endif %}
+
+</body>
+</html>
