@@ -19,6 +19,20 @@ font-size:14px;
 🏠
 </a>
 
+<!-- 🔥 TIMER (홈버튼 바로 아래) -->
+<div style="
+position:fixed;
+top:60px;
+left:15px;
+z-index:999;
+">
+
+<button onclick="setTimer(120)" style="display:block;margin-bottom:5px;">2h</button>
+<button onclick="setTimer(240)" style="display:block;margin-bottom:5px;">4h</button>
+<button onclick="setTimer(480)" style="display:block;">8h</button>
+
+</div>
+
 <!-- 🔥 최신 영상 -->
 {% assign latest = site.posts.first %}
 
@@ -28,8 +42,9 @@ font-size:14px;
   <div style="position:relative;width:100%;padding-bottom:56.25%;">
     <iframe 
     id="mainVideo"
-    src="https://www.youtube.com/embed/{{ latest.youtube }}?rel=0&modestbranding=1&playsinline=1"
+    src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&autoplay=1&mute=1&rel=0"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+    allow="autoplay; encrypted-media; picture-in-picture"
     allowfullscreen>
     </iframe>
   </div>
@@ -45,38 +60,29 @@ font-size:14px;
 {% if site.posts.size > 1 %}
   {% assign second = site.posts[1] %}
 
-  <!-- 왼쪽 (비활성 느낌) -->
   <div style="
   position:fixed;bottom:20px;left:15px;
   width:50px;height:50px;
   background:#000;color:#fff;
   border-radius:50%;
   display:flex;justify-content:center;align-items:center;
-  opacity:0.3;
-  ">
+  opacity:0.3;">
   ←
   </div>
 
-  <!-- 오른쪽 -->
   <a href="{{ site.baseurl }}{{ second.url }}" style="
   position:fixed;bottom:20px;right:15px;
   width:50px;height:50px;
   background:#000;color:#fff;
   border-radius:50%;
   display:flex;justify-content:center;align-items:center;
-  text-decoration:none;
-  ">
+  text-decoration:none;">
   →
   </a>
 {% endif %}
 
-<!-- 🔥 자유 영역 -->
-<div style="text-align:center;padding:10px;font-size:14px;color:#444;">
-  ✨ 원하는 문구를 자유롭게 작성하세요
-</div>
-
 <!-- 🎬 Latest Videos -->
-<h2 style="text-align:center;font-size:16px;margin-top:10px;">
+<h2 style="text-align:center;font-size:16px;margin-top:20px;">
 🎬 Latest Videos
 </h2>
 
@@ -85,8 +91,6 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
 padding:10px;
-max-width:900px;
-margin:auto;
 ">
 
 {% for post in site.posts %}
@@ -95,30 +99,16 @@ margin:auto;
 style="cursor:pointer;">
 
   <div style="background:#eee;border-radius:10px;overflow:hidden;">
-
-    {% if post.youtube %}
     <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
-    {% endif %}
-
     <div style="padding:8px;font-size:13px;">
       🌧 {{ post.title }}
     </div>
-
   </div>
 
 </div>
 
 {% endfor %}
 
-</div>
-
-<!-- ⏱ TIMER -->
-<div style="text-align:center;margin:30px 0;">
-  <h3>⏱ Sleep Timer</h3>
-
-  <button onclick="setTimer(120)">2h</button>
-  <button onclick="setTimer(240)">4h</button>
-  <button onclick="setTimer(480)">8h</button>
 </div>
 
 <script>
@@ -130,13 +120,8 @@ function playVideo(id, title){
   const player = document.getElementById("mainVideo");
   const titleBox = document.getElementById("mainTitle");
 
-  if(player){
-    player.src = "https://www.youtube.com/embed/" + id + "?rel=0&modestbranding=1&playsinline=1";
-  }
-
-  if(titleBox){
-    titleBox.innerText = "🌧 " + title;
-  }
+  player.src = "https://www.youtube.com/embed/" + id + "?playsinline=1&autoplay=1&mute=1&rel=0";
+  titleBox.innerText = "🌧 " + title;
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
