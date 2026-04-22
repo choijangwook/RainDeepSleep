@@ -99,7 +99,10 @@ h1{
 
   <!-- 이전 (←) : 더 오래된 글 -->
   {% if page.next %}
-    <a href="{{ page.next.url }}">←</a>
+  # <a href="{{ page.next.url }}">←</a>
+
+    <a href="{{ site.baseurl }}{{ page.next.url }}">
+  
   {% else %}
     <span style="opacity:0.3;">←</span>
   {% endif %}
@@ -113,6 +116,8 @@ h1{
     <span style="opacity:0.3;">→</span>
   {% endif %}
 
+
+  
 </div>
 
 </body>
