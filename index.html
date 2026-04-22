@@ -154,20 +154,19 @@ audio{
 </div>
 
 <!-- CARDS -->
-<h2>🎧 Recommended Videos</h2>
 
-<div class="card-grid">
+<h2>🎧 Latest Sounds</h2>
 
-  <a class="card" href="#">🌧 Rain Window</a>
-  <a class="card" href="#">⛈ Thunder Rain</a>
-  <a class="card" href="#">🌊 Ocean Waves</a>
-  <a class="card" href="#">🌲 Forest Night</a>
-  <a class="card" href="#">🔥 Fireplace</a>
-  <a class="card" href="#">🌌 Night Sky</a>
-  <a class="card" href="#">🛏 Deep Sleep</a>
-  <a class="card" href="#">🌧 Soft Rain</a>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;">
+
+{% for post in site.posts %}
+  <a href="{{ post.url }}" style="background:#eee;padding:12px;border-radius:10px;text-decoration:none;color:#000;">
+    🌧 {{ post.title }}
+  </a>
+{% endfor %}
 
 </div>
+
 
 <!-- PAGINATION -->
 <div class="pagination">
