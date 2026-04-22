@@ -3,11 +3,78 @@ layout: default
 title: "Rain Sound for Deep Sleep"
 ---
 
+<style>
+body{
+  margin:0;
+  overflow-x:hidden; /* 🔥 오른쪽 밀림 방지 */
+  font-family:sans-serif;
+}
+
+.container{
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+}
+
+/* 영상 */
+.video{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+}
+.video iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border:0;
+}
+
+/* 타이머 */
+.timer{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:10px 0;
+}
+
+.timer button{
+  padding:8px 12px;
+}
+
+/* 카드 */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:10px;
+}
+
+.card{
+  background:#eee;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+}
+
+</style>
+
+<div class="container">
+
 <!-- 홈 -->
 <a href="{{ site.baseurl }}/" style="
-position:fixed;top:15px;left:15px;
-background:#000;color:#fff;padding:8px 12px;
-border-radius:8px;text-decoration:none;z-index:999;">
+position:fixed;
+top:10px;
+left:10px;
+background:#000;color:#fff;
+padding:8px 10px;
+border-radius:6px;
+z-index:999;
+text-decoration:none;">
 🏠
 </a>
 
@@ -16,35 +83,40 @@ border-radius:8px;text-decoration:none;z-index:999;">
 </h2>
 
 <!-- TIMER -->
-<div style="display:flex;justify-content:center;gap:10px;margin:10px 0;">
-  <button onclick="setTimer(120)">2h</button>
-  <button onclick="setTimer(240)">4h</button>
-  <button onclick="setTimer(480)">8h</button>
+<div class="timer">
+<button onclick="setTimer(120)">2h</button>
+<button onclick="setTimer(240)">4h</button>
+<button onclick="setTimer(480)">8h</button>
 </div>
 
 <!-- 영상 -->
 {% assign latest = site.posts.first %}
-<div style="position:relative;width:100%;padding-bottom:56.25%;">
-<iframe id="mainVideo"
-src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1"
-style="position:absolute;width:100%;height:100%;border:0;"
+
+<div class="video">
+<iframe id="player"
+src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0&modestbranding=1&origin={{ site.url }}"
+allow="autoplay; encrypted-media; picture-in-picture"
 allowfullscreen>
 </iframe>
 </div>
 
-<!-- 🎬 Latest Videos -->
-<h2 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h2>
+<!-- 목록 -->
+<h3 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h3>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;">
+<div class="grid">
 
 {% for post in site.posts %}
 <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;">
-  <div style="background:#eee;border-radius:10px;overflow:hidden;">
-    <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg" style="width:100%;">
-    <div style="padding:8px;font-size:13px;">🌧 {{ post.title }}</div>
+  <div class="card">
+    <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg">
+    <div style="padding:6px;font-size:13px;">
+      🌧 {{ post.title }}
+    </div>
   </div>
 </a>
 {% endfor %}
+
+</div>
 
 </div>
 
@@ -55,13 +127,13 @@ function setTimer(min){
   if(timerId) clearTimeout(timerId);
 
   timerId = setTimeout(()=>{
-    const player = document.getElementById("mainVideo");
-    if(player){
-      player.remove(); // 🔥 완전 제거 (확실히 멈춤)
+    const p = document.getElementById("player");
+    if(p){
+      p.src = ""; // 🔥 완전 종료
     }
-    alert("⏰ 타이머 종료");
+    alert("⏰ 종료");
   }, min * 60000);
 
-  alert("⏱ " + min + "분 타이머 설정됨");
+  alert(min + "분 설정");
 }
 </script>
