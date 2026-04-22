@@ -78,8 +78,8 @@ body{
 
 <body>
 
-<!-- 🔥 홈 버튼 -->
-<a href="/" class="home-btn">🏠</a>
+<!-- 🔥 홈 버튼 (모바일 404 해결) -->
+<a href="{{ site.baseurl }}/" class="home-btn">🏠</a>
 
 <!-- 제목 -->
 <h2 style="text-align:center;margin:10px 0;">
@@ -91,7 +91,7 @@ body{
   {{ content }}
 </div>
 
-<!-- 🔥 글 페이지에서만 화살표 표시 -->
+<!-- 🔥 글 페이지에서만 화살표 -->
 {% if page.url != "/" %}
 
   {% if page.next %}
@@ -101,7 +101,7 @@ body{
   {% if page.previous %}
     <a class="nav-btn nav-right" href="{{ site.baseurl }}{{ page.previous.url }}">→</a>
   {% endif %}
-  
+
 {% endif %}
 
 </body>
