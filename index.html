@@ -8,17 +8,45 @@ title: "Rain Sound for Deep Sleep"
   <img src="https://via.placeholder.com/1200x300?text=Rain+Deep+Sleep" alt="banner">
 </div>
 
-<!-- 🔥 자유 텍스트 영역 (여기에 마음대로 쓰면 됨) -->
+<!-- 🔥 홈 버튼 (항상 표시) -->
+<a href="{{ site.baseurl }}/" 
+style="position:fixed;top:15px;left:15px;
+background:#000;color:#fff;padding:8px 12px;
+border-radius:8px;text-decoration:none;font-size:14px;z-index:999;">
+🏠 Home
+</a>
+
+<!-- 🔥 화살표 (첫 화면에서도 동작) -->
+{% assign sorted_posts = site.posts | sort: "order" %}
+
+{% assign first = sorted_posts[0] %}
+{% assign last = sorted_posts | last %}
+
+<!-- 왼쪽 (첫 글) -->
+{% if first %}
+<a href="{{ site.baseurl }}{{ first.url }}" 
+class="nav-btn nav-left">←</a>
+{% endif %}
+
+<!-- 오른쪽 (마지막 글) -->
+{% if last %}
+<a href="{{ site.baseurl }}{{ last.url }}" 
+class="nav-btn nav-right">→</a>
+{% endif %}
+
+<!-- 🔥 자유 텍스트 -->
 <div style="text-align:center;padding:10px;font-size:14px;color:#444;">
-  ✨ 여기에 원하는 문구, 소개글, 설명 등을 자유롭게 작성하세요
+  ✨ 여기에 원하는 문구를 자유롭게 작성하세요
 </div>
 
-<!-- 🎧 최신 사운드 -->
-<h2 style="font-size:16px;margin-top:10px;text-align:center;">🎧 Latest Sounds</h2>
+<!-- 🎧 제목 변경 -->
+<h2 style="font-size:16px;margin-top:10px;text-align:center;">
+🎬 Latest Videos
+</h2>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;max-width:900px;margin:auto;">
 
-{% for post in site.posts %}
+{% for post in sorted_posts %}
   <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;font-size:13px;">
     
     <div style="background:#eee;border-radius:10px;overflow:hidden;">
@@ -38,7 +66,7 @@ title: "Rain Sound for Deep Sleep"
 
 </div>
 
-<!-- ⏱ TIMER (2h / 4h / 8h) -->
+<!-- ⏱ TIMER -->
 <div style="text-align:center;margin:30px 0;">
   <h3 style="font-size:16px;">⏱ Sleep Timer</h3>
 
