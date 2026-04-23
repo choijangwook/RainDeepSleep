@@ -1,20 +1,14 @@
 ---
 layout: default
-title: "Rain Sound for Deep Sleep"
+title: "Rain Sound"
 ---
 
 <style>
-*{ box-sizing:border-box; }
+*{box-sizing:border-box;}
 
-body{
-  margin:0;
-  font-family:sans-serif;
-}
-
-/* 🎬 영상 */
 .video{
-  position:relative;
   width:100%;
+  position:relative;
   padding-bottom:56.25%;
 }
 
@@ -22,48 +16,9 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  top:0;
-  left:0;
-  border:0;
 }
 
-/* ⏱ TIMER */
-.timer{
-  text-align:center;
-  padding:15px;
-}
-
-/* 버튼 줄 */
-.timer-row{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-}
-
-/* 버튼 */
-.timer-row button{
-  flex:1;
-  padding:14px 0;
-  font-size:16px;
-  border:none;
-  border-radius:10px;
-  background:#4a90e2;
-  color:white;
-  transition:0.2s;
-}
-
-/* 테스트 버튼 */
-.test-btn{
-  margin-top:12px;
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:#333;
-  color:white;
-}
-
-/* 🎬 리스트 */
+/* 축소 문제 방지 */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -72,6 +27,7 @@ body{
 }
 
 .card{
+  width:100%;
   background:#eee;
   border-radius:10px;
   overflow:hidden;
@@ -82,49 +38,50 @@ body{
 }
 </style>
 
-<h2 style="text-align:center;margin:10px 0;font-size:15px;">
-🌧 Rain Sound for Deep Sleep
-</h2>
+<!-- 상단 -->
+<div class="topbar">
+  <a class="navbtn" href="/">🏠 Home</a>
+  <div>
+    <a class="navbtn" href="#prev">←</a>
+    <a class="navbtn" href="#next">→</a>
+  </div>
+</div>
 
-<!-- 🎬 영상 -->
+<h2 style="text-align:center;">🌧 Rain Sound</h2>
+
 {% assign latest = site.posts.first %}
 
 <div class="video">
   <iframe id="player"
-    src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0"
+    src="https://www.youtube.com/embed/{{ latest.youtube }}"
     allowfullscreen>
   </iframe>
 </div>
 
-<!-- ⏱ TIMER -->
+<!-- TIMER -->
 <div class="timer">
 
   <b>⏱ TIMER</b>
 
   <div class="timer-row">
-    <button onclick="setTimer(120,this)">2 HOURS</button>
-    <button onclick="setTimer(240,this)">4 HOURS</button>
-    <button onclick="setTimer(480,this)">8 HOURS</button>
+    <button onclick="setTimer(120,this)">2h</button>
+    <button onclick="setTimer(240,this)">4h</button>
+    <button onclick="setTimer(480,this)">8h</button>
   </div>
 
-  <button class="test-btn" onclick="setTimer(0.1,this)">
-    TEST (6 sec)
-  </button>
+  <button class="test-btn" onclick="setTimer(0.1,this)">TEST</button>
 
 </div>
 
-<!-- 🎬 Latest Videos -->
-<h3 style="text-align:center;margin-top:20px;">
-🎬 Latest Videos
-</h3>
+<h3 style="text-align:center;">🎬 Latest Videos</h3>
 
 <div class="grid">
 
 {% for post in site.posts %}
-<a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;">
+<a href="{{ post.url }}">
   <div class="card">
     <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg">
-    <div style="padding:6px;font-size:13px;">
+    <div style="padding:8px;font-size:13px;">
       🌧 {{ post.title }}
     </div>
   </div>
@@ -132,5 +89,4 @@ body{
 {% endfor %}
 
 </div>
-
 
