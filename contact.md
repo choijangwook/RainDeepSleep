@@ -4,8 +4,6 @@ title: "Contact"
 permalink: /contact/
 ---
 
-# 📩 Contact
-
-If you have any questions or feedback, please contact:
+# Contact
 
 📧 your-email@example.com
