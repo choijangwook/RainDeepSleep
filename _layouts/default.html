@@ -1,37 +1,56 @@
-<script>
-let timer;
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
 
-function setTimer(min, btn){
+  <style>
+    body{
+      margin:0;
+      font-family:sans-serif;
+    }
 
-  // 🔥 기존 타이머 무조건 제거
-  if(timer){
-    clearTimeout(timer);
-    timer = null;
-  }
+    .active{
+      background:#222 !important;
+      color:#fff !important;
+    }
+  </style>
+</head>
 
-  // 버튼 색 초기화
-  document.querySelectorAll('.timer-row button, .test-btn').forEach(b=>{
-    b.classList.remove('active');
-  });
+<body>
 
-  if(btn){
-    btn.classList.add('active');
-  }
+  <!-- 🔥 페이지 내용 -->
+  {{ content }}
 
-  alert("타이머 설정: " + min + "분");
+  <!-- 🔥 JS (무조건 body 안) -->
+  <script>
+    let timer;
 
-  timer = setTimeout(()=>{
-    stopVideo();
-    alert("⏰ 종료");
-  }, min * 60000);
-}
+    function setTimer(min, btn){
 
-// 🔥 완전 확실 정지
-function stopVideo(){
-  const iframe = document.getElementById("player");
+      if(timer){
+        clearTimeout(timer);
+      }
 
-  if(iframe){
-    iframe.src = iframe.src; // 핵심: reload = 무조건 stop
-  }
-}
-</script>
+      document.querySelectorAll('.timer-row button, .test-btn')
+        .forEach(b => b.classList.remove('active'));
+
+      if(btn){
+        btn.classList.add('active');
+      }
+
+      timer = setTimeout(()=>{
+        const iframe = document.getElementById("player");
+
+        if(iframe){
+          iframe.src = iframe.src; // 🔥 가장 안정적인 정지 방식
+        }
+
+        alert("⏰ 종료");
+      }, min * 60000);
+    }
+  </script>
+
+</body>
+</html>
