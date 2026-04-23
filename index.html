@@ -3,20 +3,18 @@ layout: default
 title: "RainDeepSleep"
 ---
 
+<h1>🌧 Rain Sound for Sleep</h1>
+
 {% assign latest = site.posts.first %}
 
-<h1>🌧 Rain Sound Videos</h1>
-
 <div>
-  <iframe
-    width="100%"
-    height="400"
+  <iframe width="100%" height="400"
     src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
     allowfullscreen>
   </iframe>
 </div>
 
-<h3>Latest Videos</h3>
+<h2>🎬 Latest Videos</h2>
 
 {% for post in site.posts %}
   <div>
