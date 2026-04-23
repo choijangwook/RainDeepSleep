@@ -1,22 +1,28 @@
 ---
 layout: default
-title: "Rain Sound"
+title: "Rain ASMR"
 ---
 
+{% assign posts = site.posts %}
 {% assign latest = site.posts.first %}
 
-<!-- 🔥 TOP BAR -->
+<!-- TOP -->
 <div class="topbar">
   <a href="{{ site.baseurl }}/">🏠 Home</a>
 
-  <!-- 화살표 (이전/다음 구조 placeholder) -->
+  <!-- 🔁 REAL NAV -->
   <div>
-    <a href="#">←</a>
-    <a href="#">→</a>
+    {% if latest.previous %}
+      <a href="{{ latest.previous.url }}">← Prev</a>
+    {% endif %}
+
+    {% if latest.next %}
+      <a href="{{ latest.next.url }}">Next →</a>
+    {% endif %}
   </div>
 </div>
 
-<!-- 🎬 FULL VIDEO -->
+<!-- VIDEO -->
 <div class="video-wrap">
   <iframe
     src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
@@ -24,20 +30,15 @@ title: "Rain Sound"
   </iframe>
 </div>
 
-<!-- 🎬 Latest Videos -->
-<h3 style="text-align:center;margin:10px;">Latest Videos</h3>
+<!-- LIST (minimal) -->
+<div style="padding:10px;">
+<h3>Latest Videos</h3>
 
-<div class="list">
-
-{% for post in site.posts %}
-
-  <!-- 🔥 바로 재생 링크 -->
-  <div class="item">
-    <a href="{{ site.baseurl }}{{ post.url }}">
-      🌧 {{ post.title }}
+{% for post in posts %}
+  <div style="margin:6px 0;">
+    🌧 <a href="{{ site.baseurl }}{{ post.url }}" style="color:#fff;">
+      {{ post.title }}
     </a>
   </div>
-
 {% endfor %}
-
 </div>
