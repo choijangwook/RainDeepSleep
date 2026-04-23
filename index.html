@@ -1,38 +1,49 @@
 ---
 layout: default
-title: "Rain Sound"
+title: "Rain Sleep ASMR"
 ---
 
-<h2 style="text-align:center;">🌧 Rain Sound</h2>
+<div class="topbar">
+  <a href="/">🏠 Home</a>
+</div>
+
+<h2 style="text-align:center;">🌧 Rain Sound for Deep Sleep</h2>
 
 {% assign latest = site.posts.first %}
 
+<!-- 🎬 PLAYER -->
 <div style="position:relative;padding-bottom:56.25%;height:0;">
-  <iframe id="player"
-    src="https://www.youtube.com/embed/{{ latest.youtube }}"
+  <iframe
+    src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
     style="position:absolute;width:100%;height:100%;"
     allowfullscreen>
   </iframe>
 </div>
 
-<div style="text-align:center;margin:15px;">
+<!-- ⏱ TIMER -->
+<div style="text-align:center;margin:20px;">
 
-  <b>⏱ TIMER</b>
+  <h3>⏱ TIMER</h3>
 
-  <div>
-    <button onclick="setTimer(120,this)">2 HOURS</button>
-    <button onclick="setTimer(240,this)">4 HOURS</button>
-    <button onclick="setTimer(480,this)">8 HOURS</button>
-  </div>
+  <button onclick="setTimer(120,this)">2 HOURS</button>
+  <button onclick="setTimer(240,this)">4 HOURS</button>
+  <button onclick="setTimer(480,this)">8 HOURS</button>
 
-  <button onclick="setTimer(0.1,this)">TEST</button>
+  <br>
+
+  <button onclick="setTimer(0.1,this)">TEST (6 sec)</button>
 
 </div>
 
+<!-- 🎬 LIST -->
 <h3 style="text-align:center;">🎬 Latest Videos</h3>
 
+<div style="padding:10px;">
+
 {% for post in site.posts %}
-  <div style="padding:5px;">
+  <div style="padding:6px;">
     🌧 {{ post.title }}
   </div>
 {% endfor %}
+
+</div>
