@@ -1,13 +1,6 @@
----
-layout: default
-title: "제목"
----
-
 title: RainDeepSleep
-markdown: kramdown
-theme: minima
-
-url: "https://choijangwook.github.io"
 baseurl: "/RainDeepSleep"
+url: "https://choijangwook.github.io"
 
+markdown: kramdown
 
