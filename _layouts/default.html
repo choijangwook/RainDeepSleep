@@ -1,38 +1,45 @@
-<script>
-let timer;
-let selectedBtn = null;
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+</head>
+<body>
 
-// 타이머 설정
-function setTimer(min, btn){
-  if(timer) clearTimeout(timer);
+  {{ content }}
 
-  // 🔥 버튼 색 초기화
-  document.querySelectorAll('.timer-row button').forEach(b=>{
-    b.classList.remove('active');
-  });
+  <script>
+  let timer;
+  let selectedBtn = null;
 
-  // 🔥 선택된 버튼 강조
-  if(btn){
-    btn.classList.add('active');
-    selectedBtn = btn;
+  function setTimer(min, btn){
+    if(timer) clearTimeout(timer);
+
+    document.querySelectorAll('.timer-row button, .test-btn').forEach(b=>{
+      b.classList.remove('active');
+    });
+
+    if(btn){
+      btn.classList.add('active');
+      selectedBtn = btn;
+    }
+
+    timer = setTimeout(()=>{
+      const player = document.getElementById("player");
+      if(player){
+        player.remove();
+      }
+      alert("⏰ 종료");
+
+      if(selectedBtn){
+        selectedBtn.classList.remove('active');
+        selectedBtn = null;
+      }
+
+    }, min * 60000);
   }
+  </script>
 
-  alert("타이머 설정: " + min + "분");
-
-  timer = setTimeout(()=>{
-    const player = document.getElementById("player");
-    if(player){
-      player.remove();
-    }
-
-    alert("⏰ 타이머 종료");
-
-    // 종료 후 버튼 상태 초기화
-    if(selectedBtn){
-      selectedBtn.classList.remove('active');
-      selectedBtn = null;
-    }
-
-  }, min * 60000);
-}
-</script>
+</body>
+</html>
