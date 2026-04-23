@@ -11,7 +11,7 @@ body{
   font-family:sans-serif;
 }
 
-/* 영상 */
+/* 🎬 영상 */
 .video{
   position:relative;
   width:100%;
@@ -26,19 +26,21 @@ body{
   border:0;
 }
 
-/* TIMER */
+/* ⏱ TIMER */
 .timer{
   text-align:center;
   padding:15px;
   background:#fff;
 }
 
+/* 버튼 가로 */
 .timer-row{
   display:flex;
   gap:10px;
   margin-top:10px;
 }
 
+/* 기본 버튼 */
 .timer-row button{
   flex:1;
   padding:14px 0;
@@ -47,8 +49,15 @@ body{
   border-radius:10px;
   background:#4a90e2;
   color:white;
+  transition:0.2s;
 }
 
+/* 선택된 버튼 */
+.timer-row button.active{
+  background:#222;
+}
+
+/* 테스트 버튼 */
 .test-btn{
   margin-top:12px;
   width:100%;
@@ -58,8 +67,11 @@ body{
   background:#333;
   color:white;
 }
+.test-btn.active{
+  background:#111;
+}
 
-/* 리스트 */
+/* 🎬 목록 */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -72,42 +84,46 @@ body{
   border-radius:10px;
   overflow:hidden;
 }
-.card img{ width:100%; }
+.card img{
+  width:100%;
+}
 </style>
 
 <h2 style="text-align:center;margin:10px 0;font-size:15px;">
 🌧 Rain Sound for Deep Sleep
 </h2>
 
-<!-- 영상 -->
+<!-- 🎬 최신 영상 -->
 {% assign latest = site.posts.first %}
 
 <div class="video">
-<iframe id="player"
-src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0"
-allowfullscreen>
-</iframe>
+  <iframe id="player"
+  src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0"
+  allowfullscreen>
+  </iframe>
 </div>
 
-<!-- TIMER -->
+<!-- ⏱ TIMER -->
 <div class="timer">
 
   <b>⏱ TIMER</b>
 
   <div class="timer-row">
-    <button onclick="setTimer(120)">2 HOURS</button>
-    <button onclick="setTimer(240)">4 HOURS</button>
-    <button onclick="setTimer(480)">8 HOURS</button>
+    <button onclick="setTimer(120, this)">2 HOURS</button>
+    <button onclick="setTimer(240, this)">4 HOURS</button>
+    <button onclick="setTimer(480, this)">8 HOURS</button>
   </div>
 
-  <button class="test-btn" onclick="setTimer(0.1)">
+  <button class="test-btn" onclick="setTimer(0.1, this)">
     TEST (6 sec)
   </button>
 
 </div>
 
-<!-- 목록 -->
-<h3 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h3>
+<!-- 🎬 Latest Videos -->
+<h3 style="text-align:center;margin-top:20px;">
+🎬 Latest Videos
+</h3>
 
 <div class="grid">
 
@@ -123,30 +139,3 @@ allowfullscreen>
 {% endfor %}
 
 </div>
-
-<script>
-let timerId;
-
-// 타이머 설정
-function setTimer(min){
-  if(timerId) clearTimeout(timerId);
-
-  timerId = setTimeout(()=>{
-    stopVideo();
-    alert("⏰ Timer finished");
-  }, min * 60000);
-
-  alert("⏱ Timer set: " + min + " min");
-}
-
-// 🔥 무조건 멈추는 방식
-function stopVideo(){
-  const iframe = document.getElementById("player");
-
-  if(iframe){
-    // 영상 완전히 제거
-    iframe.src = "";
-  }
-}
-</script>
-
