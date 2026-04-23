@@ -1,47 +1,27 @@
 ---
 layout: default
-title: "ASMR Rain"
+title: "RainDeepSleep"
 ---
 
 {% assign latest = site.posts.first %}
 
-<!-- TOP -->
-<div class="topbar">
-  <a href="{{ site.baseurl }}/">🏠 Home</a>
-</div>
+<h1>🌧 Rain Sound Videos</h1>
 
-<!-- HERO -->
-<div class="hero">
+<div>
   <iframe
+    width="100%"
+    height="400"
     src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
     allowfullscreen>
   </iframe>
 </div>
 
-<!-- INTRO -->
-<div style="padding:10px 15px; max-width:900px;">
-  {{ latest.intro }}
-</div>
-
-<!-- DESCRIPTION -->
-<div style="padding:10px 15px; max-width:900px; opacity:0.9;">
-  {{ latest.content }}
-</div>
-
-<!-- NETFLIX ROW -->
-<div class="section-title">🎬 Latest Rain Sounds</div>
-
-<div class="row">
+<h3>Latest Videos</h3>
 
 {% for post in site.posts %}
-
-  <a href="{{ site.baseurl }}{{ post.url }}">
-    <div class="card">
-      <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg">
-      <div>🌧 {{ post.title }}</div>
-    </div>
-  </a>
-
+  <div>
+    🌧 <a href="{{ post.url | relative_url }}">
+      {{ post.title }}
+    </a>
+  </div>
 {% endfor %}
-
-</div>
