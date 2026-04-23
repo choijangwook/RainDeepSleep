@@ -8,7 +8,7 @@
 <style>
 body{
   margin:0;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   background:#000;
   color:#fff;
 }
@@ -20,8 +20,8 @@ body{
   position:fixed;
   top:0;
   width:100%;
-  background:rgba(0,0,0,0.7);
-  z-index:10;
+  background:rgba(0,0,0,0.8);
+  z-index:1000;
 }
 
 .topbar a{
@@ -33,7 +33,7 @@ body{
 }
 
 .content{
-  padding-top:60px;
+  padding-top:70px;
   max-width:900px;
   margin:auto;
 }
@@ -49,8 +49,9 @@ body{
   <a href="{{ '/contact/' | relative_url }}">Contact</a>
 </div>
 
+<!-- 🔥 핵심: 이게 없으면 콘텐츠 다 사라짐 -->
 <div class="content">
-{{ content }}
+  {{ content }}
 </div>
 
 </body>
