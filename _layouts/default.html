@@ -1,47 +1,38 @@
+<script>
+let timer;
+let selectedBtn = null;
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+// 타이머 설정
+function setTimer(min, btn){
+  if(timer) clearTimeout(timer);
 
-  <title>{{ page.title }}</title>
+  // 🔥 버튼 색 초기화
+  document.querySelectorAll('.timer-row button').forEach(b=>{
+    b.classList.remove('active');
+  });
 
-  <!-- 🔥 캐시 방지 -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
-  <style>
-    body{
-      margin:0;
-      font-family:sans-serif;
-    }
-  </style>
-</head>
-
-<body>
-
-  {{ content }}
-
-  <!-- 🔥 JS는 여기 넣어야 무조건 실행됨 -->
-  <script>
-  let timer;
-
-  function setTimer(min){
-    if(timer) clearTimeout(timer);
-
-    alert("타이머 시작: " + min + "분");
-
-    timer = setTimeout(()=>{
-      const player = document.getElementById("player");
-      if(player){
-        player.remove(); // 🔥 무조건 멈춤
-      }
-      alert("종료됨");
-    }, min * 60000);
+  // 🔥 선택된 버튼 강조
+  if(btn){
+    btn.classList.add('active');
+    selectedBtn = btn;
   }
-  </script>
 
-</body>
-</html>
+  alert("타이머 설정: " + min + "분");
+
+  timer = setTimeout(()=>{
+    const player = document.getElementById("player");
+    if(player){
+      player.remove();
+    }
+
+    alert("⏰ 타이머 종료");
+
+    // 종료 후 버튼 상태 초기화
+    if(selectedBtn){
+      selectedBtn.classList.remove('active');
+      selectedBtn = null;
+    }
+
+  }, min * 60000);
+}
+</script>
