@@ -12,20 +12,6 @@ button.active{
   background:#222 !important;
   color:#fff !important;
 }
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  padding:10px;
-}
-
-.top a{
-  padding:6px 10px;
-  background:#333;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-}
 </style>
 </head>
 
@@ -34,46 +20,38 @@ button.active{
 {{ content }}
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+let timer = null;
 
-  let timer = null;
+window.setTimer = function(min, btn){
 
-  function setTimer(min, btn){
-
-    if(timer){
-      clearTimeout(timer);
-      timer = null;
-    }
-
-    document.querySelectorAll("button")
-      .forEach(b => b.classList.remove("active"));
-
-    if(btn){
-      btn.classList.add("active");
-    }
-
-    console.log("Timer:", min);
-
-    timer = setTimeout(()=>{
-      const iframe = document.getElementById("player");
-
-      if(iframe){
-        iframe.src = iframe.src;
-      }
-
-      alert("⏰ Timer finished");
-
-    }, Number(min) * 60000);
+  // 🔥 안전 초기화
+  if(timer){
+    clearTimeout(timer);
+    timer = null;
   }
 
-  // 🔥 안전 연결 (onclick 대신)
-  document.querySelectorAll("[data-timer]").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      setTimer(btn.dataset.timer, btn);
-    });
+  // 버튼 상태 초기화
+  document.querySelectorAll("button").forEach(b=>{
+    b.classList.remove("active");
   });
 
-});
+  if(btn){
+    btn.classList.add("active");
+  }
+
+  console.log("TIMER START:", min);
+
+  timer = setTimeout(()=>{
+    const iframe = document.getElementById("player");
+
+    if(iframe){
+      iframe.src = iframe.src;
+    }
+
+    alert("⏰ Timer finished");
+
+  }, Number(min) * 60000);
+}
 </script>
 
 </body>
