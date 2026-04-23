@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Privacy Policy"
+title: Privacy Policy
 permalink: /privacy/
 ---
 
 # 🔒 Privacy Policy
 
-This site uses cookies and third-party services such as Google AdSense and YouTube embeds.
+This website uses cookies and third-party services such as Google AdSense and YouTube embeds.
