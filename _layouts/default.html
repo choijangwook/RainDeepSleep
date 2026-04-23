@@ -20,35 +20,53 @@
 
 <body>
 
-  <!-- 🔥 페이지 내용 -->
   {{ content }}
 
-  <!-- 🔥 JS (무조건 body 안) -->
+  <!-- 🔥 TIMER SCRIPT -->
   <script>
-    let timer;
+    let timer = null;
+    let activeBtn = null;
 
     function setTimer(min, btn){
 
+      // 기존 타이머 제거
       if(timer){
         clearTimeout(timer);
+        timer = null;
       }
 
+      // 버튼 초기화
       document.querySelectorAll('.timer-row button, .test-btn')
         .forEach(b => b.classList.remove('active'));
 
       if(btn){
         btn.classList.add('active');
+        activeBtn = btn;
       }
 
-      timer = setTimeout(()=>{
-        const iframe = document.getElementById("player");
+      alert("⏱ 타이머 설정: " + min + "분");
 
-        if(iframe){
-          iframe.src = iframe.src; // 🔥 가장 안정적인 정지 방식
-        }
+      timer = setTimeout(()=>{
+        stopVideo();
 
         alert("⏰ 종료");
+
+        if(activeBtn){
+          activeBtn.classList.remove('active');
+          activeBtn = null;
+        }
+
       }, min * 60000);
+    }
+
+    function stopVideo(){
+      const iframe = document.getElementById("player");
+
+      if(iframe){
+        const src = iframe.src;
+        iframe.src = "";
+        iframe.src = src; // 🔥 가장 안정적인 정지 방식
+      }
     }
   </script>
 
