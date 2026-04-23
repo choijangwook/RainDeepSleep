@@ -3,18 +3,16 @@ layout: default
 title: Home
 ---
 
-<h1 style="margin-bottom:20px;">🌧 Rain Sound for Deep Sleep</h1>
+<h1>🌧 Rain Sound for Deep Sleep</h1>
 
 {% assign latest = site.posts.first %}
 
-<!-- 메인 영상 -->
 {% if latest %}
   <div style="margin-bottom:30px;">
     <iframe
       width="100%"
       height="400"
-      src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
-      frameborder="0"
+      src="https://www.youtube.com/embed/{{ latest.youtube }}?rel=0"
       allowfullscreen>
     </iframe>
   </div>
@@ -22,25 +20,15 @@ title: Home
   <p>No videos yet.</p>
 {% endif %}
 
-<!-- 최신 영상 목록 -->
 <h2>🎬 Latest Videos</h2>
 
-<div>
-  {% for post in site.posts %}
-    <div style="margin:10px 0;">
-      🌧 
-      <a href="{{ post.url | relative_url }}" style="color:#4da6ff;">
-        {{ post.title }}
-      </a>
-    </div>
-  {% endfor %}
-</div>
-
-
-
-{{ 5 | plus: 5 }}
-
-
-
+{% for post in site.posts %}
+  <div style="margin:10px 0;">
+    🌧 
+    <a href="{{ post.url | relative_url }}">
+      {{ post.title }}
+    </a>
+  </div>
+{% endfor %}
 
 
