@@ -1,60 +1,43 @@
 ---
 layout: default
-title: "Rain Sound for Deep Sleep"
+title: "Rain Sound"
 ---
-
-<div class="container">
-
-<!-- 🔥 TOP -->
-<div class="topbar">
-  <a href="{{ site.baseurl }}/">🏠 Home</a>
-</div>
-
-<h2 style="text-align:center;">
-🌧 Rain Sound for Deep Sleep
-</h2>
 
 {% assign latest = site.posts.first %}
 
-<!-- 🎬 VIDEO -->
-<div class="video">
+<!-- 🔥 TOP BAR -->
+<div class="topbar">
+  <a href="{{ site.baseurl }}/">🏠 Home</a>
+
+  <!-- 화살표 (이전/다음 구조 placeholder) -->
+  <div>
+    <a href="#">←</a>
+    <a href="#">→</a>
+  </div>
+</div>
+
+<!-- 🎬 FULL VIDEO -->
+<div class="video-wrap">
   <iframe
-    src="https://www.youtube.com/embed/{{ latest.youtube }}"
+    src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
     allowfullscreen>
   </iframe>
 </div>
 
-<!-- 📌 MD EDITABLE AREA 1 -->
-<div style="margin:15px 0; padding:10px; background:#111; border-radius:10px;">
+<!-- 🎬 Latest Videos -->
+<h3 style="text-align:center;margin:10px;">Latest Videos</h3>
 
-  <h3>📌 Video Info</h3>
-
-  {{ latest.description }}
-
-</div>
-
-<!-- 📌 MD EDITABLE AREA 2 -->
-<div style="margin:15px 0; padding:10px; background:#111; border-radius:10px;">
-
-  <h3>🎬 Next / Recommended Videos</h3>
-
-  {{ latest.recommend }}
-
-</div>
-
-<!-- 🎬 LIST -->
-<h3 style="text-align:center;">Latest Videos</h3>
-
-<div>
+<div class="list">
 
 {% for post in site.posts %}
 
-  <div style="margin:5px 0;">
-    🌧 {{ post.title }}
+  <!-- 🔥 바로 재생 링크 -->
+  <div class="item">
+    <a href="{{ site.baseurl }}{{ post.url }}">
+      🌧 {{ post.title }}
+    </a>
   </div>
 
 {% endfor %}
-
-</div>
 
 </div>
