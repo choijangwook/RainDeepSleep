@@ -1,45 +1,37 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-</head>
-<body>
+<script>
+let timer;
 
-  {{ content }}
+function setTimer(min, btn){
 
-  <script>
-  let timer;
-  let selectedBtn = null;
-
-  function setTimer(min, btn){
-    if(timer) clearTimeout(timer);
-
-    document.querySelectorAll('.timer-row button, .test-btn').forEach(b=>{
-      b.classList.remove('active');
-    });
-
-    if(btn){
-      btn.classList.add('active');
-      selectedBtn = btn;
-    }
-
-    timer = setTimeout(()=>{
-      const player = document.getElementById("player");
-      if(player){
-        player.remove();
-      }
-      alert("⏰ 종료");
-
-      if(selectedBtn){
-        selectedBtn.classList.remove('active');
-        selectedBtn = null;
-      }
-
-    }, min * 60000);
+  // 🔥 기존 타이머 무조건 제거
+  if(timer){
+    clearTimeout(timer);
+    timer = null;
   }
-  </script>
 
-</body>
-</html>
+  // 버튼 색 초기화
+  document.querySelectorAll('.timer-row button, .test-btn').forEach(b=>{
+    b.classList.remove('active');
+  });
+
+  if(btn){
+    btn.classList.add('active');
+  }
+
+  alert("타이머 설정: " + min + "분");
+
+  timer = setTimeout(()=>{
+    stopVideo();
+    alert("⏰ 종료");
+  }, min * 60000);
+}
+
+// 🔥 완전 확실 정지
+function stopVideo(){
+  const iframe = document.getElementById("player");
+
+  if(iframe){
+    iframe.src = iframe.src; // 핵심: reload = 무조건 stop
+  }
+}
+</script>
