@@ -13,16 +13,16 @@ body{
   color:#fff;
 }
 
-/* top */
+/* TOP */
 .topbar{
   display:flex;
   justify-content:space-between;
   padding:10px;
   position:fixed;
-  width:100%;
   top:0;
-  background:rgba(0,0,0,0.6);
+  width:100%;
   z-index:10;
+  background:rgba(0,0,0,0.6);
 }
 
 .topbar a{
@@ -33,7 +33,7 @@ body{
   border-radius:6px;
 }
 
-/* video full focus */
+/* VIDEO */
 .video-wrap{
   width:100%;
   height:100vh;
@@ -51,6 +51,44 @@ body{
 <body>
 
 {{ content }}
+
+<script>
+let posts = [];
+let currentIndex = 0;
+
+/* init */
+document.addEventListener("DOMContentLoaded", ()=>{
+  const items = document.querySelectorAll("[data-post]");
+  items.forEach((el,i)=>{
+    posts.push(el.dataset.post);
+    if(el.dataset.current === "true"){
+      currentIndex = i;
+    }
+  });
+});
+
+/* NEXT / PREV */
+function goNext(){
+  if(currentIndex < posts.length - 1){
+    currentIndex++;
+    location.href = posts[currentIndex];
+  }
+}
+
+function goPrev(){
+  if(currentIndex > 0){
+    currentIndex--;
+    location.href = posts[currentIndex];
+  }
+}
+
+/* AUTO NEXT (핵심) */
+function autoNext(){
+  setTimeout(()=>{
+    goNext();
+  }, 10000); // 10초 테스트 (나중에 영상 길이로 확장 가능)
+}
+</script>
 
 </body>
 </html>
