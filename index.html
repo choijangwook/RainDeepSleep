@@ -3,12 +3,11 @@ layout: default
 title: "Rain Sound"
 ---
 
-<h2 style="text-align:center;">🌧 Rain Sound</h2>
-
 {% assign latest = site.posts.first %}
 
 <div style="position:relative;padding-bottom:56.25%;height:0;">
   <iframe id="player"
+    data-src="https://www.youtube.com/embed/{{ latest.youtube }}"
     src="https://www.youtube.com/embed/{{ latest.youtube }}"
     style="position:absolute;width:100%;height:100%;"
     allowfullscreen>
@@ -28,11 +27,3 @@ title: "Rain Sound"
   <button onclick="setTimer(0.1,this)">TEST (6 sec)</button>
 
 </div>
-
-<h3 style="text-align:center;">🎬 Latest Videos</h3>
-
-{% for post in site.posts %}
-  <div style="padding:5px;">
-    🌧 {{ post.title }}
-  </div>
-{% endfor %}
