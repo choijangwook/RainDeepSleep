@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ASMR Rain"
+title: "Rain ASMR"
 ---
 
 {% assign latest = site.posts.first %}
@@ -10,38 +10,33 @@ title: "ASMR Rain"
   <a href="{{ site.baseurl }}/">🏠 Home</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
+<!-- 📌 INTRO (MD short text) -->
+<div style="max-width:900px;margin:10px auto;text-align:center;">
+  {{ latest.intro }}
+</div>
+
+<!-- 🎬 VIDEO -->
+<div class="video-wrap">
   <iframe
     src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
     allowfullscreen>
   </iframe>
 </div>
 
-<!-- INTRO -->
-<div style="padding:10px 15px; max-width:900px;">
-  {{ latest.intro }}
-</div>
+<!-- 📌 LONG CONTENT (MD full body) -->
+<div style="max-width:900px;margin:20px auto;padding:10px;">
 
-<!-- DESCRIPTION -->
-<div style="padding:10px 15px; max-width:900px; opacity:0.9;">
   {{ latest.content }}
+
 </div>
 
-<!-- NETFLIX ROW -->
-<div class="section-title">🎬 Latest Rain Sounds</div>
-
-<div class="row">
+<!-- LIST -->
+<h3 style="text-align:center;">Latest Videos</h3>
 
 {% for post in site.posts %}
-
-  <a href="{{ site.baseurl }}{{ post.url }}">
-    <div class="card">
-      <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg">
-      <div>🌧 {{ post.title }}</div>
-    </div>
-  </a>
-
+  <div style="text-align:center;">
+    🌧 <a href="{{ site.baseurl }}{{ post.url }}">
+      {{ post.title }}
+    </a>
+  </div>
 {% endfor %}
-
-</div>
