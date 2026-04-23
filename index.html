@@ -1,45 +1,79 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-</head>
-<body>
+---
+layout: default
+title: "Rain Sound for Deep Sleep"
+---
 
-  {{ content }}
+<style>
+body{margin:0;font-family:sans-serif;}
 
-  <script>
-  let timer;
-  let selectedBtn = null;
+.video{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+}
+.video iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
 
-  function setTimer(min, btn){
-    if(timer) clearTimeout(timer);
+.timer{
+  text-align:center;
+  padding:15px;
+}
 
-    document.querySelectorAll('.timer-row button, .test-btn').forEach(b=>{
-      b.classList.remove('active');
-    });
+.timer-row{
+  display:flex;
+  gap:10px;
+}
 
-    if(btn){
-      btn.classList.add('active');
-      selectedBtn = btn;
-    }
+.timer-row button{
+  flex:1;
+  padding:12px;
+  border:none;
+  background:#4a90e2;
+  color:#fff;
+  border-radius:8px;
+}
 
-    timer = setTimeout(()=>{
-      const player = document.getElementById("player");
-      if(player){
-        player.remove();
-      }
-      alert("⏰ 종료");
+.timer-row button.active{
+  background:#222;
+}
 
-      if(selectedBtn){
-        selectedBtn.classList.remove('active');
-        selectedBtn = null;
-      }
+.test-btn{
+  margin-top:10px;
+  width:100%;
+  padding:12px;
+  border:none;
+  background:#333;
+  color:#fff;
+  border-radius:8px;
+}
 
-    }, min * 60000);
-  }
-  </script>
+.test-btn.active{
+  background:#111;
+}
+</style>
 
-</body>
-</html>
+<h2 style="text-align:center;">🌧 Rain Sound for Deep Sleep</h2>
+
+<div class="video">
+<iframe id="player"
+src="https://www.youtube.com/embed/{{ site.posts.first.youtube }}"
+allowfullscreen>
+</iframe>
+</div>
+
+<div class="timer">
+  <b>⏱ TIMER</b>
+
+  <div class="timer-row">
+    <button onclick="setTimer(120,this)">2h</button>
+    <button onclick="setTimer(240,this)">4h</button>
+    <button onclick="setTimer(480,this)">8h</button>
+  </div>
+
+  <button class="test-btn" onclick="setTimer(0.1,this)">TEST</button>
+</div>
