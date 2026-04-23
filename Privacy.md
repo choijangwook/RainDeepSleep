@@ -1,21 +1,63 @@
 ---
 layout: default
-title: "Privacy"
+title: "Privacy Policy"
 permalink: /privacy/
 ---
 
 # 🔒 Privacy Policy
 
-This website uses third-party services such as **Google AdSense**.
+This website respects your privacy and is committed to protecting it.
 
-## Cookies
+---
 
-Google may use cookies to serve ads based on your previous visits.
+## 📊 Information Collection
 
-## Third-party vendors
+This website itself does not directly collect personal information.
 
-Google and its partners may use tracking technologies to show relevant ads.
+However, third-party services such as Google AdSense may collect limited data such as:
 
-## Consent
+- Cookies
+- Device information
+- Browser type
+- Anonymous usage data
 
-By using this site, you agree to the use of cookies and advertising technologies.
+---
+
+## 🍪 Cookies
+
+Google and its partners may use cookies to:
+
+- Serve relevant advertisements
+- Measure ad performance
+- Improve user experience
+
+You can disable cookies through your browser settings at any time.
+
+---
+
+## 📡 Third-Party Services
+
+This website may use third-party services including:
+
+- Google AdSense
+- YouTube embeds
+
+These services may collect data according to their own privacy policies.
+
+---
+
+## ⚠️ External Content
+
+Embedded content (such as YouTube videos) behaves as if you visited YouTube directly.
+
+---
+
+## 📌 Consent
+
+By using this website, you agree to the use of cookies and third-party services as described above.
+
+---
+
+## 🔄 Updates
+
+This Privacy Policy may be updated occasionally without prior notice.
