@@ -1,54 +1,38 @@
 ---
 layout: default
-title: "Rain Sound for Deep Sleep"
+title: "Rain Sound"
 ---
+
+<h2 style="text-align:center;">🌧 Rain Sound</h2>
 
 {% assign latest = site.posts.first %}
 
-<h2 style="text-align:center;margin:10px 0;">
-🌧 Rain Sound for Deep Sleep
-</h2>
-
-<!-- 🎬 VIDEO -->
 <div style="position:relative;padding-bottom:56.25%;height:0;">
-
-  <iframe
-    id="player"
-    src="https://www.youtube.com/embed/{{ latest.youtube }}?enablejsapi=1&rel=0"
+  <iframe id="player"
+    src="https://www.youtube.com/embed/{{ latest.youtube }}"
     style="position:absolute;width:100%;height:100%;"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
     allowfullscreen>
   </iframe>
-
 </div>
 
-<!-- ⏱ TIMER -->
 <div style="text-align:center;margin:15px;">
 
   <b>⏱ TIMER</b>
 
-  <div style="margin-top:10px;">
+  <div>
     <button onclick="setTimer(120,this)">2 HOURS</button>
     <button onclick="setTimer(240,this)">4 HOURS</button>
     <button onclick="setTimer(480,this)">8 HOURS</button>
   </div>
 
-  <button onclick="setTimer(0.1,this)" style="margin-top:10px;">
-    TEST (6 sec)
-  </button>
+  <button onclick="setTimer(0.1,this)">TEST</button>
 
 </div>
 
-<!-- 🎬 LIST -->
 <h3 style="text-align:center;">🎬 Latest Videos</h3>
 
-<div style="padding:10px;">
-
 {% for post in site.posts %}
-  <div style="margin:5px 0;">
+  <div style="padding:5px;">
     🌧 {{ post.title }}
   </div>
 {% endfor %}
-
-</div>
