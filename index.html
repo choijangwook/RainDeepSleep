@@ -3,20 +3,19 @@ layout: default
 title: "Rain ASMR"
 ---
 
-{% assign posts = site.posts %}
 {% assign latest = site.posts.first %}
 
 <!-- TOP -->
 <div class="topbar">
   <a href="{{ site.baseurl }}/">🏠 Home</a>
-
-  <div>
-    <a href="#" onclick="goPrev()">← Prev</a>
-    <a href="#" onclick="goNext()">Next →</a>
-  </div>
 </div>
 
-<!-- VIDEO -->
+<!-- 📌 INTRO (MD short text) -->
+<div style="max-width:900px;margin:10px auto;text-align:center;">
+  {{ latest.intro }}
+</div>
+
+<!-- 🎬 VIDEO -->
 <div class="video-wrap">
   <iframe
     src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
@@ -24,15 +23,20 @@ title: "Rain ASMR"
   </iframe>
 </div>
 
-<!-- LIST -->
-<div style="display:none;">
+<!-- 📌 LONG CONTENT (MD full body) -->
+<div style="max-width:900px;margin:20px auto;padding:10px;">
 
-{% for post in posts %}
-
-  <div data-post="{{ site.baseurl }}{{ post.url }}"
-       {% if post.url == latest.url %}data-current="true"{% endif %}>
-  </div>
-
-{% endfor %}
+  {{ latest.content }}
 
 </div>
+
+<!-- LIST -->
+<h3 style="text-align:center;">Latest Videos</h3>
+
+{% for post in site.posts %}
+  <div style="text-align:center;">
+    🌧 <a href="{{ site.baseurl }}{{ post.url }}">
+      {{ post.title }}
+    </a>
+  </div>
+{% endfor %}
