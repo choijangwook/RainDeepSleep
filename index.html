@@ -1,141 +1,45 @@
----
-layout: default
-title: "Rain Sound for Deep Sleep"
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+</head>
+<body>
 
-<style>
-*{ box-sizing:border-box; }
+  {{ content }}
 
-body{
-  margin:0;
-  font-family:sans-serif;
-}
+  <script>
+  let timer;
+  let selectedBtn = null;
 
-/* 🎬 영상 */
-.video{
-  position:relative;
-  width:100%;
-  padding-bottom:56.25%;
-}
-.video iframe{
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  border:0;
-}
+  function setTimer(min, btn){
+    if(timer) clearTimeout(timer);
 
-/* ⏱ TIMER */
-.timer{
-  text-align:center;
-  padding:15px;
-  background:#fff;
-}
+    document.querySelectorAll('.timer-row button, .test-btn').forEach(b=>{
+      b.classList.remove('active');
+    });
 
-/* 버튼 가로 */
-.timer-row{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-}
+    if(btn){
+      btn.classList.add('active');
+      selectedBtn = btn;
+    }
 
-/* 기본 버튼 */
-.timer-row button{
-  flex:1;
-  padding:14px 0;
-  font-size:16px;
-  border:none;
-  border-radius:10px;
-  background:#4a90e2;
-  color:white;
-  transition:0.2s;
-}
+    timer = setTimeout(()=>{
+      const player = document.getElementById("player");
+      if(player){
+        player.remove();
+      }
+      alert("⏰ 종료");
 
-/* 선택된 버튼 */
-.timer-row button.active{
-  background:#222;
-}
+      if(selectedBtn){
+        selectedBtn.classList.remove('active');
+        selectedBtn = null;
+      }
 
-/* 테스트 버튼 */
-.test-btn{
-  margin-top:12px;
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:#333;
-  color:white;
-}
-.test-btn.active{
-  background:#111;
-}
+    }, min * 60000);
+  }
+  </script>
 
-/* 🎬 목록 */
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  padding:10px;
-}
-
-.card{
-  background:#eee;
-  border-radius:10px;
-  overflow:hidden;
-}
-.card img{
-  width:100%;
-}
-</style>
-
-<h2 style="text-align:center;margin:10px 0;font-size:15px;">
-🌧 Rain Sound for Deep Sleep
-</h2>
-
-<!-- 🎬 최신 영상 -->
-{% assign latest = site.posts.first %}
-
-<div class="video">
-  <iframe id="player"
-  src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0"
-  allowfullscreen>
-  </iframe>
-</div>
-
-<!-- ⏱ TIMER -->
-<div class="timer">
-
-  <b>⏱ TIMER</b>
-
-  <div class="timer-row">
-    <button onclick="setTimer(120, this)">2 HOURS</button>
-    <button onclick="setTimer(240, this)">4 HOURS</button>
-    <button onclick="setTimer(480, this)">8 HOURS</button>
-  </div>
-
-  <button class="test-btn" onclick="setTimer(0.1, this)">
-    TEST (6 sec)
-  </button>
-
-</div>
-
-<!-- 🎬 Latest Videos -->
-<h3 style="text-align:center;margin-top:20px;">
-🎬 Latest Videos
-</h3>
-
-<div class="grid">
-
-{% for post in site.posts %}
-<a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;">
-  <div class="card">
-    <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg">
-    <div style="padding:6px;font-size:13px;">
-      🌧 {{ post.title }}
-    </div>
-  </div>
-</a>
-{% endfor %}
-
-</div>
+</body>
+</html>
