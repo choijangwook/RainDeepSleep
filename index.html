@@ -11,36 +11,33 @@ body{
   font-family:sans-serif;
 }
 
-/* 🎬 영상 */
+/* 영상 */
 .video{
   position:relative;
   width:100%;
   padding-bottom:56.25%;
 }
-.video iframe{
+#player{
   position:absolute;
   width:100%;
   height:100%;
   top:0;
   left:0;
-  border:0;
 }
 
-/* ⏱ TIMER */
+/* TIMER */
 .timer{
   text-align:center;
   padding:15px;
   background:#fff;
 }
 
-/* 버튼 가로 정렬 */
 .timer-row{
   display:flex;
   gap:10px;
   margin-top:10px;
 }
 
-/* 큰 버튼 */
 .timer-row button{
   flex:1;
   padding:14px 0;
@@ -51,19 +48,17 @@ body{
   color:white;
 }
 
-/* 테스트 버튼 */
 .test-btn{
   margin-top:12px;
   width:100%;
   padding:12px;
-  font-size:14px;
   border:none;
   border-radius:10px;
   background:#333;
   color:white;
 }
 
-/* 🎬 목록 */
+/* 리스트 */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -76,29 +71,22 @@ body{
   border-radius:10px;
   overflow:hidden;
 }
-.card img{
-  width:100%;
-}
+.card img{ width:100%; }
 </style>
 
 <h2 style="text-align:center;margin:10px 0;font-size:15px;">
 🌧 Rain Sound for Deep Sleep
 </h2>
 
-<!-- 🎬 최신 영상 -->
+<!-- 영상 -->
 {% assign latest = site.posts.first %}
 
 <div class="video">
-<iframe id="player"
-src="https://www.youtube.com/embed/{{ latest.youtube }}?enablejsapi=1&playsinline=1&rel=0"
-allow="encrypted-media"
-allowfullscreen>
-</iframe>
+  <div id="player"></div> <!-- 🔥 iframe 대신 div -->
 </div>
 
-<!-- ⏱ TIMER -->
+<!-- TIMER -->
 <div class="timer">
-
   <b>⏱ TIMER</b>
 
   <div class="timer-row">
@@ -110,16 +98,12 @@ allowfullscreen>
   <button class="test-btn" onclick="setTimer(0.1)">
     TEST (6 sec)
   </button>
-
 </div>
 
-<!-- 🎬 Latest Videos -->
-<h3 style="text-align:center;margin-top:20px;">
-🎬 Latest Videos
-</h3>
+<!-- 목록 -->
+<h3 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h3>
 
 <div class="grid">
-
 {% for post in site.posts %}
 <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;">
   <div class="card">
@@ -130,52 +114,37 @@ allowfullscreen>
   </div>
 </a>
 {% endfor %}
-
 </div>
 
-<!-- 🔥 YouTube API -->
+<!-- YouTube API -->
 <script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
 let player;
 let timerId;
-let ready = false;
 
-// 플레이어 준비
+// 🔥 플레이어 생성 (핵심)
 function onYouTubeIframeAPIReady(){
   player = new YT.Player('player', {
-    events:{
-      'onReady': function(){
-        ready = true;
-      }
+    videoId: "{{ latest.youtube }}",
+    playerVars: {
+      playsinline: 1,
+      rel: 0
     }
   });
 }
 
-// 타이머 설정
+// 타이머
 function setTimer(min){
   if(timerId) clearTimeout(timerId);
 
   timerId = setTimeout(()=>{
-    stopVideo();
+    if(player){
+      player.stopVideo(); // 🔥 이제 진짜 먹힘
+    }
     alert("⏰ Timer finished");
   }, min * 60000);
 
   alert("⏱ Timer set: " + min + " min");
-}
-
-// 영상 정지 (완전 확실)
-function stopVideo(){
-
-  // 1차 (API)
-  if(ready && player){
-    player.stopVideo();
-  }
-
-  // 2차 (강제 종료)
-  const iframe = document.getElementById("player");
-  if(iframe){
-    iframe.src = iframe.src;
-  }
 }
 </script>
