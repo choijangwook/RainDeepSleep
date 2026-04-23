@@ -17,12 +17,13 @@ body{
   width:100%;
   padding-bottom:56.25%;
 }
-#player{
+.video iframe{
   position:absolute;
   width:100%;
   height:100%;
   top:0;
   left:0;
+  border:0;
 }
 
 /* TIMER */
@@ -82,11 +83,15 @@ body{
 {% assign latest = site.posts.first %}
 
 <div class="video">
-  <div id="player"></div> <!-- 🔥 iframe 대신 div -->
+<iframe id="player"
+src="https://www.youtube.com/embed/{{ latest.youtube }}?playsinline=1&rel=0"
+allowfullscreen>
+</iframe>
 </div>
 
 <!-- TIMER -->
 <div class="timer">
+
   <b>⏱ TIMER</b>
 
   <div class="timer-row">
@@ -98,12 +103,14 @@ body{
   <button class="test-btn" onclick="setTimer(0.1)">
     TEST (6 sec)
   </button>
+
 </div>
 
 <!-- 목록 -->
 <h3 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h3>
 
 <div class="grid">
+
 {% for post in site.posts %}
 <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none;color:#000;">
   <div class="card">
@@ -114,37 +121,31 @@ body{
   </div>
 </a>
 {% endfor %}
+
 </div>
 
-<!-- YouTube API -->
-<script src="https://www.youtube.com/iframe_api"></script>
-
 <script>
-let player;
 let timerId;
 
-// 🔥 플레이어 생성 (핵심)
-function onYouTubeIframeAPIReady(){
-  player = new YT.Player('player', {
-    videoId: "{{ latest.youtube }}",
-    playerVars: {
-      playsinline: 1,
-      rel: 0
-    }
-  });
-}
-
-// 타이머
+// 타이머 설정
 function setTimer(min){
   if(timerId) clearTimeout(timerId);
 
   timerId = setTimeout(()=>{
-    if(player){
-      player.stopVideo(); // 🔥 이제 진짜 먹힘
-    }
+    stopVideo();
     alert("⏰ Timer finished");
   }, min * 60000);
 
   alert("⏱ Timer set: " + min + " min");
+}
+
+// 🔥 무조건 멈추는 방식
+function stopVideo(){
+  const iframe = document.getElementById("player");
+
+  if(iframe){
+    // 영상 완전히 제거
+    iframe.src = "";
+  }
 }
 </script>
