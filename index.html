@@ -3,11 +3,20 @@ layout: default
 title: "Rain Sound"
 ---
 
-<h2 style="text-align:center;">🌧 Rain Sound</h2>
+<!-- 🔥 Top UI -->
+<div class="top">
+  <a href="/">🏠 Home</a>
+  <div>
+    <a href="#">←</a>
+    <a href="#">→</a>
+  </div>
+</div>
+
+<h2 style="text-align:center;">🌧 Rain Sound for Deep Sleep</h2>
 
 {% assign latest = site.posts.first %}
 
-<!-- 🎬 영상 -->
+<!-- 🎬 Video -->
 <div style="position:relative;padding-bottom:56.25%;height:0;">
   <iframe id="player"
     src="https://www.youtube.com/embed/{{ latest.youtube }}"
@@ -22,24 +31,20 @@ title: "Rain Sound"
   <b>⏱ TIMER</b>
 
   <div>
-    <button onclick="setTimer(120,this)">2h</button>
-    <button onclick="setTimer(240,this)">4h</button>
-    <button onclick="setTimer(480,this)">8h</button>
+    <button onclick="setTimer(120,this)">2 HOURS</button>
+    <button onclick="setTimer(240,this)">4 HOURS</button>
+    <button onclick="setTimer(480,this)">8 HOURS</button>
   </div>
 
-  <button onclick="setTimer(0.1,this)">TEST</button>
+  <button onclick="setTimer(0.1,this)">TEST (6 sec)</button>
 
 </div>
 
-<!-- 🎬 Latest Videos (URL 안전 버전) -->
+<!-- 🎬 Latest -->
 <h3 style="text-align:center;">🎬 Latest Videos</h3>
 
-<div>
-
 {% for post in site.posts %}
-  <a href="{{ site.baseurl }}{{ post.url }}">
+  <div style="padding:5px;">
     🌧 {{ post.title }}
-  </a><br>
+  </div>
 {% endfor %}
-
-</div>
