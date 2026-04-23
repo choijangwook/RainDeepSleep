@@ -1,42 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ page.title }}</title>
-
-<style>
-body{margin:0;font-family:sans-serif;}
-
-.active{
-  background:#222 !important;
-  color:#fff !important;
-}
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  padding:10px;
-}
-
-.top a{
-  padding:6px 10px;
-  background:#333;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-}
-</style>
-</head>
-
-<body>
-
-{{ content }}
-
 <script>
 let timer = null;
 
-function setTimer(min, btn){
+// 🔥 핵심: 전역 고정
+window.setTimer = function(min, btn){
 
   if(timer){
     clearTimeout(timer);
@@ -50,7 +16,7 @@ function setTimer(min, btn){
     btn.classList.add('active');
   }
 
-  console.log("Timer set:", min, "minutes");
+  console.log("Timer started:", min);
 
   timer = setTimeout(()=>{
     const iframe = document.getElementById("player");
@@ -64,6 +30,3 @@ function setTimer(min, btn){
   }, Number(min) * 60000);
 }
 </script>
-
-</body>
-</html>
