@@ -4,16 +4,14 @@ title: "Rain Sound for Deep Sleep"
 ---
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
   font-family:sans-serif;
 }
 
-/* 영상 */
+/* 🎬 영상 */
 .video{
   position:relative;
   width:100%;
@@ -28,14 +26,44 @@ body{
   border:0;
 }
 
-/* TIMER */
+/* ⏱ TIMER */
 .timer{
   text-align:center;
   padding:15px;
   background:#fff;
 }
 
-/* 리스트 */
+/* 버튼 가로 정렬 */
+.timer-row{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+/* 큰 버튼 */
+.timer-row button{
+  flex:1;
+  padding:14px 0;
+  font-size:16px;
+  border:none;
+  border-radius:10px;
+  background:#4a90e2;
+  color:white;
+}
+
+/* 테스트 버튼 */
+.test-btn{
+  margin-top:12px;
+  width:100%;
+  padding:12px;
+  font-size:14px;
+  border:none;
+  border-radius:10px;
+  background:#333;
+  color:white;
+}
+
+/* 🎬 목록 */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -57,7 +85,7 @@ body{
 🌧 Rain Sound for Deep Sleep
 </h2>
 
-<!-- 🔥 최신 영상 -->
+<!-- 🎬 최신 영상 -->
 {% assign latest = site.posts.first %}
 
 <div class="video">
@@ -68,20 +96,27 @@ allowfullscreen>
 </iframe>
 </div>
 
-<!-- 🔥 TIMER (영상 아래 배치 → 겹침 완전 해결) -->
+<!-- ⏱ TIMER -->
 <div class="timer">
-<b>⏱ TIMER</b><br>
 
-<button onclick="setTimer(120)">2h</button>
-<button onclick="setTimer(240)">4h</button>
-<button onclick="setTimer(480)">8h</button>
+  <b>⏱ TIMER</b>
 
-<br><br>
-<button onclick="setTimer(0.1)">테스트(6초)</button>
+  <div class="timer-row">
+    <button onclick="setTimer(120)">2 HOURS</button>
+    <button onclick="setTimer(240)">4 HOURS</button>
+    <button onclick="setTimer(480)">8 HOURS</button>
+  </div>
+
+  <button class="test-btn" onclick="setTimer(0.1)">
+    TEST (6 sec)
+  </button>
+
 </div>
 
-<!-- 🔥 Latest Videos -->
-<h3 style="text-align:center;margin-top:20px;">🎬 Latest Videos</h3>
+<!-- 🎬 Latest Videos -->
+<h3 style="text-align:center;margin-top:20px;">
+🎬 Latest Videos
+</h3>
 
 <div class="grid">
 
@@ -117,20 +152,21 @@ function onYouTubeIframeAPIReady(){
   });
 }
 
-// TIMER 설정
+// 타이머 설정
 function setTimer(min){
   if(timerId) clearTimeout(timerId);
 
   timerId = setTimeout(()=>{
     stopVideo();
-    alert("⏰ 타이머 종료");
+    alert("⏰ Timer finished");
   }, min * 60000);
 
-  alert("⏱ " + min + "분 설정");
+  alert("⏱ Timer set: " + min + " min");
 }
 
-// 🔥 영상 정지 (확실하게)
+// 영상 정지 (완전 확실)
 function stopVideo(){
+
   // 1차 (API)
   if(ready && player){
     player.stopVideo();
