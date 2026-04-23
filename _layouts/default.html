@@ -11,82 +11,9 @@ body{
   font-family:sans-serif;
 }
 
-/* 버튼 활성 */
 .active{
   background:#222 !important;
   color:#fff !important;
-}
-
-/* 상단 UI */
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px;
-}
-
-/* 홈 + 화살표 */
-.navbtn{
-  padding:8px 12px;
-  background:#333;
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  text-decoration:none;
-}
-
-/* 영상 */
-.video{
-  position:relative;
-  width:100%;
-  padding-bottom:56.25%;
-}
-
-.video iframe{
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  border:0;
-}
-
-/* TIMER */
-.timer{
-  text-align:center;
-  padding:15px;
-}
-
-.timer-row{
-  display:flex;
-  gap:10px;
-}
-
-.timer-row button{
-  flex:1;
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  background:#4a90e2;
-  color:#fff;
-}
-
-/* Latest 안정 */
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  padding:10px;
-}
-
-.card{
-  background:#eee;
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.card img{
-  width:100%;
 }
 </style>
 </head>
@@ -97,44 +24,31 @@ body{
 
 <script>
 let timer = null;
-let activeBtn = null;
 
-// 🔥 핵심 수정: 분 단위 정확 처리
 function setTimer(min, btn){
 
   if(timer){
     clearTimeout(timer);
+    timer = null;
   }
 
-  document.querySelectorAll('.timer-row button, .test-btn')
+  document.querySelectorAll('button')
     .forEach(b => b.classList.remove('active'));
 
   if(btn){
     btn.classList.add('active');
-    activeBtn = btn;
   }
 
-  alert("타이머 설정: " + min + "분");
-
   timer = setTimeout(()=>{
-    stopVideo();
+    const iframe = document.getElementById("player");
+
+    if(iframe){
+      iframe.src = iframe.src;
+    }
 
     alert("⏰ 종료");
 
-    if(activeBtn){
-      activeBtn.classList.remove('active');
-      activeBtn = null;
-    }
-
   }, min * 60000);
-}
-
-function stopVideo(){
-  const iframe = document.getElementById("player");
-
-  if(iframe){
-    iframe.src = iframe.src;
-  }
 }
 </script>
 
