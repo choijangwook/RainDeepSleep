@@ -1,7 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+</head>
+
+<body>
+
+{{ content }}
+
 <script>
 let timer = null;
 
-window.setTimer = function(min, btn){
+function setTimer(min, btn){
 
   if(timer){
     clearTimeout(timer);
@@ -16,32 +28,18 @@ window.setTimer = function(min, btn){
   }
 
   timer = setTimeout(()=>{
-    stopVideo();
-    alert("⏰ FINISHED");
-  }, Number(min) * 60000);
-};
+    const iframe = document.getElementById("player");
 
-// 🔥 핵심: postMessage로 YouTube 제어
-function stopVideo(){
-
-  const iframe = document.getElementById("player");
-
-  if(iframe && iframe.contentWindow){
-
-    try {
-      iframe.contentWindow.postMessage(
-        '{"event":"command","func":"pauseVideo","args":""}',
-        "*"
-      );
-
-      iframe.contentWindow.postMessage(
-        '{"event":"command","func":"stopVideo","args":""}',
-        "*"
-      );
-
-    } catch(e){
-      console.log(e);
+    if(iframe){
+      // 🔥 가장 안전한 방식 (정지 대신 reset)
+      iframe.src = iframe.src;
     }
-  }
+
+    alert("⏰ FINISHED");
+
+  }, Number(min) * 60000);
 }
 </script>
+
+</body>
+</html>
