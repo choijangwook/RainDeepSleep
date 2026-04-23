@@ -10,15 +10,9 @@ title: "Rain ASMR"
 <div class="topbar">
   <a href="{{ site.baseurl }}/">🏠 Home</a>
 
-  <!-- 🔁 REAL NAV -->
   <div>
-    {% if latest.previous %}
-      <a href="{{ latest.previous.url }}">← Prev</a>
-    {% endif %}
-
-    {% if latest.next %}
-      <a href="{{ latest.next.url }}">Next →</a>
-    {% endif %}
+    <a href="#" onclick="goPrev()">← Prev</a>
+    <a href="#" onclick="goNext()">Next →</a>
   </div>
 </div>
 
@@ -30,15 +24,15 @@ title: "Rain ASMR"
   </iframe>
 </div>
 
-<!-- LIST (minimal) -->
-<div style="padding:10px;">
-<h3>Latest Videos</h3>
+<!-- LIST -->
+<div style="display:none;">
 
 {% for post in posts %}
-  <div style="margin:6px 0;">
-    🌧 <a href="{{ site.baseurl }}{{ post.url }}" style="color:#fff;">
-      {{ post.title }}
-    </a>
+
+  <div data-post="{{ site.baseurl }}{{ post.url }}"
+       {% if post.url == latest.url %}data-current="true"{% endif %}>
   </div>
+
 {% endfor %}
+
 </div>
