@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+
+<style>
+body{margin:0;font-family:sans-serif;}
+
+button.active{
+  background:#222 !important;
+  color:#fff !important;
+}
+</style>
+</head>
+
+<body>
+
+{{ content }}
+
 <script>
 let timer = null;
 
@@ -16,40 +37,35 @@ window.setTimer = function(min, btn){
     btn.classList.add("active");
   }
 
-  console.log("TIMER:", min);
+  console.log("timer:", min);
 
   timer = setTimeout(()=>{
     stopVideo();
-    alert("⏰ TEST / TIMER FINISHED");
+    alert("⏰ FINISHED");
   }, Number(min) * 60000);
 };
 
-// 🔥 진짜 확실한 정지 방식
+// 🔥 안전한 방식 (DOM 제거 금지)
 function stopVideo(){
 
-  const old = document.getElementById("player");
+  const iframe = document.getElementById("player");
 
-  if(old){
+  if(iframe){
+    try {
+      // 1. src 제거 → 정지
+      iframe.src = "about:blank";
 
-    // 1. iframe 제거
-    old.remove();
+      // 2. 약간 후 다시 복구 (안정형)
+      setTimeout(()=>{
+        iframe.src = iframe.dataset.src;
+      }, 200);
 
-    // 2. 다시 생성 (완전 초기화)
-    const wrapper = document.createElement("div");
-    wrapper.style.position = "relative";
-    wrapper.style.paddingBottom = "56.25%";
-    wrapper.style.height = "0";
-
-    wrapper.innerHTML = `
-      <iframe
-        id="player"
-        src=""
-        style="position:absolute;width:100%;height:100%;"
-        allowfullscreen>
-      </iframe>
-    `;
-
-    document.body.insertBefore(wrapper, document.body.children[1]);
+    } catch(e){
+      console.log("stop error:", e);
+    }
   }
 }
 </script>
+
+</body>
+</html>
