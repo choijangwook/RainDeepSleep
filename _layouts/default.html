@@ -4,6 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ page.title }}</title>
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+}
+
+button{
+  padding:10px 14px;
+  border:none;
+  border-radius:8px;
+  margin:4px;
+  cursor:pointer;
+}
+
+.active{
+  background:#444;
+  color:#fff;
+}
+
+/* 🌙 sleep mode */
+.sleep{
+  background:#000 !important;
+  filter:brightness(0.3);
+}
+</style>
 </head>
 
 <body>
@@ -27,17 +61,34 @@ function setTimer(min, btn){
     btn.classList.add("active");
   }
 
+  showStatus(min);
+
   timer = setTimeout(()=>{
-    const iframe = document.getElementById("player");
+    sleepMode();
+  }, min * 60000);
+}
 
-    if(iframe){
-      // 🔥 가장 안전한 방식 (정지 대신 reset)
-      iframe.src = iframe.src;
-    }
+function showStatus(min){
+  let old = document.getElementById("status");
+  if(old) old.remove();
 
-    alert("⏰ FINISHED");
+  let div = document.createElement("div");
+  div.id = "status";
+  div.style.textAlign = "center";
+  div.style.margin = "10px";
+  div.innerText = "⏱ Timer running: " + min + " min";
+  document.body.appendChild(div);
+}
 
-  }, Number(min) * 60000);
+function sleepMode(){
+  document.body.classList.add("sleep");
+
+  let div = document.createElement("div");
+  div.style.textAlign = "center";
+  div.style.padding = "20px";
+  div.innerHTML = "🌙 Sleep session finished";
+
+  document.body.appendChild(div);
 }
 </script>
 
