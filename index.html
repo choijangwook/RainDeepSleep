@@ -1,27 +1,33 @@
 ---
 layout: default
-title: "Rain Sleep ASMR"
+title: "Rain Sound"
 ---
 
+<!-- 🔥 TOP NAV -->
 <div class="topbar">
-  <a href="/">🏠 Home</a>
+  <a href="{{ site.baseurl }}/">🏠 Home</a>
+
+  <div>
+    <a href="#">←</a>
+    <a href="#">→</a>
+  </div>
 </div>
 
 <h2 style="text-align:center;">🌧 Rain Sound for Deep Sleep</h2>
 
 {% assign latest = site.posts.first %}
 
-<!-- 🎬 PLAYER -->
+<!-- 🎬 VIDEO -->
 <div style="position:relative;padding-bottom:56.25%;height:0;">
   <iframe
-    src="https://www.youtube.com/embed/{{ latest.youtube }}?autoplay=1&rel=0"
+    src="https://www.youtube.com/embed/{{ latest.youtube }}"
     style="position:absolute;width:100%;height:100%;"
     allowfullscreen>
   </iframe>
 </div>
 
 <!-- ⏱ TIMER -->
-<div style="text-align:center;margin:20px;">
+<div style="text-align:center;margin:15px;">
 
   <h3>⏱ TIMER</h3>
 
@@ -29,21 +35,24 @@ title: "Rain Sleep ASMR"
   <button onclick="setTimer(240,this)">4 HOURS</button>
   <button onclick="setTimer(480,this)">8 HOURS</button>
 
-  <br>
-
-  <button onclick="setTimer(0.1,this)">TEST (6 sec)</button>
+  <button onclick="setTimer(0.1,this)">TEST</button>
 
 </div>
 
-<!-- 🎬 LIST -->
+<!-- 🎬 Latest Videos -->
 <h3 style="text-align:center;">🎬 Latest Videos</h3>
 
-<div style="padding:10px;">
+<div class="grid">
 
 {% for post in site.posts %}
-  <div style="padding:6px;">
-    🌧 {{ post.title }}
+<a href="{{ site.baseurl }}{{ post.url }}">
+  <div class="card">
+    <img src="https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg">
+    <div style="padding:6px;font-size:13px;">
+      🌧 {{ post.title }}
+    </div>
   </div>
+</a>
 {% endfor %}
 
 </div>
