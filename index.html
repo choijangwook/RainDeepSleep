@@ -1,18 +1,18 @@
 ---
 layout: default
-title: Rain Deep Sleep
+title: Home
 ---
 
-# Rain Deep Sleep 🌧️
+<h1>🌧 Rain Deep Sleep</h1>
 
-Calming rain sounds for sleep, focus, and relaxation.
+<p>Relaxing rain sounds to help you sleep deeply.</p>
 
-## Menu
-
-- About
-- Blog
-- FAQ
-
-## Latest Post
-
-- Deep Sleep Rain Sound
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
