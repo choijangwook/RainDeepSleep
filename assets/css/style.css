@@ -4,15 +4,18 @@
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #0b1120;
   color: #e5e7eb;
 }
 
-/* 🔥 핵심: 전체 풀폭 */
-header, main {
-  width: 100%;
+/* 🔥 고정 헤더 */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0f172a;
+  padding-bottom: 10px;
 }
 
 /* 로고 */
@@ -21,30 +24,32 @@ header, main {
   padding: 15px;
 }
 
-/* ===================== */
-/* 🔥 NAV 1번 줄 */
-/* ===================== */
-.nav-top {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 10px 15px;
-  background: #0f172a;
-  justify-content: flex-start;
+/* 검색창 */
+#searchInput {
+  width: 95%;
+  margin: 0 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
 
-/* ===================== */
-/* 🔥 NAV 2번 줄 */
-/* ===================== */
-.nav-category {
+/* nav */
+.nav-top, .nav-category {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   padding: 10px 15px;
+}
+
+.nav-top {
+  background: #0f172a;
+}
+
+.nav-category {
   background: #0b1220;
 }
 
-/* 링크 스타일 */
 nav a {
   color: #38bdf8;
   text-decoration: none;
@@ -57,28 +62,22 @@ nav a {
   padding: 6px 10px;
   border-radius: 8px;
   color: white;
-  font-weight: bold;
 }
 
-/* ===================== */
-/* 🔥 MAIN (PC FULL WIDTH) */
-/* ===================== */
+/* main full */
 main {
-  padding: 20px;
   width: 100%;
+  padding: 20px;
 }
 
-/* ===================== */
-/* 🔥 CARD GRID */
-/* ===================== */
+/* grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 14px;
-  width: 100%;
 }
 
-/* 카드 */
+/* card */
 .card {
   background: #111827;
   border-radius: 12px;
@@ -94,7 +93,6 @@ main {
 
 .card img {
   width: 100%;
-  display: block;
 }
 
 .card-content {
@@ -103,18 +101,11 @@ main {
 
 .card-title {
   font-size: 13px;
-  font-weight: bold;
 }
 
-/* ===================== */
-/* 📱 모바일 */
-/* ===================== */
+/* 모바일 */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .nav-top, .nav-category {
-    justify-content: center;
   }
 }
