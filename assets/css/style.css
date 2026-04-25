@@ -1,5 +1,7 @@
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -16,47 +18,65 @@ body {
   color: white;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header {
   width: 100%;
   background: #0f172a;
 }
 
 .logo {
-  padding: 15px;
   margin: 0;
+  padding: 15px;
 }
 
-/* NAV GRID */
+/* =========================
+   NAV (🔥 1줄 고정 핵심)
+========================= */
 .nav-top {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: nowrap;      /* 🔥 핵심 */
   gap: 6px;
   padding: 10px;
+  width: 100%;
+  overflow-x: auto;       /* 모바일 안전 */
 }
 
-/* BUTTON */
-.btn {
+.nav-top .btn {
+  flex: 1;
+  white-space: nowrap;
   text-align: center;
-  padding: 10px;
   background: #111827;
   color: #38bdf8;
   text-decoration: none;
+  padding: 10px;
   border-radius: 8px;
 }
 
-/* HERO */
+/* =========================
+   MAIN
+========================= */
+main {
+  width: 100%;
+  padding: 10px;
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
   text-align: center;
   padding: 20px;
 }
 
-/* GRID */
+/* =========================
+   GRID (Netflix stable)
+========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  padding: 10px;
 }
 
 /* PC */
@@ -66,12 +86,9 @@ body {
   }
 }
 
-/* CARD */
-.card img {
-  width: 100%;
-  display: block;
-}
-
+/* =========================
+   CARD
+========================= */
 .card {
   background: #111827;
   border-radius: 10px;
@@ -80,9 +97,15 @@ body {
   color: white;
 }
 
-/* MOBILE NAV */
-@media (max-width: 768px) {
-  .nav-top {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.card img {
+  width: 100%;
+  display: block;
+}
+
+/* =========================
+   AD
+========================= */
+.ad-box {
+  margin: 20px 0;
+  text-align: center;
 }
