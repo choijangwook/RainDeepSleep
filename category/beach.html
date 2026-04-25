@@ -1,14 +1,20 @@
 ---
 layout: default
-title: Rainy Beach
+title: Rain on beach
 ---
 
-<h1>🌊 Rain at Beach</h1>
+<h1>⛺ Rain on Tent</h1>
 
-<ul>
-{% for post in site.categories.beach %}
-  <li>
-    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-  </li>
+<div class="grid">
+{% for post in site.categories.tent %}
+  <a href="{{ site.baseurl }}{{ post.url }}" class="card">
+
+    <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="{{ post.title }}">
+
+    <div class="card-content">
+      <div class="card-title">{{ post.title }}</div>
+    </div>
+
+  </a>
 {% endfor %}
-</ul>
+</div>
