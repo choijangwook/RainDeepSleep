@@ -1,9 +1,17 @@
 ---
-title: "Rain on Tent for Deep Sleep"
-date: 2026-04-25
-categories: [tent]
+layout: default
+title: Tent
 ---
 
-<iframe width="100%" height="400"
-src="https://www.youtube.com/embed/영상ID"
-frameborder="0" allowfullscreen></iframe>
+<h1>⛺ Rain on Tent</h1>
+
+<div class="grid">
+{% for post in site.categories.tent %}
+  <a href="{{ site.baseurl }}{{ post.url }}" class="card">
+    <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
+    <div class="card-content">
+      <div class="card-title">{{ post.title }}</div>
+    </div>
+  </a>
+{% endfor %}
+</div>
