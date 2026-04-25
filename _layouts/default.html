@@ -7,21 +7,18 @@
   <title>{{ page.title }}</title>
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
-
-  <!-- AdSense -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX"
-    crossorigin="anonymous">
-  </script>
 </head>
 
 <body>
 
-<header>
+<header class="header">
 
   <h2 class="logo">🌧 Rain Deep Sleep</h2>
 
-  <!-- 🔥 1번 줄: 홈 + 정보 -->
+  <!-- 🔍 검색 -->
+  <input type="text" id="searchInput" placeholder="Search rain sounds...">
+
+  <!-- 1줄 -->
   <nav class="nav-top">
     <a href="{{ site.baseurl }}/" class="home-btn">🏠 Home</a>
     <a href="{{ site.baseurl }}/about.html">About</a>
@@ -29,7 +26,7 @@
     <a href="{{ site.baseurl }}/contact.html">Contact</a>
   </nav>
 
-  <!-- 🔥 2번 줄: 카테고리 -->
+  <!-- 2줄 -->
   <nav class="nav-category">
     <a href="{{ site.baseurl }}/category/tent.html">⛺ Tent</a>
     <a href="{{ site.baseurl }}/category/forest.html">🌲 Forest</a>
@@ -44,6 +41,23 @@
 <main>
   {{ content }}
 </main>
+
+<!-- 🔍 검색 스크립트 -->
+<script>
+document.getElementById("searchInput").addEventListener("keyup", function() {
+  let filter = this.value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    if (text.includes(filter)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+</script>
 
 </body>
 </html>
