@@ -6,21 +6,39 @@ layout: default
   <h1>Rain Sounds for Deep Sleep</h1>
 </section>
 
-<!-- 🔥 AD MID -->
-<div class="ad-box">
-  <!-- AdSense Middle -->
-</div>
-
 <div class="grid">
 
 {% for post in site.posts %}
 
-  <a class="card" href="{{ site.baseurl }}{{ post.url }}">
-    <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
-    <div class="card-content">
-      <div class="card-title">{{ post.title }}</div>
-    </div>
-  </a>
+  <!-- 카드 -->
+  <div class="card">
+
+    <!-- 🔥 썸네일 + 플레이 버튼 -->
+    <a href="https://www.youtube.com/watch?v={{ post.youtube_id }}" class="thumb-link" target="_blank">
+
+      <div class="thumb-wrapper">
+
+        <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
+
+        <!-- ▶ 큰 재생 버튼 -->
+        <div class="play-button">▶</div>
+
+      </div>
+
+    </a>
+
+    <!-- 🔥 제목 (유튜브 링크) -->
+    <a class="card-title-link"
+       href="https://www.youtube.com/watch?v={{ post.youtube_id }}"
+       target="_blank">
+
+      <div class="card-content">
+        <div class="card-title">{{ post.title }}</div>
+      </div>
+
+    </a>
+
+  </div>
 
 {% endfor %}
 
