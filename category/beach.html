@@ -1,0 +1,14 @@
+---
+layout: default
+title: Rainy Beach
+---
+
+<h1>🌊 Rain at Beach</h1>
+
+<ul>
+{% for post in site.categories.beach %}
+  <li>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>
