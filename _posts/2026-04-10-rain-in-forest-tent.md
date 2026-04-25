@@ -1,10 +1,9 @@
 ---
-layout: post
-title: "Rain Sound for Deep Sleep"
+title: "Rain on Tent for Deep Sleep"
+date: 2026-04-25
+categories: [tent]
 ---
 
-Listen to relaxing rain sounds.
-
 <iframe width="100%" height="400"
-src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+src="https://www.youtube.com/embed/영상ID"
 frameborder="0" allowfullscreen></iframe>
