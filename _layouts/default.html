@@ -15,22 +15,26 @@
 
 <header class="header">
 
-  <!-- 🔥 상단 메뉴 -->
+  <!-- 🔥 빠른 탈출 (항상 왼쪽 고정 느낌) -->
+  <div class="quick-home">
+    <a href="{{ site.baseurl }}/">🏠 Home</a>
+  </div>
+
+  <!-- 메뉴 -->
   <nav class="nav-top">
-    <a class="btn" href="{{ site.baseurl }}/">Home</a>
     <a class="btn" href="{{ site.baseurl }}/blog.html">Blog</a>
     <a class="btn" href="{{ site.baseurl }}/about.html">About</a>
     <a class="btn" href="{{ site.baseurl }}/contact.html">Contact</a>
     <a class="btn" href="{{ site.baseurl }}/faq.html">FAQ</a>
   </nav>
 
-  <!-- 🔥 카테고리 (Nature 추가 + 붙이기) -->
+  <!-- 🔥 카테고리 순서 수정 -->
   <nav class="nav-category">
-    <a class="btn" href="{{ site.baseurl }}/category/forest.html">Forest</a>
+    <a class="btn" href="{{ site.baseurl }}/category/nature.html">Nature</a>
     <a class="btn" href="{{ site.baseurl }}/category/cabin.html">Cabin</a>
+    <a class="btn" href="{{ site.baseurl }}/category/forest.html">Forest</a>
     <a class="btn" href="{{ site.baseurl }}/category/beach.html">Beach</a>
     <a class="btn" href="{{ site.baseurl }}/category/other.html">Others</a>
-    <a class="btn" href="{{ site.baseurl }}/category/nature.html">Nature</a>
   </nav>
 
 </header>
