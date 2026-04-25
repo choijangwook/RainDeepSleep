@@ -1,6 +1,7 @@
 title: Rain Deep Sleep
-description: Relaxing rain sounds for deep sleep
-baseurl: "/RainDeepSleep"   # ⭐️ 여기 중요 (레포 이름과 정확히 일치)
+description: Rain sounds for sleep and relaxation
+
+baseurl: "/RainDeepSleep"
 url: "https://choijangwook.github.io"
 
 theme: minima
