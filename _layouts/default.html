@@ -7,6 +7,12 @@
   <title>{{ page.title }}</title>
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+
+  <!-- 🔥 AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX"
+    crossorigin="anonymous">
+  </script>
 </head>
 
 <body>
@@ -15,49 +21,57 @@
 
   <h2 class="logo">🌧 Rain Deep Sleep</h2>
 
-  <!-- 🔍 검색 -->
-  <input type="text" id="searchInput" placeholder="Search rain sounds...">
-
-  <!-- 1줄 -->
+  <!-- 🔥 1줄 (정보 메뉴) -->
   <nav class="nav-top">
-    <a href="{{ site.baseurl }}/" class="home-btn">🏠 Home</a>
-    <a href="{{ site.baseurl }}/about.html">About</a>
-    <a href="{{ site.baseurl }}/privacy.html">Privacy</a>
-    <a href="{{ site.baseurl }}/contact.html">Contact</a>
+    <a href="{{ site.baseurl }}/" class="btn">🏠 Home</a>
+    <a href="{{ site.baseurl }}/about.html" class="btn">About</a>
+    <a href="{{ site.baseurl }}/privacy.html" class="btn">Privacy</a>
+    <a href="{{ site.baseurl }}/contact.html" class="btn">Contact</a>
   </nav>
 
-  <!-- 2줄 -->
+  <!-- 🔥 2줄 (카테고리) -->
   <nav class="nav-category">
-    <a href="{{ site.baseurl }}/category/tent.html">⛺ Tent</a>
-    <a href="{{ site.baseurl }}/category/forest.html">🌲 Forest</a>
-    <a href="{{ site.baseurl }}/category/cabin.html">🏡 Cabin</a>
-    <a href="{{ site.baseurl }}/category/beach.html">🌊 Beach</a>
-    <a href="{{ site.baseurl }}/category/car.html">🚗 Car</a>
-    <a href="{{ site.baseurl }}/category/other.html">➕ More</a>
+    <a href="{{ site.baseurl }}/category/tent.html" class="btn">⛺ Tent</a>
+    <a href="{{ site.baseurl }}/category/forest.html" class="btn">🌲 Forest</a>
+    <a href="{{ site.baseurl }}/category/cabin.html" class="btn">🏡 Cabin</a>
+    <a href="{{ site.baseurl }}/category/beach.html" class="btn">🌊 Beach</a>
+    <a href="{{ site.baseurl }}/category/car.html" class="btn">🚗 Car</a>
+    <a href="{{ site.baseurl }}/category/other.html" class="btn">➕ More</a>
   </nav>
 
 </header>
 
 <main>
-  {{ content }}
+
+<!-- 🔥 광고 1 (상단) -->
+<div class="ad-box">
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-XXXXXXXX"
+    data-ad-slot="1111111111"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+{{ content }}
+
+<!-- 🔥 광고 2 (하단) -->
+<div class="ad-box">
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-XXXXXXXX"
+    data-ad-slot="3333333333"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
 </main>
-
-<!-- 🔍 검색 스크립트 -->
-<script>
-document.getElementById("searchInput").addEventListener("keyup", function() {
-  let filter = this.value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    let text = card.innerText.toLowerCase();
-    if (text.includes(filter)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
-</script>
 
 </body>
 </html>
