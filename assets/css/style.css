@@ -1,6 +1,6 @@
 
 /* =========================
-   RESET (🔥 핵심: 화면 밀림 방지)
+   RESET
 ========================= */
 * {
   box-sizing: border-box;
@@ -10,17 +10,25 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;   /* 🔥 오른쪽 밀림 완전 차단 */
+  overflow-x: hidden;
 }
 
 /* =========================
-   BODY
+   BODY (🔥 흰 배경)
 ========================= */
 body {
   font-family: Arial;
-  background: #0b1120;
-  color: #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+}
+
+/* =========================
+   PC 중앙 정렬 핵심
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;   /* 🔥 중앙 정렬 */
+  width: 100%;
 }
 
 /* =========================
@@ -29,23 +37,26 @@ body {
 .nav-top,
 .nav-category {
   display: flex;
-  gap: 4px;
-  padding: 6px;
-  width: 100%;
+  gap: 6px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* 버튼 */
 .btn {
   flex: 1;
   text-align: center;
-  padding: 8px;
+  padding: 10px;
 
   border-radius: 6px;
-  background: #111827;
-  color: #38bdf8;
+
+  background: #f3f4f6;
+  color: #111827;
 
   text-decoration: none;
-  border: 1px solid #ffffff; /* 🔥 흰색 외곽선 */
+
+  border: 1px solid #9ca3af; /* 🔥 가독성 좋은 회색 */
 }
 
 /* =========================
@@ -56,7 +67,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   padding: 10px;
-  width: 100%;
 }
 
 /* PC */
@@ -70,19 +80,15 @@ body {
    CARD
 ========================= */
 .card {
-  background: #111827;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 10px;
   overflow: hidden;
-  width: 100%;
 }
 
-/* =========================
-   THUMBNAIL (🔥 핵심)
-========================= */
+/* 썸네일 */
 .thumb-wrapper {
   position: relative;
-  width: 100%;
-  overflow: hidden;   /* 🔥 넘침 방지 */
 }
 
 .thumb-wrapper img {
@@ -90,9 +96,7 @@ body {
   display: block;
 }
 
-/* =========================
-   ▶ PLAY BUTTON (🔥 핵심 복구)
-========================= */
+/* ▶ 버튼 */
 .play-button {
   position: absolute;
   top: 50%;
@@ -113,25 +117,18 @@ body {
   font-size: 28px;
   text-decoration: none;
 
-  z-index: 10; /* 🔥 이미지 위로 올림 */
+  z-index: 10;
 }
 
-/* =========================
-   TITLE
-========================= */
-.card-title-link {
-  text-decoration: none;
-}
-
+/* 제목 */
 .card-title {
-  color: #ffffff;
+  color: #111827;
   font-size: 14px;
   padding: 10px;
-  line-height: 1.4;
 }
 
 /* =========================
-   VIDEO (POST PAGE)
+   VIDEO
 ========================= */
 .video-container iframe {
   width: 100%;
@@ -140,9 +137,8 @@ body {
 
 /* 모바일 */
 @media (max-width: 768px) {
-
   .video-container iframe {
-    display: none; /* 🔥 오류 제거 */
+    display: none;
   }
 
   .mobile-play {
@@ -157,9 +153,7 @@ body {
   }
 }
 
-/* =========================
-   YOUTUBE BIG BUTTON
-========================= */
+/* 유튜브 버튼 */
 .youtube-big-btn {
   display: block;
   width: 100%;
@@ -191,7 +185,7 @@ body {
   height: 50px;
 
   background: #38bdf8;
-  color: #0b1120;
+  color: #111827;
 
   border-radius: 50%;
 
@@ -204,4 +198,10 @@ body {
   font-weight: bold;
 
   z-index: 9999;
+}
+
+/* 광고 */
+.ad-box {
+  margin: 20px 0;
+  text-align: center;
 }
