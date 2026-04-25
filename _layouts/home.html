@@ -14,19 +14,17 @@ layout: default
 
   <div class="thumb-wrapper">
 
-    <!-- 썸네일 → 내부 페이지 -->
-    <a href="{{ site.baseurl }}{{ post.url }}">
-      <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
-    </a>
+    <!-- 썸네일 -->
+    <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
 
-    <!-- ▶ → 유튜브 -->
+    <!-- 🔥 중앙 큰 ▶ (유튜브 이동) -->
     <a href="https://www.youtube.com/watch?v={{ post.youtube_id }}"
        target="_blank"
        class="play-button">▶</a>
 
   </div>
 
-  <!-- 제목 -->
+  <!-- 제목 → 내부 페이지 -->
   <a href="{{ site.baseurl }}{{ post.url }}" class="card-title-link">
     <div class="card-title">
       {{ post.title }}
