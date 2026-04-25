@@ -159,3 +159,31 @@ main {
     font-size: 12px;
   }
 }
+
+
+/* =========================
+   🔥 HARD LOCK (HOME OVERFLOW FIX)
+========================= */
+
+/* 페이지 전체 스크롤 방어 */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+/* Home grid isolation */
+.grid {
+  contain: layout paint; /* 🔥 핵심 */
+  max-width: 100%;
+}
+
+/* 카드 이미지 overflow 완전 제거 */
+.card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 링크가 긴 경우 overflow 방지 */
+a {
+  word-break: break-word;
+}
