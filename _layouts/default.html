@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
+  <!-- 모바일 확대 방지 -->
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -15,16 +16,26 @@
 
 <header class="header">
 
-  <!-- 🔥 메뉴 -->
+  <!-- 🔥 상단 메뉴 -->
   <nav class="nav-top">
-    <a class="btn" href="{{ site.baseurl }}/">🏠 Home</a>
+    <a class="btn" href="{{ site.baseurl }}/">Home</a>
     <a class="btn" href="{{ site.baseurl }}/blog.html">Blog</a>
     <a class="btn" href="{{ site.baseurl }}/about.html">About</a>
     <a class="btn" href="{{ site.baseurl }}/contact.html">Contact</a>
+    <a class="btn" href="{{ site.baseurl }}/faq.html">FAQ</a>
+  </nav>
+
+  <!-- 🔥 카테고리 -->
+  <nav class="nav-category">
+    <a class="btn" href="{{ site.baseurl }}/category/forest.html">Forest</a>
+    <a class="btn" href="{{ site.baseurl }}/category/cabin.html">Cabin</a>
+    <a class="btn" href="{{ site.baseurl }}/category/beach.html">Beach</a>
+    <a class="btn" href="{{ site.baseurl }}/category/other.html">Others</a>
   </nav>
 
 </header>
 
+<!-- 🔥 광고 TOP -->
 <div class="ad-box">
   <!-- AdSense TOP -->
 </div>
@@ -33,6 +44,7 @@
   {{ content }}
 </main>
 
+<!-- 🔥 광고 BOTTOM -->
 <div class="ad-box">
   <!-- AdSense BOTTOM -->
 </div>
