@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>{{ page.title }}</title>
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+  <h2 class="logo">🌧 Rain Deep Sleep</h2>
+
+  <!-- NAV -->
+  <nav class="nav-top">
+    <a href="{{ site.baseurl }}/" class="btn">🏠 Home</a>
+    <a href="{{ site.baseurl }}/about.html" class="btn">About</a>
+    <a href="{{ site.baseurl }}/privacy.html" class="btn">Privacy</a>
+    <a href="{{ site.baseurl }}/contact.html" class="btn">Contact</a>
+  </nav>
+
+  <nav class="nav-category">
+    <a href="{{ site.baseurl }}/category/forest.html" class="btn">🌲 Forest</a>
+    <a href="{{ site.baseurl }}/category/cabin.html" class="btn">🏡 Cabin</a>
+    <a href="{{ site.baseurl }}/category/beach.html" class="btn">🌊 Beach</a>
+    <a href="{{ site.baseurl }}/category/other.html" class="btn">➕ More</a>
+  </nav>
+
+</header>
+
+<main class="home-main">
+
+  <!-- 🔥 HERO 느낌 (Netflix 스타일 시작 영역) -->
+  <section class="hero">
+    <h1>Relax with Rain Sounds</h1>
+    <p>Deep sleep, focus, meditation</p>
+  </section>
+
+  <!-- 🔥 AD -->
+  <div class="ad-box">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXX"
+      data-ad-slot="1111111111"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+  </div>
+
+  <!-- 🔥 GRID (핵심 영역) -->
+  <section class="grid">
+    {% for post in site.posts %}
+      <a href="{{ site.baseurl }}{{ post.url }}" class="card">
+        <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
+        <div class="card-content">
+          <div class="card-title">{{ post.title }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </section>
+
+</main>
+
+</body>
+</html>
