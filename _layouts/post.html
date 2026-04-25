@@ -6,11 +6,25 @@ layout: default
 
 <h1>{{ page.title }}</h1>
 
-<iframe width="100%" height="500"
-  src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+<!-- 🔥 PC에서는 정상 embed -->
+<div class="video-container">
+
+  <iframe
+    src="https://www.youtube.com/embed/{{ page.youtube_id }}"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  <!-- 🔥 모바일 fallback 버튼 -->
+  <div class="mobile-play">
+    <a href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
+       target="_blank"
+       class="youtube-btn">
+       ▶ Play on YouTube
+    </a>
+  </div>
+
+</div>
 
 <div class="ad-box"></div>
 
