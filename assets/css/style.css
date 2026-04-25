@@ -1,51 +1,40 @@
-body {
-  font-family: Arial, sans-serif;
+ body {
+  font-family: Arial;
   background: #0b1120;
   color: #e5e7eb;
   margin: 0;
   padding: 20px;
 }
 
-nav {
-  margin-bottom: 20px;
-}
-
 nav a {
   margin-right: 10px;
   color: #38bdf8;
+  text-decoration: none;
 }
 
-h1, h2 {
-  margin-top: 20px;
-}
-
-/* 🔥 카드 그리드 */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
 }
 
-/* 🔥 카드 */
 .card {
   background: #111827;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
 }
 
 .card:hover {
   transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* 썸네일 */
 .card img {
   width: 100%;
-  display: block;
 }
 
-/* 텍스트 */
 .card-content {
   padding: 10px;
 }
