@@ -1,28 +1,19 @@
-/* 🔥 오른쪽 밀림 완전 차단 */
+/* RESET */
+* { box-sizing: border-box; }
+
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  max-width: 100%;
 }
 
-/* =========================
-   빠른 Home 버튼
-========================= */
-.quick-home {
-  padding: 6px 10px;
-  background: #0f172a;
+body {
+  font-family: Arial;
+  background: #0b1120;
+  color: white;
 }
 
-.quick-home a {
-  color: #38bdf8;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* =========================
-   NAV
-========================= */
+/* NAV */
 .nav-top,
 .nav-category {
   display: flex;
@@ -35,17 +26,13 @@ html, body {
   text-align: center;
   padding: 8px;
   border-radius: 6px;
-
   background: #111827;
   color: #38bdf8;
   text-decoration: none;
-
   border: 1px solid #374151;
 }
 
-/* =========================
-   GRID
-========================= */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -59,9 +46,7 @@ html, body {
   }
 }
 
-/* =========================
-   썸네일
-========================= */
+/* 썸네일 */
 .thumb-wrapper {
   position: relative;
 }
@@ -71,7 +56,7 @@ html, body {
   display: block;
 }
 
-/* 🔥 중앙 큰 ▶ */
+/* ▶ 버튼 */
 .play-button {
   position: absolute;
   top: 50%;
@@ -80,8 +65,8 @@ html, body {
 
   width: 65px;
   height: 65px;
-
   border-radius: 50%;
+
   background: rgba(0,0,0,0.6);
   color: white;
 
@@ -102,4 +87,35 @@ html, body {
 /* 광고 */
 .ad-box {
   margin: 20px 0;
+}
+
+/* =========================
+   🔥 플로팅 Home 버튼
+========================= */
+.floating-home {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  background: #38bdf8;
+  color: #0b1120;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+
+  z-index: 9999;
+}
+
+.floating-home:hover {
+  transform: scale(1.1);
 }
