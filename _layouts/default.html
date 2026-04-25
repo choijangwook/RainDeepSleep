@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title }}</title>
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 
-  <!-- Google AdSense -->
+  <!-- AdSense -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX"
     crossorigin="anonymous">
@@ -18,23 +18,27 @@
 <body>
 
 <header>
-  <h2>🌧 Rain Deep Sleep</h2>
 
-  <nav>
+  <h2 class="logo">🌧 Rain Deep Sleep</h2>
+
+  <!-- 🔥 1번 줄: 홈 + 정보 -->
+  <nav class="nav-top">
     <a href="{{ site.baseurl }}/" class="home-btn">🏠 Home</a>
+    <a href="{{ site.baseurl }}/about.html">About</a>
+    <a href="{{ site.baseurl }}/privacy.html">Privacy</a>
+    <a href="{{ site.baseurl }}/contact.html">Contact</a>
+  </nav>
 
+  <!-- 🔥 2번 줄: 카테고리 -->
+  <nav class="nav-category">
     <a href="{{ site.baseurl }}/category/tent.html">⛺ Tent</a>
     <a href="{{ site.baseurl }}/category/forest.html">🌲 Forest</a>
     <a href="{{ site.baseurl }}/category/cabin.html">🏡 Cabin</a>
     <a href="{{ site.baseurl }}/category/beach.html">🌊 Beach</a>
     <a href="{{ site.baseurl }}/category/car.html">🚗 Car</a>
     <a href="{{ site.baseurl }}/category/other.html">➕ More</a>
-
-    |
-    <a href="{{ site.baseurl }}/about.html">About</a>
-    <a href="{{ site.baseurl }}/privacy.html">Privacy</a>
-    <a href="{{ site.baseurl }}/contact.html">Contact</a>
   </nav>
+
 </header>
 
 <main>
