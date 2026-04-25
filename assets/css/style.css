@@ -2,94 +2,105 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* 🔥 좌우 밀림 방지 */
+}
+
+body {
   font-family: Arial;
   background: #0b1120;
   color: #e5e7eb;
 }
 
-/* 🔥 핵심: PC 중앙 몰림 제거 */
-main {
+/* 🔥 핵심: 완전 풀폭 */
+header, main {
   width: 100%;
-  max-width: 100%;
-  padding: 20px;
 }
 
-/* header */
+/* ========================= */
+/* HEADER */
+/* ========================= */
 .header {
   width: 100%;
   background: #0f172a;
-  padding-bottom: 10px;
 }
 
-/* logo */
 .logo {
   margin: 0;
   padding: 15px;
 }
 
 /* ========================= */
-/* 🔥 버튼형 네비 (핵심 변경) */
+/* NAV (완전 균등 분배) */
 /* ========================= */
 .nav-top,
 .nav-category {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between; /* ⭐ 핵심 */
-  padding: 10px 15px;
-  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* 버튼 스타일 */
+/* 🔥 핵심: 버튼 균등 + 꽉 차게 */
 .btn {
-  flex: 1; /* ⭐ 균등 분배 */
+  flex: 1 1 auto;
   text-align: center;
-  padding: 10px 8px;
+  padding: 12px 6px;
+  margin: 4px;
   border-radius: 10px;
   background: #111827;
   color: #38bdf8;
   text-decoration: none;
   font-size: 13px;
   transition: 0.2s;
+  min-width: 110px;
 }
 
 .btn:hover {
   background: #1f2937;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
-/* 🔥 광고 박스 */
+/* ========================= */
+/* MAIN FULL WIDTH */
+/* ========================= */
+main {
+  width: 100%;
+  padding: 10px;
+}
+
+/* ========================= */
+/* ADS */
+/* ========================= */
 .ad-box {
   margin: 20px 0;
   text-align: center;
 }
 
 /* ========================= */
-/* 🔥 카드 */
+/* GRID */
 /* ========================= */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  width: 100%;
 }
 
+/* CARD */
 .card {
   background: #111827;
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   color: white;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
+  display: block;
 }
 
 .card-content {
@@ -101,15 +112,14 @@ main {
 }
 
 /* ========================= */
-/* 📱 모바일 */
+/* 📱 MOBILE */
 /* ========================= */
 @media (max-width: 768px) {
-  .btn {
-    font-size: 12px;
-    padding: 8px;
-  }
-
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    min-width: 45%;
   }
 }
