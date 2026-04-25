@@ -1,3 +1,6 @@
+/* =========================
+   🔥 FULL RESET (핵심)
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -6,20 +9,12 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* 🔥 좌우 밀림 제거 */
+  overflow-x: hidden;
 }
 
-body {
-  font-family: Arial;
-  background: #0b1120;
-  color: #e5e7eb;
-}
-
-/* =========================
-   🔥 FULL WIDTH FIX
-========================= */
-header, main {
-  width: 100%;
+/* 🔥 완전 풀폭 강제 */
+body.full {
+  width: 100vw;
 }
 
 /* =========================
@@ -36,62 +31,56 @@ header, main {
 }
 
 /* =========================
-   NAV BUTTON SYSTEM
+   NAV (완전 풀폭 + 균등)
 ========================= */
 .nav-top,
 .nav-category {
   display: flex;
-  width: 100%;
+  width: 100vw;   /* 🔥 핵심 */
+  margin: 0;
+  padding: 0;
   flex-wrap: wrap;
 }
 
-/* 🔥 핵심: 완전 균등 + 꽉 채우기 */
+/* 버튼 */
 .btn {
-  flex: 1;
+  flex: 1 1 auto;
   text-align: center;
   padding: 14px 8px;
-  margin: 4px;
-  border-radius: 10px;
+  margin: 3px;
   background: #111827;
   color: #38bdf8;
   text-decoration: none;
-  font-size: 13px;
-  transition: 0.2s;
-  min-width: 0; /* 🔥 중요: 밀림 방지 */
+  border-radius: 10px;
 }
 
+/* hover */
 .btn:hover {
   background: #1f2937;
-  transform: scale(1.02);
 }
 
 /* =========================
-   MAIN FULL WIDTH
+   MAIN (🔥 핵심 수정)
 ========================= */
 main {
-  width: 100%;
+  width: 100vw;     /* 🔥 중요 */
+  margin: 0;        /* 🔥 제거 */
   padding: 10px;
 }
 
 /* =========================
-   ADS
-========================= */
-.ad-box {
-  margin: 20px 0;
-  text-align: center;
-}
-
-/* =========================
-   GRID
+   GRID (완전 중앙 문제 해결)
 ========================= */
 .grid {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 12px;
-  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* CARD */
+/* 카드 */
 .card {
   background: #111827;
   border-radius: 12px;
@@ -105,23 +94,11 @@ main {
   display: block;
 }
 
-.card-content {
-  padding: 8px;
-}
-
-.card-title {
-  font-size: 13px;
-}
-
 /* =========================
    MOBILE
 ========================= */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .btn {
-    flex: 1 1 45%;
   }
 }
