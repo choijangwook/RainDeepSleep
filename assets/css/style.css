@@ -1,94 +1,46 @@
-* {
-  box-sizing: border-box;
-}
+---
+layout: default
+---
 
-body {
-  font-family: Arial, sans-serif;
-  background: #0b1120;
-  color: #e5e7eb;
-  margin: 0;
-  padding: 0;
-}
+<article>
 
-/* 헤더 */
-header {
-  width: 100%;
-  padding: 15px;
-  background: #0f172a;
-}
+<h1>{{ page.title }}</h1>
 
-/* 네비 */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 10px;
-}
+<!-- 🎥 영상 -->
+<iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/{{ page.youtube_id }}"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 
-nav a {
-  color: #38bdf8;
-  text-decoration: none;
-  font-size: 14px;
-}
+<!-- 📢 광고 -->
+<div style="margin:30px 0;">
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-XXXXXXXX"
+     data-ad-slot="2222222222"
+     data-ad-format="auto"></ins>
 
-/* 홈 버튼 */
-.home-btn {
-  background: #1f2937;
-  padding: 6px 10px;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-}
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-.home-btn:hover {
-  background: #334155;
-}
+<!-- 🔥 추천 -->
+<h2>More Like This</h2>
 
-/* 본문 */
-main {
-  width: 100%;
-  padding: 15px;
-}
+<div class="grid">
+{% assign cat = page.categories[0] %}
+{% for post in site.categories[cat] %}
+  {% if post.url != page.url %}
+    <a href="{{ site.baseurl }}{{ post.url }}" class="card">
+      <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
+      <div class="card-content">
+        <div class="card-title">{{ post.title }}</div>
+      </div>
+    </a>
+  {% endif %}
+{% endfor %}
+</div>
 
-/* 🔥 카드 그리드 */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 12px;
-  width: 100%;
-}
-
-/* 카드 */
-.card {
-  background: #111827;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card img {
-  width: 100%;
-  display: block;
-}
-
-.card-content {
-  padding: 8px;
-}
-
-.card-title {
-  font-size: 13px;
-  font-weight: bold;
-}
-
-/* 📱 모바일 */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+</article>
