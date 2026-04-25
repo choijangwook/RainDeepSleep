@@ -1,127 +1,20 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
-}
-
-/* 메인 타이틀 */
-.main-title {
-  font-size: 18px;
-  text-align: center;
-  white-space: nowrap;
-  margin: 20px 0;
-}
-
-/* NAV */
-.nav {
-  width: 100%;
-  background: #111;
-}
-
-.nav-inner {
-  display: flex;
-  justify-content: space-between;  /* 🔥 좌우 꽉 */
-  align-items: center;
-  padding: 15px 20px;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* 메인 */
-.main {
-  width: 100%;
+  background: #0f172a;
+  color: #e5e7eb;
+  margin: 0;
   padding: 20px;
 }
 
-/* 카드 */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.card {
-  width: 300px;
-}
-
-.thumb {
-  position: relative;
-}
-
-.thumb img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60px;
-  height: 60px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.play-button::before {
-  content: "";
-  position: absolute;
-  left: 22px;
-  top: 18px;
-  border-left: 18px solid white;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-}
-
-/* 카드 제목 */
-.card-title {
-  font-size: 14px;
-  margin-top: 8px;
-  text-align: center;
-}
-
-/* 리스트 점 제거 */
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-/* 🔥 버튼 크게 */
-.youtube-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 18px 30px;
-  font-size: 20px;
-  background: red;
-  color: white;
+a {
+  color: #38bdf8;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
 }
 
-/* 모바일 */
-@media (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  .main-title {
-    font-size: 14px;
-  }
-
-  /* 모바일에서는 메뉴 다시 가운데 */
-  .nav-inner {
-    justify-content: center;
-    gap: 20px;
-  }
+header {
+  margin-bottom: 20px;
 }
