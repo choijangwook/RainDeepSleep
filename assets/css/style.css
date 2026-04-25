@@ -1,7 +1,42 @@
 /* =========================
-   🔥 NAV GRID SYSTEM (핵심 해결)
+   RESET
 ========================= */
+* {
+  box-sizing: border-box;
+}
 
+html, body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden !important; /* 🔥 핵심: 전체 스와이프 차단 */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b1120;
+  color: #e5e7eb;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  width: 100%;
+  background: #0f172a;
+}
+
+.logo {
+  margin: 0;
+  padding: 15px;
+}
+
+/* =========================
+   NAV (완전 안정 grid)
+========================= */
 .nav-top,
 .nav-category {
   display: grid;
@@ -10,12 +45,11 @@
   padding: 10px;
 }
 
-/* 1줄 메뉴 */
+/* 🔥 PC / MOBILE 자동 분리 */
 .nav-top {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* 2줄 카테고리 */
 .nav-category {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -24,15 +58,18 @@
 .btn {
   display: block;
   text-align: center;
+
   padding: 12px 6px;
+  border-radius: 10px;
+
   background: #111827;
   color: #38bdf8;
   text-decoration: none;
-  border-radius: 10px;
+
   font-size: 13px;
 
-  width: 100%;   /* 🔥 핵심 */
-  margin: 0;     /* 완전 제거 */
+  width: 100%;
+  min-width: 0; /* 🔥 중요 */
 }
 
 .btn:hover {
@@ -40,11 +77,85 @@
 }
 
 /* =========================
-   MOBILE
+   MAIN
+========================= */
+main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px;
+
+  overflow-x: hidden; /* 🔥 2차 방어 */
+}
+
+/* =========================
+   AD BOX
+========================= */
+.ad-box {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* =========================
+   GRID (핵심 안정 버전)
+========================= */
+.grid {
+  display: grid;
+
+  width: 100%;
+  max-width: 100%;
+
+  gap: 12px;
+
+  /* 🔥 핵심: auto-fill 제거 */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* PC */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+
+  text-decoration: none;
+  color: white;
+
+  display: block;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+}
+
+.card-content {
+  padding: 8px;
+}
+
+.card-title {
+  font-size: 13px;
+}
+
+/* =========================
+   MOBILE SAFETY
 ========================= */
 @media (max-width: 768px) {
   .nav-top,
   .nav-category {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    font-size: 12px;
   }
 }
