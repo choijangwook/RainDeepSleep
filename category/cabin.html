@@ -1,0 +1,14 @@
+---
+layout: default
+title: Rainy Cabin
+---
+
+<h1>🏡 Rain on Cabin</h1>
+
+<ul>
+{% for post in site.categories.cabin %}
+  <li>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>
