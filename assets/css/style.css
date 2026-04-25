@@ -1,68 +1,105 @@
+/* 🔥 오른쪽 밀림 완전 차단 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* =========================
-   NAV 버튼형 + 붙이기
+   빠른 Home 버튼
+========================= */
+.quick-home {
+  padding: 6px 10px;
+  background: #0f172a;
+}
+
+.quick-home a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================
+   NAV
 ========================= */
 .nav-top,
 .nav-category {
   display: flex;
-  gap: 4px;              /* 🔥 거의 붙이기 */
-  padding: 5px;
+  gap: 4px;
+  padding: 6px;
 }
 
 .btn {
   flex: 1;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   border-radius: 6px;
 
   background: #111827;
   color: #38bdf8;
-
   text-decoration: none;
 
-  border: 1px solid #374151; /* 🔥 외곽선 */
+  border: 1px solid #374151;
 }
 
 /* =========================
-   영상 영역
+   GRID
 ========================= */
-.video-container {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================
+   썸네일
+========================= */
+.thumb-wrapper {
   position: relative;
 }
 
-/* iframe */
-.video-container iframe {
+.thumb-wrapper img {
   width: 100%;
-  height: 500px;
-}
-
-/* 모바일에서는 iframe 숨김 */
-@media (max-width: 768px) {
-  .video-container iframe {
-    display: none;
-  }
-
-  .mobile-play {
-    display: block;
-  }
-}
-
-/* PC에서는 버튼 숨김 */
-@media (min-width: 769px) {
-  .mobile-play {
-    display: none;
-  }
-}
-
-/* =========================
-   유튜브 버튼
-========================= */
-.youtube-btn {
   display: block;
-  background: red;
+}
+
+/* 🔥 중앙 큰 ▶ */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
   color: white;
-  text-align: center;
-  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
   text-decoration: none;
-  font-weight: bold;
-  margin-top: 20px;
+}
+
+/* 제목 */
+.card-title {
+  color: white;
+  padding: 8px;
+}
+
+/* 광고 */
+.ad-box {
+  margin: 20px 0;
 }
