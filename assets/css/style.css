@@ -1,4 +1,3 @@
-
 /* =========================
    RESET
 ========================= */
@@ -10,24 +9,25 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: hidden; /* 🔥 화면 오른쪽 밀림 방지 */
 }
 
 /* =========================
-   BODY (🔥 흰 배경)
+   BODY
 ========================= */
 body {
   font-family: Arial;
-  background: #ffffff;
+  background: #ffffff; /* 🔥 흰 배경 */
   color: #111827;
 }
 
 /* =========================
-   PC 중앙 정렬 핵심
+   PC 중앙 정렬 컨테이너
 ========================= */
 .container {
   max-width: 1200px;
-  margin: 0 auto;   /* 🔥 중앙 정렬 */
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -38,9 +38,14 @@ body {
 .nav-category {
   display: flex;
   gap: 6px;
-  padding: 10px;
+  padding: 6px 10px; /* 🔥 간격 줄임 */
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* 🔥 카테고리 위 간격 압축 */
+.nav-category {
+  margin-top: -4px;
 }
 
 /* 버튼 */
@@ -56,7 +61,7 @@ body {
 
   text-decoration: none;
 
-  border: 1px solid #9ca3af; /* 🔥 가독성 좋은 회색 */
+  border: 1px solid #9ca3af; /* 🔥 가독성 외곽선 */
 }
 
 /* =========================
@@ -86,9 +91,13 @@ body {
   overflow: hidden;
 }
 
-/* 썸네일 */
+/* =========================
+   THUMBNAIL
+========================= */
 .thumb-wrapper {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .thumb-wrapper img {
@@ -96,7 +105,9 @@ body {
   display: block;
 }
 
-/* ▶ 버튼 */
+/* =========================
+   ▶ PLAY BUTTON (중앙)
+========================= */
 .play-button {
   position: absolute;
   top: 50%;
@@ -120,15 +131,22 @@ body {
   z-index: 10;
 }
 
-/* 제목 */
+/* =========================
+   TITLE
+========================= */
+.card-title-link {
+  text-decoration: none;
+}
+
 .card-title {
   color: #111827;
   font-size: 14px;
   padding: 10px;
+  line-height: 1.4;
 }
 
 /* =========================
-   VIDEO
+   VIDEO (POST)
 ========================= */
 .video-container iframe {
   width: 100%;
@@ -137,10 +155,13 @@ body {
 
 /* 모바일 */
 @media (max-width: 768px) {
+
+  /* iframe 숨김 (오류 방지) */
   .video-container iframe {
     display: none;
   }
 
+  /* 버튼 표시 */
   .mobile-play {
     display: block;
   }
@@ -153,7 +174,9 @@ body {
   }
 }
 
-/* 유튜브 버튼 */
+/* =========================
+   YOUTUBE BIG BUTTON
+========================= */
 .youtube-big-btn {
   display: block;
   width: 100%;
@@ -174,7 +197,7 @@ body {
 }
 
 /* =========================
-   FLOATING HOME
+   FLOATING HOME BUTTON
 ========================= */
 .floating-home {
   position: fixed;
@@ -200,7 +223,9 @@ body {
   z-index: 9999;
 }
 
-/* 광고 */
+/* =========================
+   AD
+========================= */
 .ad-box {
   margin: 20px 0;
   text-align: center;
