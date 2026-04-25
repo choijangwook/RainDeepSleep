@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
+  <!-- 🔥 모바일 흔들림 / 확대 방지 -->
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -13,29 +14,59 @@
 
 <body>
 
+<!-- =========================
+     HEADER (ONLY ONCE)
+========================= -->
 <header class="header">
 
-  <!-- 🔥 상단 타이틀 (중복 제거 → 여기만 유지) -->
+  <!-- 🔥 중복 제거: 여기 하나만 유지 -->
   <h2 class="logo">🌧 Rain Deep Sleep</h2>
 
-  <!-- 🔥 메뉴 순서 변경 -->
+  <!-- =========================
+       NAV (FULL CATEGORY + MENU)
+  ========================= -->
   <nav class="nav-top">
+
+    <!-- MAIN -->
     <a class="btn" href="{{ site.baseurl }}/">🏠 Home</a>
     <a class="btn" href="{{ site.baseurl }}/blog.html">Blog</a>
+
+    <!-- CATEGORY -->
+    <a class="btn" href="{{ site.baseurl }}/category/forest.html">🌲 Forest</a>
+    <a class="btn" href="{{ site.baseurl }}/category/cabin.html">🏡 Cabin</a>
+    <a class="btn" href="{{ site.baseurl }}/category/beach.html">🌊 Beach</a>
+    <a class="btn" href="{{ site.baseurl }}/category/car.html">🚗 Car</a>
+    <a class="btn" href="{{ site.baseurl }}/category/tent.html">⛺ Tent</a>
+    <a class="btn" href="{{ site.baseurl }}/category/other.html">➕ More</a>
+
+    <!-- INFO -->
     <a class="btn" href="{{ site.baseurl }}/about.html">About</a>
     <a class="btn" href="{{ site.baseurl }}/contact.html">Contact</a>
+
   </nav>
 
 </header>
 
-<!-- 🔥 AD TOP -->
+<!-- =========================
+     AD TOP
+========================= -->
 <div class="ad-box">
-  <!-- AdSense Top -->
+  <!-- Google AdSense TOP -->
 </div>
 
+<!-- =========================
+     MAIN CONTENT
+========================= -->
 <main>
   {{ content }}
 </main>
+
+<!-- =========================
+     FOOTER AD (optional)
+========================= -->
+<div class="ad-box">
+  <!-- Google AdSense BOTTOM -->
+</div>
 
 </body>
 </html>
