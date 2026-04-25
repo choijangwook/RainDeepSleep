@@ -1,36 +1,41 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
 
-<article>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 
-  <h1>{{ page.title }}</h1>
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX"
+    crossorigin="anonymous">
+  </script>
+</head>
 
-  <!-- 🎥 유튜브 영상 -->
-  <iframe width="100%" height="500"
-    src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
+<body>
 
-  <!-- 🔥 같은 카테고리 추천 -->
-  <h2>More Like This</h2>
+<header>
+  <h2><a href="{{ site.baseurl }}/">🌧 Rain Deep Sleep</a></h2>
 
-  <div class="grid">
-  {% assign current_category = page.categories[0] %}
-  {% for post in site.categories[current_category] %}
-    {% if post.url != page.url %}
-      <a href="{{ site.baseurl }}{{ post.url }}" class="card">
+  <nav>
+    <a href="{{ site.baseurl }}/category/tent.html">⛺ Tent</a>
+    <a href="{{ site.baseurl }}/category/forest.html">🌲 Forest</a>
+    <a href="{{ site.baseurl }}/category/cabin.html">🏡 Cabin</a>
+    <a href="{{ site.baseurl }}/category/beach.html">🌊 Beach</a>
+    <a href="{{ site.baseurl }}/category/car.html">🚗 Car</a>
+    <a href="{{ site.baseurl }}/category/other.html">➕ More</a>
 
-        <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
+    |
+    <a href="{{ site.baseurl }}/about.html">About</a>
+    <a href="{{ site.baseurl }}/privacy.html">Privacy</a>
+    <a href="{{ site.baseurl }}/contact.html">Contact</a>
+  </nav>
+</header>
 
-        <div class="card-content">
-          <div class="card-title">{{ post.title }}</div>
-        </div>
+<main>
+  {{ content }}
+</main>
 
-      </a>
-    {% endif %}
-  {% endfor %}
-  </div>
-
-</article>
+</body>
+</html>
