@@ -12,3 +12,4 @@ However, third-party services such as Google AdSense may use cookies to serve ad
 We do not control third-party cookies.
 
 For more information, please visit Google Privacy Policy.
+<a class="btn" href="/privacy.html">Privacy</a>
