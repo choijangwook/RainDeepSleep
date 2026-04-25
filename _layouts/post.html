@@ -4,29 +4,35 @@ layout: default
 
 <article>
 
-<h1>{{ page.title }}</h1>
+  <h1>{{ page.title }}</h1>
 
-<div class="video-container">
+  <!-- 🎥 영상 영역 -->
+  <div class="video-container">
 
-  <iframe
-    src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
+    <!-- PC용 유튜브 iframe -->
+    <iframe
+      src="https://www.youtube.com/embed/{{ page.youtube_id }}"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
 
-  <div class="mobile-play">
-    <a href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
-       target="_blank"
-       class="youtube-big-btn">
-       ▶ Play on YouTube
-    </a>
+    <!-- 📱 모바일용 큰 버튼 -->
+    <div class="mobile-play">
+      <a href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
+         target="_blank"
+         class="youtube-big-btn">
+         ▶ Play on YouTube
+      </a>
+    </div>
+
   </div>
 
-</div>
+  <!-- 📝 설명 영역 (md 내용 출력) -->
+  <div class="post-description">
+    {{ content }}
+  </div>
 
-<!-- 🔥 설명 영역 (md 내용 출력) -->
-<div class="post-description">
-  {{ content }}
-</div>
+  <!-- 📢 광고 자리 -->
+  <div class="ad-box"></div>
 
 </article>
