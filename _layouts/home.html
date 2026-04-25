@@ -12,23 +12,25 @@ layout: default
 
 <div class="card">
 
-  <!-- 🔥 썸네일 → 내부 페이지 (안정 재생) -->
-  <a href="{{ site.baseurl }}{{ post.url }}" class="thumb-link">
+  <div class="thumb-wrapper">
 
-    <div class="thumb-wrapper">
+    <!-- 썸네일 → 내부 페이지 -->
+    <a href="{{ site.baseurl }}{{ post.url }}">
       <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
+    </a>
 
-      <!-- ▶ 중앙 버튼 -->
-      <div class="play-button">▶</div>
+    <!-- ▶ → 유튜브 -->
+    <a href="https://www.youtube.com/watch?v={{ post.youtube_id }}"
+       target="_blank"
+       class="play-button">▶</a>
+
+  </div>
+
+  <!-- 제목 -->
+  <a href="{{ site.baseurl }}{{ post.url }}" class="card-title-link">
+    <div class="card-title">
+      {{ post.title }}
     </div>
-
-  </a>
-
-  <!-- 🔥 유튜브 버튼 -->
-  <a class="youtube-btn"
-     href="https://www.youtube.com/watch?v={{ post.youtube_id }}"
-     target="_blank">
-     ▶ Play on YouTube
   </a>
 
 </div>
