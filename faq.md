@@ -5,11 +5,8 @@ title: FAQ
 
 # FAQ
 
-## What is this site?
-Rain sound for sleep and focus.
+Q. What is this site?  
+A. Rain sounds for sleep and relaxation.
 
-## Is it free?
-Yes.
-
-## Can I use it for studying?
-Yes.
+Q. How to use?  
+A. Click ▶ or open videos.
