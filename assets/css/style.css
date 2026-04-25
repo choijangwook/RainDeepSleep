@@ -1,49 +1,28 @@
 /* =========================
-   RESET
+   🔥 NAV GRID SYSTEM (핵심 해결)
 ========================= */
-* {
-  box-sizing: border-box;
-}
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden; /* 핵심 */
-}
-
-body {
-  font-family: Arial;
-  background: #0b1120;
-  color: #e5e7eb;
-}
-
-/* =========================
-   HEADER
-========================= */
-.header {
-  width: 100%;
-  background: #0f172a;
-}
-
-.logo {
-  margin: 0;
-  padding: 15px;
-}
-
-/* =========================
-   NAV (🔥 핵심 수정)
-========================= */
 .nav-top,
 .nav-category {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   width: 100%;
+  gap: 6px;
+  padding: 10px;
 }
 
-/* 🔥 핵심: margin 제거 + gap 사용 */
+/* 1줄 메뉴 */
+.nav-top {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 2줄 카테고리 */
+.nav-category {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 버튼 */
 .btn {
-  flex: 1 1 0;
+  display: block;
   text-align: center;
   padding: 12px 6px;
   background: #111827;
@@ -52,90 +31,20 @@ body {
   border-radius: 10px;
   font-size: 13px;
 
-  margin: 0;      /* 🔥 중요 */
-  border: 1px solid transparent;
+  width: 100%;   /* 🔥 핵심 */
+  margin: 0;     /* 완전 제거 */
 }
 
-.nav-top,
-.nav-category {
-  gap: 6px; /* 🔥 margin 대신 gap */
-  padding: 10px;
-}
-
-/* hover */
 .btn:hover {
   background: #1f2937;
-}
-
-/* =========================
-   MAIN
-========================= */
-main {
-  width: 100%;
-  padding: 10px;
-}
-
-/* =========================
-   GRID
-========================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-  width: 100%;
-}
-
-/* 카드 */
-.card {
-  background: #111827;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-}
-
-.card img {
-  width: 100%;
-  display: block;
-}
-
-.card-content {
-  padding: 8px;
 }
 
 /* =========================
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-  .grid {
+  .nav-top,
+  .nav-category {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .btn {
-    font-size: 12px;
-  }
-}
-
-/* =========================
-   🔥 FIX FULL WIDTH ROOT
-========================= */
-
-article {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* main을 진짜 풀폭으로 고정 */
-main {
-  width: 100%;
-  margin: 0;
-  padding: 0; /* 🔥 중요 */
-}
-
-/* grid 안정화 */
-.grid {
-  margin: 0;
-  padding: 0 10px; /* 내부 여백만 */
 }
