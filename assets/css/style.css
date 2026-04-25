@@ -1,121 +1,76 @@
-/* RESET */
-* { box-sizing: border-box; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
+/* 🔥 PC 배경 + 텍스트 가독성 */
 body {
-  font-family: Arial;
-  background: #0b1120;
-  color: white;
+  background: #0b1120;   /* 어두운 배경 */
+  color: #e5e7eb;
 }
 
-/* NAV */
-.nav-top,
-.nav-category {
-  display: flex;
-  gap: 4px;
-  padding: 6px;
-}
-
-.btn {
-  flex: 1;
-  text-align: center;
-  padding: 8px;
-  border-radius: 6px;
-  background: #111827;
-  color: #38bdf8;
-  text-decoration: none;
-  border: 1px solid #374151;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 10px;
-}
-
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* 썸네일 */
-.thumb-wrapper {
-  position: relative;
-}
-
-.thumb-wrapper img {
-  width: 100%;
-  display: block;
-}
-
-/* ▶ 버튼 */
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-
-  background: rgba(0,0,0,0.6);
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 26px;
-  text-decoration: none;
-}
-
-/* 제목 */
+/* 🔥 카드 텍스트 가독성 */
 .card-title {
-  color: white;
-  padding: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px;
+  line-height: 1.4;
 }
 
-/* 광고 */
-.ad-box {
-  margin: 20px 0;
+/* 🔥 NAV 외곽선 흰색 */
+.btn {
+  border: 1px solid #ffffff;
 }
 
 /* =========================
-   🔥 플로팅 Home 버튼
+   모바일 영상 처리
 ========================= */
-.floating-home {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
 
-  width: 50px;
-  height: 50px;
-
-  background: #38bdf8;
-  color: #0b1120;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
-
-  z-index: 9999;
+/* iframe */
+.video-container iframe {
+  width: 100%;
+  height: 500px;
 }
 
-.floating-home:hover {
-  transform: scale(1.1);
+/* 모바일 */
+@media (max-width: 768px) {
+
+  /* iframe 숨김 (오류 제거) */
+  .video-container iframe {
+    display: none;
+  }
+
+  /* 큰 버튼 표시 */
+  .mobile-play {
+    display: block;
+  }
+}
+
+/* PC에서는 버튼 숨김 */
+@media (min-width: 769px) {
+  .mobile-play {
+    display: none;
+  }
+}
+
+/* 🔥 큰 빨간 유튜브 버튼 */
+.youtube-big-btn {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+
+  background: #ff0000;
+  color: white;
+
+  text-align: center;
+  padding: 18px;
+
+  border-radius: 12px;
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 🔥 Home / 카테고리 더 잘 보이게 */
+.nav-top,
+.nav-category {
+  background: #020617;
 }
