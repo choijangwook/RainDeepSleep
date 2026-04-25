@@ -1,5 +1,5 @@
 /* =========================
-   🔥 FULL RESET (핵심)
+   RESET
 ========================= */
 * {
   box-sizing: border-box;
@@ -9,12 +9,13 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* 핵심 */
 }
 
-/* 🔥 완전 풀폭 강제 */
-body.full {
-  width: 100vw;
+body {
+  font-family: Arial;
+  background: #0b1120;
+  color: #e5e7eb;
 }
 
 /* =========================
@@ -31,27 +32,34 @@ body.full {
 }
 
 /* =========================
-   NAV (완전 풀폭 + 균등)
+   NAV (🔥 핵심 수정)
 ========================= */
 .nav-top,
 .nav-category {
   display: flex;
-  width: 100vw;   /* 🔥 핵심 */
-  margin: 0;
-  padding: 0;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-/* 버튼 */
+/* 🔥 핵심: margin 제거 + gap 사용 */
 .btn {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   text-align: center;
-  padding: 14px 8px;
-  margin: 3px;
+  padding: 12px 6px;
   background: #111827;
   color: #38bdf8;
   text-decoration: none;
   border-radius: 10px;
+  font-size: 13px;
+
+  margin: 0;      /* 🔥 중요 */
+  border: 1px solid transparent;
+}
+
+.nav-top,
+.nav-category {
+  gap: 6px; /* 🔥 margin 대신 gap */
+  padding: 10px;
 }
 
 /* hover */
@@ -60,24 +68,21 @@ body.full {
 }
 
 /* =========================
-   MAIN (🔥 핵심 수정)
+   MAIN
 ========================= */
 main {
-  width: 100vw;     /* 🔥 중요 */
-  margin: 0;        /* 🔥 제거 */
+  width: 100%;
   padding: 10px;
 }
 
 /* =========================
-   GRID (완전 중앙 문제 해결)
+   GRID
 ========================= */
 .grid {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 12px;
-  margin: 0;
-  padding: 0;
+  width: 100%;
 }
 
 /* 카드 */
@@ -94,11 +99,19 @@ main {
   display: block;
 }
 
+.card-content {
+  padding: 8px;
+}
+
 /* =========================
    MOBILE
 ========================= */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    font-size: 12px;
   }
 }
