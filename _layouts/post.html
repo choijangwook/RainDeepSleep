@@ -14,30 +14,8 @@ layout: default
     allowfullscreen>
   </iframe>
 
-  <!-- 🔥 AD -->
   <div class="ad-box">
     <!-- AdSense -->
-  </div>
-
-  <h2>More Like This</h2>
-
-  <div class="grid">
-
-  {% assign cat = page.categories[0] %}
-
-  {% for post in site.categories[cat] %}
-    {% if post.url != page.url %}
-
-      <a class="card" href="{{ site.baseurl }}{{ post.url }}">
-        <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
-        <div class="card-content">
-          <div class="card-title">{{ post.title }}</div>
-        </div>
-      </a>
-
-    {% endif %}
-  {% endfor %}
-
   </div>
 
 </article>
