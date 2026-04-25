@@ -28,7 +28,7 @@ body {
 }
 
 /* =========================
-   NAV (🔥 색상 분리)
+   NAV
 ========================= */
 .nav-top {
   display: flex;
@@ -36,8 +36,7 @@ body {
   padding: 6px 10px;
   max-width: 1200px;
   margin: 0 auto;
-
-  background: #f1f5f9; /* 🔥 연한 회색 */
+  background: #f1f5f9;
 }
 
 .nav-category {
@@ -47,20 +46,16 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: -4px;
-
-  background: #e2e8f0; /* 🔥 더 진한 연회색 */
+  background: #e2e8f0;
 }
 
-/* 버튼 */
 .btn {
   flex: 1;
   text-align: center;
   padding: 10px;
-
   border-radius: 6px;
   background: #ffffff;
   color: #111827;
-
   text-decoration: none;
   border: 1px solid #9ca3af;
 }
@@ -155,7 +150,7 @@ body {
 }
 
 /* =========================
-   YOUTUBE BUTTON
+   YOUTUBE BIG BUTTON
 ========================= */
 .youtube-big-btn {
   display: block;
@@ -176,7 +171,14 @@ body {
   font-weight: bold;
 }
 
-/* 🔥 설명 영역 */
+/* 🔥 기존 md 버튼 제거 */
+.youtube-button {
+  display: none !important;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
 .post-description {
   max-width: 700px;
   margin: 20px auto;
