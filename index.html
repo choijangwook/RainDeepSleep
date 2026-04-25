@@ -1,23 +1,27 @@
 <h1>🌧 Rain Deep Sleep</h1>
 
 <h2>Categories</h2>
-
 <ul>
-  <li><a href="{{ site.baseurl }}/category/tent.html">⛺ Rain on Tent</a></li>
-  <li><a href="{{ site.baseurl }}/category/forest.html">🌲 Rain in Forest</a></li>
-  <li><a href="{{ site.baseurl }}/category/cabin.html">🏡 Rain on Cabin</a></li>
-  <li><a href="{{ site.baseurl }}/category/beach.html">🌊 Rain at Beach</a></li>
-  <li><a href="{{ site.baseurl }}/category/car.html">🚗 Rain in Car</a></li>
+  <li><a href="{{ site.baseurl }}/category/tent.html">⛺ Tent</a></li>
+  <li><a href="{{ site.baseurl }}/category/forest.html">🌲 Forest</a></li>
+  <li><a href="{{ site.baseurl }}/category/cabin.html">🏡 Cabin</a></li>
+  <li><a href="{{ site.baseurl }}/category/beach.html">🌊 Beach</a></li>
+  <li><a href="{{ site.baseurl }}/category/car.html">🚗 Car</a></li>
   <li><a href="{{ site.baseurl }}/category/other.html">➕ More</a></li>
 </ul>
 
-<h2>Latest Posts</h2>
+<h2>Latest Videos</h2>
 
-<ul>
+<div class="grid">
 {% for post in site.posts %}
-  <li>
-    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    <small> ({{ post.categories }})</small>
-  </li>
+  <a href="{{ site.baseurl }}{{ post.url }}" class="card">
+
+    <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg">
+
+    <div class="card-content">
+      <div class="card-title">{{ post.title }}</div>
+    </div>
+
+  </a>
 {% endfor %}
-</ul>
+</div>
