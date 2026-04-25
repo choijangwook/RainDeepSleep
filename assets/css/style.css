@@ -115,3 +115,27 @@ main {
     font-size: 12px;
   }
 }
+
+/* =========================
+   🔥 FIX FULL WIDTH ROOT
+========================= */
+
+article {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* main을 진짜 풀폭으로 고정 */
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0; /* 🔥 중요 */
+}
+
+/* grid 안정화 */
+.grid {
+  margin: 0;
+  padding: 0 10px; /* 내부 여백만 */
+}
