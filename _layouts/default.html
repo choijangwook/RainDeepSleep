@@ -3,76 +3,31 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- 🔥 모바일 확대 / 흔들림 방지 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
   <title>{{ page.title }}</title>
-
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
 <header class="header">
 
   <h2 class="logo">🌧 Rain Deep Sleep</h2>
 
-  <!-- 🔥 1줄 메뉴 -->
   <nav class="nav-top">
-    <a href="{{ site.baseurl }}/" class="btn">🏠 Home</a>
-    <a href="{{ site.baseurl }}/about.html" class="btn">About</a>
-    <a href="{{ site.baseurl }}/privacy.html" class="btn">Privacy</a>
-    <a href="{{ site.baseurl }}/contact.html" class="btn">Contact</a>
-  </nav>
-
-  <!-- 🔥 2줄 카테고리 -->
-  <nav class="nav-category">
-    <a href="{{ site.baseurl }}/category/forest.html" class="btn">🌲 Forest</a>
-    <a href="{{ site.baseurl }}/category/cabin.html" class="btn">🏡 Cabin</a>
-    <a href="{{ site.baseurl }}/category/beach.html" class="btn">🌊 Beach</a>
-    <a href="{{ site.baseurl }}/category/other.html" class="btn">➕ More</a>
+    <a class="btn" href="{{ site.baseurl }}/">🏠 Home</a>
+    <a class="btn" href="{{ site.baseurl }}/about.html">About</a>
+    <a class="btn" href="{{ site.baseurl }}/blog.html">Blog</a>
+    <a class="btn" href="{{ site.baseurl }}/contact.html">Contact</a>
   </nav>
 
 </header>
 
-<!-- =========================
-     MAIN CONTENT
-========================= -->
 <main>
-
-  <!-- 🔥 AdSense TOP -->
-  <div class="ad-box">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-XXXXXXXX"
-      data-ad-slot="1111111111"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
   {{ content }}
-
-  <!-- 🔥 AdSense BOTTOM -->
-  <div class="ad-box">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-XXXXXXXX"
-      data-ad-slot="3333333333"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
 </main>
 
 </body>
