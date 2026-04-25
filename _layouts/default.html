@@ -13,20 +13,22 @@
 
 <body>
 
-<!-- 🔥 어디서든 바로 Home -->
+<!-- 🔥 플로팅 Home -->
 <a href="{{ site.baseurl }}/" class="floating-home">🏠</a>
 
 <header class="header">
 
-  <!-- 상단 메뉴 -->
+  <!-- 🔥 상단 메뉴 -->
   <nav class="nav-top">
+    <a class="btn" href="{{ site.baseurl }}/">Home</a>
     <a class="btn" href="{{ site.baseurl }}/blog.html">Blog</a>
     <a class="btn" href="{{ site.baseurl }}/about.html">About</a>
     <a class="btn" href="{{ site.baseurl }}/contact.html">Contact</a>
+    <a class="btn" href="{{ site.baseurl }}/privacy.html">Privacy</a>
     <a class="btn" href="{{ site.baseurl }}/faq.html">FAQ</a>
   </nav>
 
-  <!-- 카테고리 -->
+  <!-- 🔥 카테고리 -->
   <nav class="nav-category">
     <a class="btn" href="{{ site.baseurl }}/category/nature.html">Nature</a>
     <a class="btn" href="{{ site.baseurl }}/category/cabin.html">Cabin</a>
@@ -37,14 +39,12 @@
 
 </header>
 
-<!-- 광고 TOP -->
 <div class="ad-box"></div>
 
-<main>
+<main class="container">
   {{ content }}
 </main>
 
-<!-- 광고 BOTTOM -->
 <div class="ad-box"></div>
 
 </body>
