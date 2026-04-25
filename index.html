@@ -1,18 +1,23 @@
----
-layout: default
-title: Home
----
-
 <h1>🌧 Rain Deep Sleep</h1>
 
-<p>Relaxing rain sounds to help you sleep deeply.</p>
+<h2>Categories</h2>
 
 <ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </li>
-  {% endfor %}
+  <li><a href="{{ site.baseurl }}/category/tent.html">⛺ Rain on Tent</a></li>
+  <li><a href="{{ site.baseurl }}/category/forest.html">🌲 Rain in Forest</a></li>
+  <li><a href="{{ site.baseurl }}/category/cabin.html">🏡 Rain on Cabin</a></li>
+  <li><a href="{{ site.baseurl }}/category/beach.html">🌊 Rain at Beach</a></li>
+  <li><a href="{{ site.baseurl }}/category/car.html">🚗 Rain in Car</a></li>
+  <li><a href="{{ site.baseurl }}/category/other.html">➕ More</a></li>
+</ul>
+
+<h2>Latest Posts</h2>
+
+<ul>
+{% for post in site.posts %}
+  <li>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    <small> ({{ post.categories }})</small>
+  </li>
+{% endfor %}
 </ul>
