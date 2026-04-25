@@ -8,14 +8,12 @@ layout: default
 
 <div class="video-container">
 
-  <!-- PC용 iframe -->
   <iframe
     src="https://www.youtube.com/embed/{{ page.youtube_id }}"
     frameborder="0"
     allowfullscreen>
   </iframe>
 
-  <!-- 🔥 모바일 전용 큰 버튼 -->
   <div class="mobile-play">
     <a href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
        target="_blank"
@@ -26,6 +24,9 @@ layout: default
 
 </div>
 
-<div class="ad-box"></div>
+<!-- 🔥 설명 영역 (md 내용 출력) -->
+<div class="post-description">
+  {{ content }}
+</div>
 
 </article>
