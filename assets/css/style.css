@@ -10,7 +10,7 @@ html, body {
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* 🔥 화면 오른쪽 밀림 방지 */
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -18,12 +18,12 @@ html, body {
 ========================= */
 body {
   font-family: Arial;
-  background: #ffffff; /* 🔥 흰 배경 */
+  background: #ffffff;
   color: #111827;
 }
 
 /* =========================
-   PC 중앙 정렬 컨테이너
+   CONTAINER
 ========================= */
 .container {
   max-width: 1200px;
@@ -38,30 +38,24 @@ body {
 .nav-category {
   display: flex;
   gap: 6px;
-  padding: 6px 10px; /* 🔥 간격 줄임 */
+  padding: 6px 10px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 🔥 카테고리 위 간격 압축 */
 .nav-category {
   margin-top: -4px;
 }
 
-/* 버튼 */
 .btn {
   flex: 1;
   text-align: center;
   padding: 10px;
-
   border-radius: 6px;
-
   background: #f3f4f6;
   color: #111827;
-
   text-decoration: none;
-
-  border: 1px solid #9ca3af; /* 🔥 가독성 외곽선 */
+  border: 1px solid #9ca3af;
 }
 
 /* =========================
@@ -74,7 +68,6 @@ body {
   padding: 10px;
 }
 
-/* PC */
 @media (min-width: 900px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
@@ -106,7 +99,7 @@ body {
 }
 
 /* =========================
-   ▶ PLAY BUTTON (중앙)
+   ▶ PLAY BUTTON (🔥 크기 줄임)
 ========================= */
 .play-button {
   position: absolute;
@@ -114,8 +107,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 70px;
-  height: 70px;
+  width: 52px;     /* 🔥 기존 70 → 52 */
+  height: 52px;
 
   border-radius: 50%;
   background: rgba(0,0,0,0.6);
@@ -125,7 +118,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  font-size: 28px;
+  font-size: 22px; /* 🔥 기존 28 → 22 */
   text-decoration: none;
 
   z-index: 10;
@@ -146,28 +139,23 @@ body {
 }
 
 /* =========================
-   VIDEO (POST)
+   VIDEO
 ========================= */
 .video-container iframe {
   width: 100%;
   height: 500px;
 }
 
-/* 모바일 */
 @media (max-width: 768px) {
-
-  /* iframe 숨김 (오류 방지) */
   .video-container iframe {
     display: none;
   }
 
-  /* 버튼 표시 */
   .mobile-play {
     display: block;
   }
 }
 
-/* PC */
 @media (min-width: 769px) {
   .mobile-play {
     display: none;
@@ -175,29 +163,25 @@ body {
 }
 
 /* =========================
-   YOUTUBE BIG BUTTON
+   YOUTUBE BUTTON
 ========================= */
 .youtube-big-btn {
   display: block;
   width: 100%;
   max-width: 500px;
   margin: 40px auto;
-
   background: #ff0000;
   color: white;
-
   text-align: center;
   padding: 18px;
-
   border-radius: 12px;
   text-decoration: none;
-
   font-size: 18px;
   font-weight: bold;
 }
 
 /* =========================
-   FLOATING HOME BUTTON
+   FLOATING HOME
 ========================= */
 .floating-home {
   position: fixed;
