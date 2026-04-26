@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on the Pond"
 date: 2026-04-18
-categories: [Nature]
+categories: [nature]
 youtube_id: sF-9KE4JZuc
 
 ---
