@@ -1,4 +1,5 @@
 ---
+
 layout: post
 title: "Rain Inside a Cozy Villa"
 date: 2026-04-19
