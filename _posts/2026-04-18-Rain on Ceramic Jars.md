@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on Ceramic Jars"
 date: 2026-04-18
-categories: [Others]
+categories: [others]
 youtube_id: AJKHpyIlKF4
 
 ---
