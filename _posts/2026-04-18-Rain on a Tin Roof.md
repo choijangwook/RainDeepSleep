@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on a Tin Roof"
 date: 2026-04-18
-categories: [Cabin]
+categories: [cabin]
 youtube_id: FE43621xEG0
 
 ---
