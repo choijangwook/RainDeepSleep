@@ -1,4 +1,5 @@
 ---
+
 layout: post
 title: "Rain on a Wooden House"
 date: 2026-04-18
