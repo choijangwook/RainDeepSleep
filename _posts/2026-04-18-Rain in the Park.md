@@ -2,7 +2,7 @@
 layout: post
 title: "Rain in the Park"
 date: 2026-04-18
-categories: [forest]
+categories: [beach]
 youtube_id: _a2KYHQpD7w
 
 ---
