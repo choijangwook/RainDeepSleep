@@ -1,15 +1,24 @@
 ---
 layout: default
 title: Others
+permalink: /category/others/
 ---
 
 <h1>🎧 Others</h1>
 
 {% assign posts = site.categories.others %}
 
-{% for post in posts %}
-  <h2>
-    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-  </h2>
-  <p>{{ post.date | date: "%Y-%m-%d" }}</p>
-{% endfor %}
+{% if posts and posts.size > 0 %}
+  {% for post in posts %}
+    <div style="margin-bottom:20px;">
+      <h2>
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h2>
+      <p>{{ post.date | date: "%Y-%m-%d" }}</p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>No posts in this category yet.</p>
+{% endif %}
