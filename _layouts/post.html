@@ -6,10 +6,15 @@
   <title>{{ page.title }}</title>
 
   <style>
-    .yt-button {
-      display: inline-block;
+    .yt-wrapper {
       margin-top: 20px;
-      padding: 18px 28px;
+    }
+
+    .yt-button {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 18px 0;
       font-size: 20px;
       font-weight: bold;
       color: #fff;
@@ -22,11 +27,7 @@
 
     .yt-button:hover {
       background-color: #cc0000;
-      transform: scale(1.05);
-    }
-
-    .yt-wrapper {
-      margin-top: 20px;
+      transform: scale(1.02);
     }
   </style>
 </head>
@@ -38,7 +39,6 @@
 
   {% if page.youtube_id %}
     
-    <!-- 🔴 iframe 제거하고 버튼만 표시 -->
     <div class="yt-wrapper">
       <a class="yt-button"
          href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
