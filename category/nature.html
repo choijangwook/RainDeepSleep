@@ -1,5 +1,15 @@
 ---
-layout: home
-title: nature
-category: nature
+layout: default
+title: Nature
 ---
+
+<h1>🌿 Nature</h1>
+
+{% assign posts = site.categories.nature %}
+
+{% for post in posts %}
+  <h2>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </h2>
+  <p>{{ post.date | date: "%Y-%m-%d" }}</p>
+{% endfor %}
