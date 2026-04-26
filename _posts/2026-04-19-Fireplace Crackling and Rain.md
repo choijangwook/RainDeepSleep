@@ -2,7 +2,7 @@
 layout: post
 title: "Fireplace Crackling and Rain"
 date: 2026-04-19
-categories: [Cabin]
+categories: [cabin]
 youtube_id: 25kaRUX4McU
 
 ---
