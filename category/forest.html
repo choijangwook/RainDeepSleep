@@ -1,5 +1,15 @@
 ---
-layout: home
+layout: default
 title: Forest
-category: forest
 ---
+
+<h1>🌲 Forest</h1>
+
+{% assign posts = site.categories.forest %}
+
+{% for post in posts %}
+  <h2>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </h2>
+  <p>{{ post.date | date: "%Y-%m-%d" }}</p>
+{% endfor %}
