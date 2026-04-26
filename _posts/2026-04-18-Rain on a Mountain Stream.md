@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on a Mountain Stream"
 date: 2026-04-18
-categories: [Nature]
+categories: [nature]
 youtube_id: 9ZJSSN2LXtY
 
 ---
