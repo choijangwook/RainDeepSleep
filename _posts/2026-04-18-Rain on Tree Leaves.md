@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on Tree Leaves"
 date: 2026-04-18
-categories: [Nature]
+categories: [nature]
 youtube_id: EonBq7wc8QU
 
 ---
