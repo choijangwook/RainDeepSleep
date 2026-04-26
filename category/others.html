@@ -1,0 +1,15 @@
+---
+layout: default
+title: Others
+---
+
+<h1>🎧 Others</h1>
+
+{% assign posts = site.categories.others %}
+
+{% for post in posts %}
+  <h2>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </h2>
+  <p>{{ post.date | date: "%Y-%m-%d" }}</p>
+{% endfor %}
