@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fireplace Crackling & Rain ASMR"
+title: "Fireplace Crackling and Rain"
 date: 2026-04-18
 categories: [Cabin]
 youtube_id: 25kaRUX4McU
