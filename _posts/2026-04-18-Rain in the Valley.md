@@ -2,7 +2,7 @@
 layout: post
 title: "Rain in the Valley"
 date: 2026-04-18
-categories: [forest]
+categories: [cabin]
 youtube_id: VcvYMtWLnmU
 
 ---
