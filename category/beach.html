@@ -1,5 +1,15 @@
 ---
-layout: home
-title: beach
-category: beach
+layout: default
+title: Beach
 ---
+
+<h1>🌊 Beach</h1>
+
+{% assign posts = site.categories.beach %}
+
+{% for post in posts %}
+  <h2>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </h2>
+  <p>{{ post.date | date: "%Y-%m-%d" }}</p>
+{% endfor %}
