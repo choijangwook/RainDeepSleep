@@ -3,7 +3,7 @@
 layout: post
 title: "Rain Inside a Cozy Villa"
 date: 2026-04-19
-categories: [Cabin]
+categories: [cabin]
 youtube_id: sjbba7B1sg8
 
 ---
