@@ -7,6 +7,6 @@ title: Contact
 
 For inquiries or collaborations:
 
-📧 Email: your-email@example.com
+📧 Email: jangwookchoi1@gmail.com
 
-We usually respond within 24–72 hours.
+We usually respond within 2–7 days.
