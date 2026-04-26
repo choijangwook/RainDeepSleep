@@ -5,11 +5,12 @@ title: Privacy Policy
 
 # Privacy Policy
 
-This website does not collect personal information directly.
+This website does not collect personal information <br>
+directly. However, third-party services such as <br>
+Google AdSense may use cookies to serve ads based <br>
+on user interests. We do not control third-party <br>
+cookies. For more information, please visit Google <br>
+Privacy Policy.<br>
 
-However, third-party services such as Google AdSense may use cookies to serve ads based on user interests.
 
-We do not control third-party cookies.
-
-For more information, please visit Google Privacy Policy.
 <a class="btn" href="/privacy.html">Privacy</a>
