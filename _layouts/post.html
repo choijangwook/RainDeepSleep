@@ -4,6 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+
+  <style>
+    .yt-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 14px 22px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #ff0000;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .yt-button:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
 <body>
@@ -11,63 +31,27 @@
   <h1>{{ page.title }}</h1>
   <p>{{ page.date | date: "%Y-%m-%d" }}</p>
 
-  {% assign category = page.categories[0] %}
+  {% if page.youtube_id %}
 
-  <!-- 🌿 Nature -->
-  {% if category == "nature" %}
-    <h2>Nature Sounds</h2>
-    {% if page.youtube_id %}
-      <iframe width="100%" height="500"
-        src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    {% endif %}
+    <!-- 유튜브 iframe -->
+    <iframe width="100%" height="500"
+      src="https://www.youtube.com/embed/{{ page.youtube_id }}"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
 
-  <!-- 🏕 Cabin -->
-  {% elsif category == "cabin" %}
-    <h2>Cabin Ambience</h2>
-    {% if page.youtube_id %}
-      <iframe width="100%" height="500"
-        src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    {% endif %}
-
-  <!-- 🌲 Forest -->
-  {% elsif category == "forest" %}
-    <h2>Forest Rain Sound</h2>
-    {% if page.youtube_id %}
-      <iframe width="100%" height="500"
-        src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    {% endif %}
-
-  <!-- 🌊 Beach -->
-  {% elsif category == "beach" %}
-    <h2>Beach Waves</h2>
-    {% if page.youtube_id %}
-      <iframe width="100%" height="500"
-        src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    {% endif %}
-
-  <!-- 🎧 Others -->
-  {% elsif category == "others" %}
-    <h2>Other Relaxing Sounds</h2>
-    {% if page.youtube_id %}
-      <iframe width="100%" height="500"
-        src="https://www.youtube.com/embed/{{ page.youtube_id }}"
-        frameborder="0" allowfullscreen>
-      </iframe>
-    {% endif %}
+    <!-- 버튼으로 변경된 Play on YouTube -->
+    <br>
+    <a class="yt-button"
+       href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
+       target="_blank">
+       ▶ Play on YouTube
+    </a>
 
   {% endif %}
 
   <hr>
 
-  <!-- 본문 -->
   <div>
     {{ content }}
   </div>
