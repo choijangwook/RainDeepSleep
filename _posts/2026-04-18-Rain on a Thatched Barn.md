@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on a Thatched Barn"
 date: 2026-04-18
-categories: [Cabin]
+categories: [cabin]
 youtube_id: XNLbF_4KWmY
 
 ---
