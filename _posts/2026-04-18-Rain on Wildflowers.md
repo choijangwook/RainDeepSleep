@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on Wildflowers"
 date: 2026-04-18
-categories: [Nature]
+categories: [nature]
 youtube_id: U1UZ87QDY9g
 
 ---
