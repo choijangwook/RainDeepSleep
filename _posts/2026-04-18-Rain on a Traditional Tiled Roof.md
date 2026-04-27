@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on a Traditional Tiled Roof"
 date: 2026-04-18
-categories: [cabin]
+categories: [others]
 youtube_id: SBKDnI4zQKY
 
 ---
