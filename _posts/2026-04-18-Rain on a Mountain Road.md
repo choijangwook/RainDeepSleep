@@ -3,7 +3,7 @@
 layout: post
 title: "Rain on a Mountain Road"
 date: 2026-04-18
-categories: [others]
+categories: [nature]
 youtube_id: VRYfJwNlXNo
 
 ---
