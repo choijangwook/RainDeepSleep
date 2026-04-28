@@ -7,8 +7,6 @@ youtube_id: Xp9SRHcF3O0
 
 ---
 
-https://www.tiktok.com/@user5919675537819/video/7633608739093875986?is_from_webapp=1&web_id=7607290168168449543
-
 <a href="https://www.youtube.com/watch?v={{ page.youtube_id }}" target="_blank" class="youtube-button">
 ▶ Play on YouTube
 </a>
