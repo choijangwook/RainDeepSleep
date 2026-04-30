@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
 
+  <style>
+    /* 🔥 유튜브 버튼 */
+    .yt-wrapper {
+      margin-top: 20px;
+    }
+
+    .yt-button {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 18px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #ff0000;
+      border-radius: 14px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .yt-button:hover {
+      background-color: #cc0000;
+      transform: scale(1.02);
+    }
+
+    /* 🔥 광고 안정화 */
+    .ad-box {
+      max-width: 720px;
+      margin: 20px auto;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+      text-align: center;
+    }
+
+    .ad-label {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 5px;
+    }
+
+    .adsbygoogle {
+      display: block;
+      width: 100% !important;
+      height: 90px !important;
+      max-height: 90px !important;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    @media (min-width: 768px) {
+      .adsbygoogle {
+        height: 100px !important;
+        max-height: 100px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.date | date: "%Y-%m-%d" }}</p>
+
+  <!-- 🔥 상단 광고 -->
+  <div class="ad-box">
+    <div class="ad-label">Advertisement</div>
+
+    <ins class="adsbygoogle"
+         data-ad-client="ca-pub-XXXXXXXXXXXX"
+         data-ad-slot="1111111111"
+         data-ad-format="horizontal"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  {% if page.youtube_id %}
+    <div class="yt-wrapper">
+      <a class="yt-button"
+         href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
+         target="_blank">
+         ▶ Play on YouTube
+      </a>
+    </div>
+  {% endif %}
+
+  <hr>
+
+  <!-- 🔥 본문 -->
+  <div>
+    {{ content }}
+  </div>
+
+  <!-- 🔥 중간 광고 (수익 핵심) -->
+  <div class="ad-box">
+    <div class="ad-label">Advertisement</div>
+
+    <ins class="adsbygoogle"
+         data-ad-client="ca-pub-XXXXXXXXXXXX"
+         data-ad-slot="2222222222"
+         data-ad-format="horizontal"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <!-- 🔥 하단 광고 -->
+  <div class="ad-box">
+    <div class="ad-label">Advertisement</div>
+
+    <ins class="adsbygoogle"
+         data-ad-client="ca-pub-XXXXXXXXXXXX"
+         data-ad-slot="3333333333"
+         data-ad-format="horizontal"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+</body>
+</html>
