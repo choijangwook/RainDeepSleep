@@ -8,11 +8,7 @@ youtube_id: FE43621xEG0
 
 ---
 
-Rain sounds for a deep and restful sleep. <br>
-In the quiet of the night, the natural sound of <br>
-rain eases tension and helps you drift into a deep <br>
-sleep quickly. This video is designed for sleep, <br>
-focus, meditation, and relaxation.<br>
-깊고 편안한 수면을 위한 빗소리입니다. 자연스러운 <br>
-빗소리가 긴장을 완화하고 빠른 숙면을 도와줍니다. <br>
-이 영상은 수면, 집중, 휴식을 위해 제작되었습니다.<br>
+The rain taps cheerfully on the tin roof, spreading like a gentle lullaby all around you,
+and the smell of wet earth and old metal floats through the air, wrapping around you like a cozy blanket.
+The raindrops drum softly on the tin roof, making your eyes feel heavy and slow,
+and you slowly drift off to sleep in the warm, cozy darkness beneath the tin roof.
