@@ -2,7 +2,7 @@
 
 layout: post
 title: "Rain Outside the Window"
-date: 2026-04-20
+
 categories: [cabin]
 youtube_id: Kr94OD3nNaw
 
