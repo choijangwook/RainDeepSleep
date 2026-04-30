@@ -7,12 +7,8 @@ youtube_id: 25kaRUX4McU
 
 ---
 
-Rain sounds for a deep and restful sleep. <br>
-In the quiet of the night, the natural sound of <br>
-rain eases tension and helps you drift into a deep <br>
-sleep quickly. This video is designed for sleep, <br>
-focus, meditation, and relaxation.<br>
-깊고 편안한 수면을 위한 빗소리입니다. 자연스러운 <br>
-빗소리가 긴장을 완화하고 빠른 숙면을 도와줍니다. <br>
-이 영상은 수면, 집중, 휴식을 위해 제작되었습니다.<br>
+The crackling fireplace and the falling rain mix together like a gentle lullaby filling the whole room,
+and the warm heat of the fire and the fresh smell of rain wrap around you like a cozy, soft blanket.
+The crackle of the logs and the tap of the raindrops tickle your ears in the sweetest way,
+and you slowly drift off to sleep in the warm, cozy darkness filled with firelight and rain.
 
