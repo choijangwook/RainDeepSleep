@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Rain on a Log Cabin"
-date: 2026-04-18
 categories: [cabin]
 youtube_id: hft39Zum9dY
 
