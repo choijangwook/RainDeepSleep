@@ -4,4 +4,4 @@ title: Blog
 ---
 
 # Blog
-All videos
+8 Hours Play, Screen Turns Off In 10 Minutes
