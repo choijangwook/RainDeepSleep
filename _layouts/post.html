@@ -31,7 +31,7 @@
       transform: scale(1.02);
     }
 
-    /* 🔥 광고 안정화 */
+    /* 🔥 광고 박스 (핵심: 강제 높이 + 잘라내기) */
     .ad-box {
       max-width: 720px;
       margin: 20px auto;
@@ -40,6 +40,9 @@
       border-radius: 10px;
       background: #fafafa;
       text-align: center;
+
+      height: 100px;        /* 👉 모바일 포함 강제 높이 */
+      overflow: hidden;     /* 👉 넘치는 광고 잘라냄 */
     }
 
     .ad-label {
@@ -51,16 +54,11 @@
     .adsbygoogle {
       display: block;
       width: 100% !important;
-      height: 90px !important;
-      max-height: 90px !important;
-      overflow: hidden;
-      margin: 20px 0;
     }
 
     @media (min-width: 768px) {
-      .adsbygoogle {
-        height: 100px !important;
-        max-height: 100px !important;
+      .ad-box {
+        height: 110px;
       }
     }
   </style>
@@ -102,7 +100,7 @@
     {{ content }}
   </div>
 
-  <!-- 🔥 중간 광고 (수익 핵심) -->
+  <!-- 🔥 중간 광고 -->
   <div class="ad-box">
     <div class="ad-label">Advertisement</div>
 
