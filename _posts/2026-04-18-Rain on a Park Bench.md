@@ -2,7 +2,7 @@
 
 layout: post
 title: "Rain on a Park Bench"
-date: 2026-04-18
+
 categories: [others]
 youtube_id: 7n9TmBLgBGo
 
