@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain by the Lakeside"
-date: 2026-04-18
+
 categories: [beach]
 youtube_id: dajDWsT4fLg
 
