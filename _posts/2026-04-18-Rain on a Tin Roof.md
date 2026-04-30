@@ -2,7 +2,7 @@
 
 layout: post
 title: "Rain on a Tin Roof"
-date: 2026-04-18
+
 categories: [others]
 youtube_id: FE43621xEG0
 
