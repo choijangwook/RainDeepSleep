@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain on the Lake"
-date: 2026-04-18
+
 categories: [beach]
 youtube_id: Xp9SRHcF3O0
 
