@@ -3,10 +3,10 @@ layout: default
 title: FAQ
 ---
 
-# FAQ
+## FAQ
 
-Q. What is this site?  
-A. Rain sounds for sleep and relaxation.
+**Q. Do I need to keep the screen on?**  
+No. Videos are designed for long playback.
 
-Q. How to use?  
-A. Click ▶ or open videos.
+**Q. Is this free?**  
+Yes, all content is free to use.
