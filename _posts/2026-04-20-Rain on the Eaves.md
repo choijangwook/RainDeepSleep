@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain on the Eaves"
-date: 2026-04-18
+
 categories: [others]
 youtube_id: hR6dCg-vWQw
 
