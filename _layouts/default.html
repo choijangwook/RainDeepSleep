@@ -16,7 +16,7 @@
   <title>{{ page.title }}</title>
 
   <style>
-    /* 메뉴 */
+    /* 🔥 메뉴 */
     .nav-top, .nav-category {
       display: flex;
       justify-content: center;
@@ -32,18 +32,10 @@
       flex-shrink: 0;
     }
 
-    /* 🔥 광고 박스 (핵심 수정) */
+    /* 🔥 광고 박스 */
     .ad-box {
-      max-width: 720px;
       margin: 20px auto;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: #fafafa;
       text-align: center;
-
-      height: 100px;        /* 🔥 강제 높이 */
-      overflow: hidden;     /* 🔥 넘치는 광고 잘라버림 */
     }
 
     .ad-label {
@@ -52,21 +44,18 @@
       margin-bottom: 5px;
     }
 
-    .adsbygoogle {
-      display: block;
-      width: 100% !important;
-    }
-
-    @media (min-width: 768px) {
-      .ad-box {
-        height: 110px;
-      }
+    /* 🔥 고정 광고 */
+    .ad-fixed {
+      width: 320px;
+      height: 100px;
+      margin: 0 auto;
     }
   </style>
 </head>
 
 <body>
 
+<!-- 홈 버튼 -->
 <a href="{{ site.baseurl }}/" class="floating-home" onclick="goHome(event)">🏠</a>
 
 <script>
@@ -78,6 +67,7 @@ function goHome(e) {
 
 <header class="header">
 
+  <!-- 상단 메뉴 -->
   <nav class="nav-top">
     <a class="btn" href="{{ site.baseurl }}/">Home</a>
     <a class="btn" href="{{ site.baseurl }}/blog.html">Blog</a>
@@ -86,6 +76,7 @@ function goHome(e) {
     <a class="btn" href="{{ site.baseurl }}/privacy.html">Privacy</a>
   </nav>
 
+  <!-- 카테고리 -->
   <nav class="nav-category">
     <a class="btn" href="{{ site.baseurl }}/category/nature.html">Nature</a>
     <a class="btn" href="{{ site.baseurl }}/category/cabin.html">Cabin</a>
@@ -96,14 +87,17 @@ function goHome(e) {
 
 </header>
 
+<!-- 상단 광고 (콘텐츠 페이지에서만) -->
 {% unless page.url contains 'about' or page.url contains 'privacy' or page.url contains 'contact' %}
 <div class="ad-box">
   <div class="ad-label">Advertisement</div>
 
-  <ins class="adsbygoogle"
-       data-ad-client="ca-pub-XXXXXXXXXXXX"
-       data-ad-slot="1111111111"
-       data-ad-format="horizontal"></ins>
+  <div class="ad-fixed">
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:320px;height:100px"
+         data-ad-client="ca-pub-XXXXXXXXXXXX"
+         data-ad-slot="1111111111"></ins>
+  </div>
 
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
@@ -115,14 +109,17 @@ function goHome(e) {
   {{ content }}
 </main>
 
+<!-- 하단 광고 -->
 {% unless page.url contains 'about' or page.url contains 'privacy' or page.url contains 'contact' %}
 <div class="ad-box">
   <div class="ad-label">Advertisement</div>
 
-  <ins class="adsbygoogle"
-       data-ad-client="ca-pub-XXXXXXXXXXXX"
-       data-ad-slot="2222222222"
-       data-ad-format="horizontal"></ins>
+  <div class="ad-fixed">
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:320px;height:100px"
+         data-ad-client="ca-pub-XXXXXXXXXXXX"
+         data-ad-slot="2222222222"></ins>
+  </div>
 
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
