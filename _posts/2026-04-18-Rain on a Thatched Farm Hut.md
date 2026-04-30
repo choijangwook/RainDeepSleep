@@ -2,7 +2,7 @@
 
 layout: post
 title: "Rain on a Thatched Farm Hut"
-date: 2026-04-18
+
 categories: [cabin]
 youtube_id: uzVXAzGW6vQ
 
