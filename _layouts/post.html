@@ -6,7 +6,6 @@
   <title>{{ page.title }}</title>
 
   <style>
-    /* 🔥 유튜브 버튼 */
     .yt-wrapper {
       margin-top: 20px;
     }
@@ -14,119 +13,91 @@
     .yt-button {
       display: block;
       width: 100%;
-      box-sizing: border-box;
       padding: 18px 0;
       font-size: 20px;
       font-weight: bold;
       color: #fff;
       background-color: #ff0000;
       border-radius: 14px;
+      text-align: center;
       text-decoration: none;
-      text-align: center;
-      transition: all 0.2s ease;
     }
 
-    .yt-button:hover {
-      background-color: #cc0000;
-      transform: scale(1.02);
-    }
-
-    /* 🔥 광고 박스 (핵심: 강제 높이 + 잘라내기) */
     .ad-box {
-      max-width: 720px;
       margin: 20px auto;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: #fafafa;
       text-align: center;
-
-      height: 100px;        /* 👉 모바일 포함 강제 높이 */
-      overflow: hidden;     /* 👉 넘치는 광고 잘라냄 */
     }
 
-    .ad-label {
-      font-size: 11px;
-      color: #999;
-      margin-bottom: 5px;
-    }
-
-    .adsbygoogle {
-      display: block;
-      width: 100% !important;
-    }
-
-    @media (min-width: 768px) {
-      .ad-box {
-        height: 110px;
-      }
+    .ad-fixed {
+      width: 320px;
+      height: 100px;
+      margin: 0 auto;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>{{ page.title }}</h1>
-  <p>{{ page.date | date: "%Y-%m-%d" }}</p>
+<h1>{{ page.title }}</h1>
+<p>{{ page.date | date: "%Y-%m-%d" }}</p>
 
-  <!-- 🔥 상단 광고 -->
-  <div class="ad-box">
-    <div class="ad-label">Advertisement</div>
-
+<!-- 상단 광고 -->
+<div class="ad-box">
+  <div class="ad-fixed">
     <ins class="adsbygoogle"
+         style="display:inline-block;width:320px;height:100px"
          data-ad-client="ca-pub-XXXXXXXXXXXX"
-         data-ad-slot="1111111111"
-         data-ad-format="horizontal"></ins>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+         data-ad-slot="1111111111"></ins>
   </div>
 
-  {% if page.youtube_id %}
-    <div class="yt-wrapper">
-      <a class="yt-button"
-         href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
-         target="_blank">
-         ▶ Play on YouTube
-      </a>
-    </div>
-  {% endif %}
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-  <hr>
+{% if page.youtube_id %}
+<div class="yt-wrapper">
+  <a class="yt-button"
+     href="https://www.youtube.com/watch?v={{ page.youtube_id }}"
+     target="_blank">
+     ▶ Play on YouTube
+  </a>
+</div>
+{% endif %}
 
-  <!-- 🔥 본문 -->
-  <div>
-    {{ content }}
-  </div>
+<hr>
 
-  <!-- 🔥 중간 광고 -->
-  <div class="ad-box">
-    <div class="ad-label">Advertisement</div>
+<div>
+  {{ content }}
+</div>
 
+<!-- 중간 광고 -->
+<div class="ad-box">
+  <div class="ad-fixed">
     <ins class="adsbygoogle"
+         style="display:inline-block;width:320px;height:100px"
          data-ad-client="ca-pub-XXXXXXXXXXXX"
-         data-ad-slot="2222222222"
-         data-ad-format="horizontal"></ins>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+         data-ad-slot="2222222222"></ins>
   </div>
 
-  <!-- 🔥 하단 광고 -->
-  <div class="ad-box">
-    <div class="ad-label">Advertisement</div>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
+<!-- 하단 광고 -->
+<div class="ad-box">
+  <div class="ad-fixed">
     <ins class="adsbygoogle"
+         style="display:inline-block;width:320px;height:100px"
          data-ad-client="ca-pub-XXXXXXXXXXXX"
-         data-ad-slot="3333333333"
-         data-ad-format="horizontal"></ins>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+         data-ad-slot="3333333333"></ins>
   </div>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
 </body>
 </html>
