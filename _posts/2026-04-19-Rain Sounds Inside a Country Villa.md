@@ -1,7 +1,7 @@
 ---
 ayout: post
 title: "Rain Sounds Inside a Country Villa"
-date: 2026-04-18
+
 categories: [cabin]
 youtube_id: n7rR2ZwqmYA
 
