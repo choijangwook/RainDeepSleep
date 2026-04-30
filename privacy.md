@@ -3,14 +3,12 @@ layout: default
 title: Privacy Policy
 ---
 
-# Privacy Policy
+## Privacy Policy
 
-This website does not collect personal information <br>
-directly. However, third-party services such as <br>
-Google AdSense may use cookies to serve ads based <br>
-on user interests. We do not control third-party <br>
-cookies. For more information, please visit Google <br>
-Privacy Policy.<br>
+This site uses third-party services including Google AdSense.
 
+These services may use cookies to display relevant ads.
 
-<a class="btn" href="/privacy.html">Privacy</a>
+We do not collect personal data directly.
+
+By using this site, you consent to the use of cookies.
