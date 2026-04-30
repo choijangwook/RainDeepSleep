@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
+  <!-- ✅ Google AdSense -->
+  <script async 
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <title>{{ page.title }}</title>
+
+  <style>
+    /* 🔥 메뉴 안정화 */
+    .nav-top, .nav-category {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn {
+      padding: 6px 10px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    /* 🔥 광고 박스 */
+    .ad-box {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      text-align: center;
+      background: #fafafa;
+    }
+
+    .ad-label {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .adsbygoogle {
+      display: block;
+      max-height: 120px; /* 🔥 광고 크기 제한 */
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="{{ site.baseurl }}/" class="floating-home" onclick="goHome(event)">🏠</a>
+
+<script>
+function goHome(e) {
+  e.preventDefault();
+  window.location.replace("{{ site.baseurl }}/");
+}
+</script>
+
+<header class="header">
+
+  <!-- ✅ 상단 메뉴 (FAQ 유지, 2줄 허용) -->
+  <nav class="nav-top">
+    <a class="btn" href="{{ site.baseurl }}/">Home</a>
+    <a class="btn" href="{{ site.baseurl }}/blog.html">Blog</a>
+    <a class="btn" href="{{ site.baseurl }}/about.html">About</a>
+    <a class="btn" href="{{ site.baseurl }}/contact.html">Contact</a>
+    <a class="btn" href="{{ site.baseurl }}/privacy.html">Privacy</a>
+    <a class="btn" href="{{ site.baseurl }}/faq.html">FAQ</a>
+  </nav>
+
+  <!-- ✅ 카테고리 -->
+  <nav class="nav-category">
+    <a class="btn" href="{{ site.baseurl }}/category/nature.html">Nature</a>
+    <a class="btn" href="{{ site.baseurl }}/category/cabin.html">Cabin</a>
+    <a class="btn" href="{{ site.baseurl }}/category/forest.html">Forest</a>
+    <a class="btn" href="{{ site.baseurl }}/category/beach.html">Beach</a>
+    <a class="btn" href="{{ site.baseurl }}/category/other.html">Others</a>
+  </nav>
+
+</header>
+
+<!-- ✅ 광고 (Home / Blog / Category에서만 출력) -->
+{% unless page.url contains 'about' or page.url contains 'privacy' or page.url contains 'faq' or page.url contains 'contact' %}
+<div class="ad-box">
+  <div class="ad-label">Advertisement</div>
+
+  <ins class="adsbygoogle"
+       data-ad-client="ca-pub-XXXXXXXXXXXX"
+       data-ad-slot="1111111111"
+       data-ad-format="horizontal"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+{% endunless %}
+
+<main class="container">
+  {{ content }}
+</main>
+
+<!-- ✅ 하단 광고 -->
+{% unless page.url contains 'about' or page.url contains 'privacy' or page.url contains 'faq' or page.url contains 'contact' %}
+<div class="ad-box">
+  <div class="ad-label">Advertisement</div>
+
+  <ins class="adsbygoogle"
+       data-ad-client="ca-pub-XXXXXXXXXXXX"
+       data-ad-slot="2222222222"
+       data-ad-format="horizontal"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+{% endunless %}
+
+</body>
+</html>
