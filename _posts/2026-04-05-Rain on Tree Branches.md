@@ -2,7 +2,7 @@
 
 layout: post
 title: "Rain on Tree Branches"
-date: 2026-04-18
+
 categories: [nature]
 youtube_id: 0xVqUn2WRaE
 
