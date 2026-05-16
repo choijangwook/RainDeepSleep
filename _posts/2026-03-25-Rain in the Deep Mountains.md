@@ -2,7 +2,7 @@
 
 layout: post
 title: "Rain in the Deep Mountains"
-date: 2026-04-18
+
 categories: [forest]
 youtube_id: vc-_MAOe5GU
 
