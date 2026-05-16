@@ -2,7 +2,7 @@
 
 layout: post
 title: "Rain in the Deep Forest"
-date: 2026-04-18
+
 categories: [forest]
 youtube_id: mIbguu36keQ
 
