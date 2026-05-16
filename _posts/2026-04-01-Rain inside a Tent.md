@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain inside a Tent"
-date: 2026-04-18
+
 categories: [nature]
 youtube_id: qstgnUFHMHA
 
