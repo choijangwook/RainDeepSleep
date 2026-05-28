@@ -4,7 +4,10 @@ description: Rain sounds for sleep and relaxation
 baseurl: "/RainDeepSleep"
 url: "https://choijangwook.github.io"
 
+repository: choijangwook/RainDeepSleep
+
 theme: minima
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
