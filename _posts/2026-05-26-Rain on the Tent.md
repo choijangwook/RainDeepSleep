@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain on the Tent"
-categories: [beach]
+categories: [Cabin]
 youtube_id: dmSb7xTyMyk
 
 ---
