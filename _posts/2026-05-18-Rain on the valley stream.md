@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Rain on the Lake"
+title: "Rain on the valley stream"
 
 categories: [beach]
-youtube_id: 
+youtube_id: /VcvYMtWLnmU
 
 ---
 
