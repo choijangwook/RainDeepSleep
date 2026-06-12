@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Rain on the Lake"
+
+categories: [beach]
+youtube_id: Xp9SRHcF3O0
+
+---
+
 The earth, long hardened into silence, opens softly to the first falling drop — what had been dry, forgotten, still, begins to breathe again, slow and deep.
 The rain does not rush or demand. It finds the cracks, the dusty seams,
 pressing gently into waiting ground, quenching a thirst no words could name.
