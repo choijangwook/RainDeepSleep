@@ -2,7 +2,7 @@
 layout: post
 title: "Rain on the Lake"
 
-categories: [beach]
+categories: [Nature]
 youtube_id: Xp9SRHcF3O0
 
 ---
