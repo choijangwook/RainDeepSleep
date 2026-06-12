@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Rain on the Lake"
+
+categories: [beach]
+youtube_id: 
+
+---
+
 The tree opens its arms wide, receiving what the sky releases — each raindrop rests upon a branch tip, holding a small, trembling world.
 II.
 The branch bows, ever so gently, beneath the quiet weight of rain.
