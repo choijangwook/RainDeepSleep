@@ -3,7 +3,7 @@ layout: post
 title: "Rain on the valley stream"
 
 categories: [beach]
-youtube_id: /VcvYMtWLnmU
+youtube_id: VcvYMtWLnmU
 
 ---
 
