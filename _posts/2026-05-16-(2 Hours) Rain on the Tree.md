@@ -2,7 +2,7 @@
 layout: post
 title: "Rain on the Tree"
 
-categories: [beach]
+categories: [Nature]
 youtube_id: dndLgpDJwfo
 
 ---
