@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain on the roof tiles"
-categories: [beach]
+categories: [Others]
 youtube_id: hR6dCg-vWQw
 
 ---
