@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain on the thatched cottage"
-categories: [beach]
+categories: [Nature]
 youtube_id: EhPHxa3U4oY
 
 ---
