@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rain on the Cabin"
-categories: [beach]
+categories: [Cabin]
 youtube_id: jMeFU_ApWvY
 
 ---
