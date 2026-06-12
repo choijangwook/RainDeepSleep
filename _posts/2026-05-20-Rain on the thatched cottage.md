@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Rain on the Lake"
+title: "Rain on the thatched cottage"
 categories: [beach]
-youtube_id: 
+youtube_id: EhPHxa3U4oY
 
 ---
 
