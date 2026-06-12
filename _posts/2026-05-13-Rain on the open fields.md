@@ -2,7 +2,7 @@
 layout: post
 title: "Rain on the open fields"
 
-categories: [others]
+categories: [Nature]
 youtube_id: 7n9TmBLgBGo
 
 ---
