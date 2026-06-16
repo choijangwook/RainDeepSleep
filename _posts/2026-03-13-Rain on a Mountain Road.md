@@ -19,7 +19,7 @@ There is a reason people describe certain natural scenes as "therapeutic" withou
 This report investigates the specific mechanisms behind that sensation, organizing the explanation by sensory channel, neurological response, and psychological effect. Understanding why this environment heals can help individuals intentionally seek it out, and can inform therapeutic design in wellness, sleep science, and stress management.
 
 2. The Neuroscience of Soft, Repetitive Sound
-3. 
+
 2.1 Pink Noise and the Relaxation Response
    
 Rainfall produces what acoustic researchers classify as "pink noise" — a sound spectrum in which lower frequencies are more powerful than higher ones, closely matching the natural noise patterns of wind, rivers, and forests. Unlike white noise (which is flat across all frequencies), pink noise has been shown in multiple sleep studies to improve slow-wave sleep quality and reduce the time it takes to fall asleep.
