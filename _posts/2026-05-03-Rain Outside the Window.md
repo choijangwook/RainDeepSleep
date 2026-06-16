@@ -60,7 +60,7 @@ The fresh scent of rainfall seeping through window seals and ventilation gaps in
 Rain on windows accumulates personal sleep association depth across an entire lifetime of exposure — every rainy night spent indoors contributing to the neurological connection between this sound and the states of rest, shelter, and sleep. By adulthood, the rain-on-window sound carries decades of consolidated sleep association that activates rest-preparation neurological responses with exceptional speed and reliability. This depth of personal sleep association conditioning — developed through lived experience rather than deliberate therapeutic practice — gives rain-on-window sound a uniquely powerful conditioned sleep response that operates independently of current stress levels, making it one of the most reliably effective natural sleep hygiene tools available across the widest possible demographic range.
 
 5. Sleep Quality and Brainwave Indicators
-6. 
+
 ParameterEffectAlpha Wave OnsetRapidly accelerated via crystalline glass tap acoustic precisionTheta Wave TransitionFacilitated through micro-rhythmic tap-and-slide sequenceDelta Wave DurationProtected by continuous ambient rainfall acoustic maskingMelatonin ProductionSupported through rain-diffused exterior light reductionSubliminal Olfactory RelaxationActivated via low-concentration petrichor infiltrationPersonal Sleep Association DepthMaximum — lifetime accumulated conditioned responseNighttime Awakening FrequencyMinimized by consistent ambient rain acoustic continuity
 
 7. Application Recommendations
