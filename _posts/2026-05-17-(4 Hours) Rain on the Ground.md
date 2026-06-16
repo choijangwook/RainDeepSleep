@@ -13,27 +13,19 @@ First Rain on Dry Earth: Healing, ASMR & the Quiet That Carries You Into Sleep
 Grounded in the imagery of hardened earth opening to rain — a world long silent, learning once again to breathe
 
 Primary Band
-
 Alpha
-
-8–12 Hz
+–12 Hz
 
 Noise Profile
-
 Pink
-
 soil-absorbed
 
 ASMR Type
-
 Primal
-
 + olfactory
 
 Stress Relief
-
 ~10 min
-
 onset
 
 1. Introduction
