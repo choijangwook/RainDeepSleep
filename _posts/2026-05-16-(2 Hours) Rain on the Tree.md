@@ -13,27 +13,18 @@ Rain on Ancient Trees: Healing, ASMR & the Forest Breath of Sleep
 Grounded in the imagery of rain received by open branches, trembling leaves, and a forest that breathes as one
 
 Primary Band
-
 Alpha
-
 8–12 Hz
-
 Noise Profile
-
 Pink
 
 layered canopy
-
 ASMR Type
-
 Multi-layer
-
 canopy + drip
 
 Cortisol Drop
-
 ~15 min
-
 nature exposure
 
 1. Introduction
