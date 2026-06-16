@@ -8,8 +8,7 @@ youtube_id: VRYfJwNlXNo
 
 ---
 
-Rain pond healing report · MD복사Why Rain on a Pond Is So Healing: A Scientific and Psychological Analysis
-
+Why Rain on a Pond Is So Healing: A Scientific and Psychological Analysis
 
 Abstract
 
