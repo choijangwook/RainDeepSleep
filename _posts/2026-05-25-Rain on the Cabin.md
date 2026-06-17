@@ -11,6 +11,7 @@ youtube_id: jMeFU_ApWvY
 ---
 
 **1. Overview**
+
 A wooden house nested within a rain-soaked forest. Rain descending through layered leaves, each canopy level softening the sound before it reaches the roof. A window blurred with trailing droplets, the woods beyond dissolving into something dreamlike. This report examines why deep forest rain is one of the most complete natural healing environments available to the human sensory system — not one element working alone, but an entire ecosystem working in concert to quiet the mind, dissolve wakefulness, and guide the listener into deep, restorative sleep.
 
 ---
