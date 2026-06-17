@@ -8,10 +8,6 @@ youtube_id: AJKHpyIlKF4
 
 ---
 
-Here's the content organized clearly in numbered points, approximately 1,900 characters:
-
----
-
 **Rain on Ceramic Jars ASMR: Therapeutic Benefits Summary**
 
 **1. Clear, Resonant Ceramic Sound Quality**  
