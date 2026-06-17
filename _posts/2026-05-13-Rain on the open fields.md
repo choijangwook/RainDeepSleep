@@ -57,18 +57,12 @@ Neuroimaging studies confirm that ambient ASMR activates the brain's default mod
 
 **6. Practical Sleep Tips**  
 
-- **Align with natural light cycles**  
-- — Autumn's shorter days advance melatonin onset by 30–60 minutes; let the audio reinforce the body's own seasonal circadian rhythm by sleeping earlier
-- **Dim screens gradually**  
-- — Begin reducing screen brightness 60 minutes before bed, moving toward near-darkness over the listening period
-- **Volume at 45–60 dB with fade-out**  
-- — Open-field rain is naturally quieter than forest rain; lower volume better replicates authentic field acoustics and avoids sleep fragmentation
-- **Cool the room to 16–18°C**  
-- — Core body temperature must drop 1–2°C to initiate sleep; a cooler room mirrors cool autumn air and accelerates the process
-- **Write down pending tasks first**  
-- — Cognitive offloading to paper reduces rumination and mirrors the "harvest completion" the soundscape evokes
-- **Use nightly for 2–3 weeks**  
-- — Consistent use builds a conditioned sleep reflex; the first sound of rain on autumn grain becomes an automatic signal to rest
+- **Align with natural light cycles**  — Autumn's shorter days advance melatonin onset by 30–60 minutes; let the audio reinforce the body's own seasonal circadian rhythm by sleeping earlier
+- **Dim screens gradually** — Begin reducing screen brightness 60 minutes before bed, moving toward near-darkness over the listening period
+- **Volume at 45–60 dB with fade-out**  — Open-field rain is naturally quieter than forest rain; lower volume better replicates authentic field acoustics and avoids sleep fragmentation
+- **Cool the room to 16–18°C**  — Core body temperature must drop 1–2°C to initiate sleep; a cooler room mirrors cool autumn air and accelerates the process
+- **Write down pending tasks first**  — Cognitive offloading to paper reduces rumination and mirrors the "harvest completion" the soundscape evokes
+- **Use nightly for 2–3 weeks**  — Consistent use builds a conditioned sleep reflex; the first sound of rain on autumn grain becomes an automatic signal to rest
 
 ---
 
