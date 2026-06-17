@@ -8,10 +8,6 @@ youtube_id: SBKDnI4zQKY
 
 ---
 
-Here's the content organized clearly in numbered points, approximately 1,900 characters:
-
----
-
 **Rain on a Traditional Tiled Roof ASMR: Therapeutic Benefits Summary**
 
 **1. Distinctive Ceramic Sound Quality**
