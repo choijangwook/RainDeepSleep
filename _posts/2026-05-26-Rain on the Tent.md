@@ -10,8 +10,8 @@ youtube_id: dmSb7xTyMyk
 
 ---
 
-**1. Overview**  A single tent  
-standing deep in a forest where no one else has come. Rain filtered through layered leaves before it knocks softly on canvas. A small, warm interior wrapped entirely in the sound of falling water. This report explores why this specific environment — rain on a tent in deep wilderness — is one of the most powerful natural conditions for profound calm, emotional fullness, and the deepest possible sleep. The mechanisms are spatial, acoustic, psychological, and philosophical — working together to remove, one by one, every reason the mind has to stay awake.
+**1. Overview**  
+A single tent standing deep in a forest where no one else has come. Rain filtered through layered leaves before it knocks softly on canvas. A small, warm interior wrapped entirely in the sound of falling water. This report explores why this specific environment — rain on a tent in deep wilderness — is one of the most powerful natural conditions for profound calm, emotional fullness, and the deepest possible sleep. The mechanisms are spatial, acoustic, psychological, and philosophical — working together to remove, one by one, every reason the mind has to stay awake.
 
 ---
 
