@@ -8,10 +8,6 @@ youtube_id: EonBq7wc8QU
 
 ---
 
-Here's the content organized clearly in numbered points, approximately 1,900 characters:
-
----
-
 **Rain on Green Leaves ASMR: Therapeutic Benefits Summary**
 
 **1. Soft Two-Phase Sound Signature**  
