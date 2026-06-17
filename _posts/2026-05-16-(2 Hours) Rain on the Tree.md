@@ -27,11 +27,11 @@ Even through a recording, canopy rain produces measurable physiological benefits
 
 Tree rain is one of the most layered ASMR environments in nature, operating across multiple sensory channels at once:
 
-Individual drip tapping — single drops falling from branch tip to leaf produce crisp, isolated taps, among the most reliable ASMR auditory triggers
-Trembling leaf movement — a drop resting on a leaf tip creates a tiny vibration, activating ASMR tingles through implied gentle touch
-Layered canopy diffusion — rain filtered through successive leaf layers becomes a soft, multi-directional wash of sound, like being wrapped in warmth from all sides
-Collective forest breath — the synchronized sound of rain across an entire forest creates a vast, unified pulse that activates social bonding circuits, producing a sense of shared presence
-Bark and wood resonance — rain on aged bark adds deep, earthy undertones that anchor the soundscape with a grounding bass register
+* Individual drip tapping — single drops falling from branch tip to leaf produce crisp, isolated taps, among the most reliable ASMR auditory triggers.
+* Trembling leaf movement — a drop resting on a leaf tip creates a tiny vibration, activating ASMR tingles through implied gentle touch.
+* Layered canopy diffusion — rain filtered through successive leaf layers becomes a soft, multi-directional wash of sound, like being wrapped in warmth from all sides.
+* Collective forest breath — the synchronized sound of rain across an entire forest creates a vast, unified pulse that activates social bonding circuits, producing a sense of shared presence.
+* Bark and wood resonance — rain on aged bark adds deep, earthy undertones that anchor the soundscape with a grounding bass register.
 
 Neuroimaging research confirms that multi-modal ASMR — combining sound, implied touch, and visual gentleness — produces stronger and more sustained relaxation than single-channel triggers, releasing dopamine while suppressing both cortisol and amygdala activity.
 
@@ -41,12 +41,11 @@ Beyond sensory relaxation, tree-rain soundscapes operate on a deeper psychologic
 
 5. Practical Sleep Tips
 
-Start 30 minutes early — begin listening before full drowsiness; let alpha-wave induction carry you naturally into sleep
-Dim the environment — near-darkness with warm light (2700K) reinforces the nighttime forest context and accelerates melatonin release
-Volume at 50–60 dB with a fade-out timer — set audio to fade after 45–60 minutes so it doesn't disrupt deep sleep phases
-Try "tree posture" — lie flat with arms slightly open, mirroring the tree's open reception; this opens the diaphragm and signals the nervous system that it is safe to rest
-Use nightly for 2–3 weeks — consistent use builds a conditioned response, turning the sound into an automatic sleep trigger
-
+* Start 30 minutes early — begin listening before full drowsiness; let alpha-wave induction carry you naturally into sleep.
+* Dim the environment — near-darkness with warm light (2700K) reinforces the nighttime forest context and accelerates melatonin release.
+* Volume at 50–60 dB with a fade-out timer — set audio to fade after 45–60 minutes so it doesn't disrupt deep sleep phases.
+* Try "tree posture" — lie flat with arms slightly open, mirroring the tree's open reception; this opens the diaphragm and signals the nervous system that it is safe to rest.
+* Use nightly for 2–3 weeks — consistent use builds a conditioned response, turning the sound into an automatic sleep trigger.
 
 6. Conclusion
 
