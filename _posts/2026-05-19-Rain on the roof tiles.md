@@ -40,5 +40,5 @@ For listeners with roots in East Asian traditions, the imagery of tiled-roof cou
 
 ---
 
-**7. Conclusion**
+**7. Conclusion**  
 The healing power of this rain passage operates through multiple overlapping mechanisms: auditory regulation through pink noise, visual deactivation through muted and slow-moving imagery, emotional warmth through memory and belonging, cognitive restoration through sensory simplicity, and deep comfort through cultural resonance and identity continuity. Together, these create a total relaxation environment — one that demands nothing of the listener, but gently and completely returns them to themselves. In a world of relentless stimulation, such quiet scenes are not merely beautiful. They are, in a measurable and meaningful sense, necessary.
