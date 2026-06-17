@@ -9,8 +9,8 @@ youtube_id: Xp9SRHcF3O0
 
 Sleep & Wellness Research Report
 
-First Rain on Dry Earth: Healing, ASMR & the Quiet That Carries You Into Sleep
-Grounded in the imagery of hardened earth opening to rain — a world long silent, learning once again to breathe
+First Rain on Dry Earth: Healing, ASMR & the Quiet That Carries You Into Sleep.
+Grounded in the imagery of hardened earth opening to rain — a world long silent, learning once again to breathe.
 
 Primary Band
 Alpha
