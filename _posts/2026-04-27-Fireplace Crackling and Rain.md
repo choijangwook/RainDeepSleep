@@ -7,10 +7,6 @@ youtube_id: 25kaRUX4McU
 
 ---
 
-Here's the content organized clearly in numbered points, approximately 1,900 characters:
-
----
-
 **Fireplace & Rain ASMR: Therapeutic Benefits Summary**
 
 **1. Complementary Sound Design**
